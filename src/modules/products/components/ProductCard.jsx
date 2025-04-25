@@ -9,7 +9,7 @@ export const ProductCard = ({ producto }) => {
     return (
       <div className="bg-white rounded-lg shadow-md p-5 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
         <div className="w-full h-48 overflow-hidden">
-          <Link to={`/products/readone/${producto._id}`}>
+          <Link to={`http://proyecto6-sgv2.onrender.com/api/v1/product/readone/${producto._id}`}>
             <img
               className="w-full h-full object-cover"
               src={producto.imagen}
