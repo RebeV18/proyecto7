@@ -50,12 +50,6 @@ export const AuthProvider = ({ children }) => {
         })
     }
 
-    /* const globalState = {
-        user: state.user,
-        token: state.token,
-        login
-    } */
-
     return (
         <AuthContext.Provider
             value={{
