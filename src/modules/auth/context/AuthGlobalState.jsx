@@ -14,7 +14,6 @@ export const AuthProvider = ({ children }) => {
 
     const [ state, dispatch ] = useReducer(authReducer, initialState);
 
-    //Crear los métodos para modificar el estado global a traves del dispatch
     const login = async({ correo, password }) => {
         try {
             const dataLogin = await loginService({ correo, password });
