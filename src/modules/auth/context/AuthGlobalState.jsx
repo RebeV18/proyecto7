@@ -20,7 +20,6 @@ export const AuthProvider = ({ children }) => {
             const { token } = dataLogin;
             const user = dataLogin.data; 
 
-            //Guardar el token en localStorage -> Logica de sesión
             if(!token || !user) {
                 throw new Error("No se pudo iniciar sesión");
             }
