@@ -26,7 +26,7 @@ export const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleLogin}>
+    <form className="text-white" onSubmit={handleLogin}>
       <div>
         <label>Correo</label>
         <input
