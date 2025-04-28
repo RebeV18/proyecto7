@@ -11,11 +11,11 @@ export const Navbar = () => {
     }
 
     return (
-        <nav className="navbar">
+        <nav className="text-white" id="navbar">
             <div className="navbar__logo">
-                <h1 className="text-white">LG</h1>
+                <h1>LG</h1>
             </div>
-            <ul className="navbar__links text-white">
+            <ul className="navbar__links flex-row text-white">
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/about">About</Link></li>
                 <li><Link to="/products">Products</Link></li>

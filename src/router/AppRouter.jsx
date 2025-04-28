@@ -4,6 +4,7 @@ import { HomePage } from "../shared/pages/HomePage"
 import { AboutPage } from "../shared/pages/AboutPage"
 import { LoginPage } from "../modules/auth/pages/Login"
 import { ProductPage } from "../modules/products/pages/ProductPage"
+import { Footer } from "../shared/components/Footer"
 
 
 export const AppRouter = () => {
@@ -16,6 +17,7 @@ export const AppRouter = () => {
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/products" element={<ProductPage />} />
             </Routes>
+            <Footer />
         </>
     )
 }
