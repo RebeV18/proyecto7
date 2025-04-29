@@ -15,11 +15,12 @@ export const CDFlipCard = () => {
     const handleApiResponse = async () => {
       const data = await fetchAllProducts();
       setSongs(data);
-      const groupSongs = [
-        ...new Set(songs.map((song) => song.cd).filter(Boolean)),
-      ];
+  
+      // Agrupar canciones por CD directamente desde la respuesta
+      const groupSongs = [...new Set(data.map((song) => song.cd).filter(Boolean))];
       setCds(groupSongs);
     };
+  
     handleApiResponse();
   }, []);
 
