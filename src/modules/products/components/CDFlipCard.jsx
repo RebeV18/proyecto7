@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { fetchAllProducts } from "../cds/productsService";
+import { fetchAllProducts } from "../services/productApiService";
 
-const CDFlipCard = () => {
+export const CDFlipCard = () => {
   const [songs, setSongs] = useState([]);
   const [cds, setCds] = useState([]);
   const [theCd, setTheCd] = useState(null);
@@ -16,7 +16,7 @@ const CDFlipCard = () => {
       const data = await fetchAllProducts();
       setSongs(data);
       const groupSongs = [
-        ...new Set(data.map((song) => song.cd).filter(Boolean)),
+        ...new Set(songs.map((song) => song.cd).filter(Boolean)),
       ];
       setCds(groupSongs);
     };
@@ -31,14 +31,13 @@ const CDFlipCard = () => {
   return (
     <section className="py-16 mx-auto sm:py-20">
       <div
-        class
-        Name="mx-auto flex justify-center object-center px-4 py-16 sm:py-24 lg:max-w-7xl"
+        className="mx-auto flex justify-center object-center px-4 py-16 sm:py-24 lg:max-w-7xl"
       >
         <div className="flex justify-center object-center flex-col gap-12 sm:gap-16">
-          <h2 className="text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl lg:text-6xl">
-            Services
+          <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Discografía
           </h2>
-
+          
           <div className="mx-auto grid gap-12 space-y-10 md:space-y-0 sm:gap-16 lg:grid-cols-3">
             {cds.map((cd) => (
               <div
@@ -50,17 +49,16 @@ const CDFlipCard = () => {
               >
                 <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                   <div className="absolute inset-0 h-full w-full rounded-xl [backface-visibility:hidden]">
-                    {cd.imageUrl && (
+                    {cd.imagen && (
                       <Image
                         className="object-cover cursor-pointer object-left h-full w-full rounded-xl"
-                        src={cd.imageUrl}
-                        alt={cd.name}
+                        src={cd.imagen}
+                        alt={cd.cd}
                         width={320}
                         height={320}
                       />
                     )}
-
-                    <p className="md:my-6 text-2xl">{cd.name}</p>
+                    <p className="md:my-6 text-2xl">{cd.cd}</p>
                   </div>
 
                   <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -94,4 +92,3 @@ const CDFlipCard = () => {
   );
 };
 
-export default CDFlipCard;
