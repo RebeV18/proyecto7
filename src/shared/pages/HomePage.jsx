@@ -2,7 +2,12 @@ export const HomePage = () => {
   return (
     <>
       <div className="flex-col justify-center align-center place-items-center text-white p-50">
-        <h1>LUIS GERARDO AQUINO</h1>
+        <h1 className="text-7xl p-10">LUIS GERARDO AQUINO</h1>
+        <img
+          className="w-full overlay"
+          src="https://res.cloudinary.com/ddxlvh0go/image/upload/v1736218921/IMG_2166_dej5fy.jpg"
+          alt="Portada"
+        />
       </div>
     </>
   );
