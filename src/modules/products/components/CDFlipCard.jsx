@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { fetchAllProducts } from "../services/productApiService";
+import { fetchAllProducts, groupByCD } from "../services/productApiService";
 
 export const CDFlipCard = () => {
   const [songs, setSongs] = useState([]);
@@ -15,6 +15,7 @@ export const CDFlipCard = () => {
     const handleApiResponse = async () => {
       try {
         const data = await fetchAllProducts();
+        const dataCD = await groupByCD();
         if (!data || typeof data !== "object") {
           throw new Error("La respuesta de la API no es válida");
         }
@@ -23,12 +24,8 @@ export const CDFlipCard = () => {
           throw new Error("La respuesta de la API no contiene un array válido");
         }
         setSongs(products);
-
-        const groupSongs = [
-          ...new Set(products.map((song) => song.cd).filter(Boolean)),
-        ];
-        setCds(groupSongs);
-        console.log("cd", groupSongs);
+        setCds(dataCD);
+        
       } catch (error) {
         console.error("Error al obtener los productos:", error);
       }

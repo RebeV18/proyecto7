@@ -14,9 +14,9 @@ export const AuthProvider = ({ children }) => {
 
     const [ state, dispatch ] = useReducer(authReducer, initialState);
 
-    const login = async({ correo, password }) => {
+    const login = async({ email, password }) => {
         try {
-            const dataLogin = await loginService({ correo, password });
+            const dataLogin = await loginService({ email, password });
             const { token } = dataLogin;
             const user = dataLogin.data; 
 

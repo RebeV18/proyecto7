@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 export const LoginForm = () => {
   const { login } = useContext(AuthContext);
-  const [correo, setcorreo] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
@@ -12,7 +12,7 @@ export const LoginForm = () => {
     event.preventDefault();
 
     const formatData = {
-      correo,
+      email,
       password,
     };
 
@@ -28,11 +28,11 @@ export const LoginForm = () => {
   return (
     <form className="text-white" onSubmit={handleLogin}>
       <div>
-        <label>Correo</label>
+        <label></label>
         <input
           type="email"
-          value={correo}
-          onChange={(event) => setcorreo(event.target.value)}
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
           required
         />
       </div>

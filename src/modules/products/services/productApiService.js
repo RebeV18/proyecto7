@@ -21,3 +21,23 @@ export const fetchProductById = async (id) => {
     throw new Error(error);
   }
 };
+
+export const groupByCD = async () => {
+  try {
+    const { products } = await fetchAllProducts();
+    const groupSongs = [
+      ...new Map(
+        products
+          .filter((product) => product.cd) // Filtra productos con un CD válido
+          .map((product) => [
+            product.cd, // Clave única para Map
+            { cd: product.cd, imagen: product.imagen }, // Objeto con nombre e imagen
+          ])
+      ).values(),
+    ];
+    return groupSongs;
+  } catch (error) {
+    console.error("Error obteniendo los productos", error);
+    throw new Error(error);
+  }
+};

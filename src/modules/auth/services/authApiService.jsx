@@ -1,10 +1,10 @@
 import { apiClient } from "../../../shared/services/apiClient";
 
-export const loginService = async ({ correo, password }) => {
+export const loginService = async ({ email, password }) => {
   try {
     const { data } = await apiClient.post(
       "https://proyecto6-sgv2.onrender.com/api/v1/user/login",
-      { correo, password }
+      { email, password }
     );
     console.log(data);
     return data;
