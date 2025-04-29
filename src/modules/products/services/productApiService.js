@@ -5,7 +5,6 @@ export const fetchAllProducts = async () => {
     const { data } = await apiClient.get(
       "https://proyecto6-sgv2.onrender.com/api/v1/product/readall/"
     );
-    console.log(data);
     return data;
   } catch (error) {
     console.error("Error obteniendo los productos", error);

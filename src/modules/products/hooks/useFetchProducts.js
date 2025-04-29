@@ -13,7 +13,6 @@ export const useFetchProducts = () => {
           setLoading(true);
 
           const response = await fetchAllProducts();
-          console.log(response.data);
           setProductos(response.data);
           setError(null);
         } catch (err) {
