@@ -6,8 +6,8 @@ export const ProductPage = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3x1 font-bold mb-6 text-center text-gray-800">
-        Nuestros Productos
+      <h1 className="text-5x1 font-bold mb-6 text-center text-White">
+        Discografía
       </h1>
 
       {loading && (

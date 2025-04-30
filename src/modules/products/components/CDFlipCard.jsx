@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { fetchAllProducts, groupByCD } from "../services/productApiService";
+
+import { fetchAllProducts } from "../services/productApiService";
 
 export const CDFlipCard = () => {
   const [songs, setSongs] = useState([]);
@@ -10,12 +11,10 @@ export const CDFlipCard = () => {
 
   const navigate = useNavigate();
 
-  //Se obtienen datos de la API y se organizan las canciones por cd usando useEffect.
   useEffect(() => {
     const handleApiResponse = async () => {
       try {
         const data = await fetchAllProducts();
-        const dataCD = await groupByCD();
         if (!data || typeof data !== "object") {
           throw new Error("La respuesta de la API no es válida");
         }
@@ -24,8 +23,22 @@ export const CDFlipCard = () => {
           throw new Error("La respuesta de la API no contiene un array válido");
         }
         setSongs(products);
-        setCds(dataCD);
-        
+
+        const groupSongs = [
+          ...new Map(
+            products
+              .filter((song) => song.cd)
+              .map((song) => [
+                song.cd,
+                {
+                  cd: song.cd,
+                  imagen: song.imagen,
+                  anho: song.anho_lanzamiento,
+                },
+              ])
+          ).values(),
+        ];
+        setCds(groupSongs);
       } catch (error) {
         console.error("Error al obtener los productos:", error);
       }
@@ -43,14 +56,10 @@ export const CDFlipCard = () => {
     <section className="py-16 mx-auto sm:py-20">
       <div className="mx-auto flex justify-center object-center px-4 py-16 sm:py-24 lg:max-w-7xl">
         <div className="flex justify-center object-center flex-col gap-12 sm:gap-16">
-          <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Discografía
-          </h2>
-
           <div className="mx-auto grid gap-12 space-y-10 md:space-y-0 sm:gap-16 lg:grid-cols-3">
-            {cds.map((cd) => (
+            {cds.map((cd, index) => (
               <div
-                key={cd}
+                key={cd.cd || index} // Usa `cd.cd` como clave única, o el índice como respaldo
                 className={`group h-96 w-96 [perspective:1000px] ${
                   theCd === cd
                 }`}
@@ -58,8 +67,9 @@ export const CDFlipCard = () => {
               >
                 <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                   <div className="absolute inset-0 h-full w-full rounded-xl [backface-visibility:hidden]">
+                  <h2 className="md:my-6 text-white text-2xl">{cd.cd}</h2>
                     {cd.imagen && (
-                      <Image
+                      <img
                         className="object-cover cursor-pointer object-left h-full w-full rounded-xl"
                         src={cd.imagen}
                         alt={cd.cd}
@@ -67,19 +77,21 @@ export const CDFlipCard = () => {
                         height={320}
                       />
                     )}
-                    <p className="md:my-6 text-white text-2xl">{cd.cd}</p>
+                    <p className="md:my-6 text-white text-sm">{cd.anho_lanzamiento}</p>
                   </div>
 
                   <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
                     <div className="flex min-h-full flex-col items-center justify-center">
-                      <h2 className="text-white text-2xl font-bold mb-4">{cd.name}</h2>
+                      <h2 className="text-white text-2xl font-bold mb-4">
+                        {cd.name}
+                      </h2>
 
                       <p className="text-white text-lg text-pretty text-center mb-4">
                         {songs
                           .filter((song) => song.cd === theCd)
                           .map((song) => (
                             <div
-                              key={song.id}
+                              key={song.id} // Asegúrate de que `song.id` sea único
                               className="p-1 cursor-pointer"
                               onClick={() => handleClickSong(song)}
                             >
