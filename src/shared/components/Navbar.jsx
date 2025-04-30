@@ -11,19 +11,18 @@ export const Navbar = () => {
     }
 
     return (
-        <nav className="text-white" id="navbar">
-            <div className="navbar__logo">
-                <h1>LG</h1>
-            </div>
-            <ul className="navbar__links flex-row text-white">
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/products">Products</Link></li>
+        <nav className="flex justify-between m-5 bg-blue-300 text-white" id="navbar">
+            <ul className="flex flex-row gap-x-3 text-white">
+                <li><Link to="/">Inicio</Link></li>
+                <p>|</p>
+                <li><Link to="/about">Sobre nosotros</Link></li>
+                <p>|</p>
+                <li><Link to="/products">Discografía</Link></li>
             </ul>
             <div className="text-white">
                 {
                     !user ? (
-                        <Link to="/login">Login</Link>
+                        <Link to="/login">Iniciar Sesión</Link>
                     ) : (
                         <div className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" id="navbar">
                             <span>{user.nombre} {user.apellido}</span>
