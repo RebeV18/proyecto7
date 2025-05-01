@@ -1,5 +1,5 @@
 export const Footer = () => {
     return (
-        <p className="flex justify-center text-white">&#169; Luis Gerardo Aquino   ||  contacto: +56 9 1111 1111  ||  luisgerardoaquino@gmail.com</p>
+        <p className="flex justify-center text-white pt-15">&#169; Luis Gerardo Aquino   ||  contacto: +503 7722 5016  ||  luisgerardoaquinocontacto@gmail.com</p>
     )
 }
