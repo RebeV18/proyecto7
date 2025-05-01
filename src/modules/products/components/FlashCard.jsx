@@ -1,24 +1,30 @@
 import clsx from "clsx";
-import { ClipboardList } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { fetchAllProducts } from "../services/productApiService";
 
 export const FlashCard = () => {
-  const [isFlipped, setIsFlipped] = useState(false);
-
-  const handleCardClick = (cd) => {
-    setTheCd(cd);
-    setIsFlipped((prev) => !prev);
-  };
-
+  const [flippedCards, setFlippedCards] = useState({});
   const [songs, setSongs] = useState([]);
   const [cds, setCds] = useState([]);
   const [theCd, setTheCd] = useState(null);
   const [theSong, setTheSong] = useState(null);
 
   const navigate = useNavigate();
+
+  const handleCardClick = (cd) => {
+    setTheCd(cd);
+    setFlippedCards((prev) => ({
+      ...prev,
+      [cd.cd]: !prev[cd.cd],
+    }));
+  };
+
+  const handleClickSong = (song) => {
+    setTheSong(song);
+    navigate(`/ProductCard/${theSong._id}`);
+  };
 
   useEffect(() => {
     const handleApiResponse = async () => {
@@ -59,10 +65,17 @@ export const FlashCard = () => {
     handleApiResponse();
   }, []);
 
-  const handleClickSong = (song) => {
-    setTheSong(song);
-    navigate(`/ProductCard/${theSong._id}`);
-  };
+  const filteredSongs = useMemo(() => {
+    return songs.filter((song) => theCd && song.cd === theCd.cd);
+  }, [songs, theCd]);
+
+  useEffect(() => {
+    if (theCd) {
+      console.log("CD seleccionado:", theCd);
+      console.log("Canciones disponibles:", songs);
+      console.log("Canciones filtradas:", filteredSongs);
+    }
+  }, [theCd, songs, filteredSongs]);
 
   return (
     <>
@@ -75,11 +88,9 @@ export const FlashCard = () => {
                   key={cd.cd || index}
                   onClick={() => handleCardClick(cd)}
                   className={clsx(
-                    `relative h-[470px] w-[220px] cursor-pointer rounded-2xl border border--200 bg-transparent shadow-md transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98] ${
-                      theCd === cd
-                    }`,
+                    `relative h-[470px] w-[220px] cursor-pointer rounded-2xl border border--200 bg-transparent shadow-md transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]`,
                     {
-                      "[&_.card-content]:rotate-y-180": isFlipped,
+                      "[&_.card-content]:rotate-y-180": flippedCards[cd.cd],
                     }
                   )}
                 >
@@ -114,23 +125,27 @@ export const FlashCard = () => {
                       <div className="card-back absolute h-full w-full rotate-y-180 rounded-2xl bg-gradient-to-br from-[#e1f4f0] to-[#b6f7df] p-4 text-gray-800 shadow-lg [backface-visibility:hidden]">
                         <div className="flex min-h-full flex-col items-center justify-center">
                           <h2 className="mb-2 flex items-center gap-1 text-2xl font-bold drop-shadow-sm text-white text-2xl font-bold mb-4">
-                            {cd.name}
+                            {cd.name || "No Name Available"}
                           </h2>
 
                           <div className="text-white text-lg text-pretty text-center mb-4">
-                            {songs
-                              .filter((song) => song.cd === theCd)
-                              .map((song) => (
+                            {filteredSongs.length > 0 ? (
+                              filteredSongs.map((song, index) => (
                                 <div
-                                  key={song.id} // Asegúrate de que `song.id` sea único
+                                  key={song.id || `${song.cd}-${index}`}
                                   className="p-1 cursor-pointer"
                                   onClick={() => handleClickSong(song)}
                                 >
                                   <p className="text-white text-xs md:text-lg text-white font-semibold lg:text-2xl">
-                                    {song.cancion}
+                                    {song.cancion || "No Song Available"}
                                   </p>
                                 </div>
-                              ))}
+                              ))
+                            ) : (
+                              <p className="text-white text-center">
+                                No hay canciones disponibles
+                              </p>
+                            )}
                           </div>
                         </div>
                       </div>

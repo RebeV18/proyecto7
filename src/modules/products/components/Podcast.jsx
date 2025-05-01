@@ -39,7 +39,6 @@ export const CDFlipCard = () => {
           ).values(),
         ];
         setCds(groupSongs);      
-        
       } catch (error) {
         console.error("Error al obtener los productos:", error);
       }
