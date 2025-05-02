@@ -88,37 +88,48 @@ export const FlashCard = () => {
                   key={cd.cd || index}
                   onClick={() => handleCardClick(cd)}
                   className={clsx(
-                    `relative h-[470px] w-[220px] cursor-pointer rounded-2xl border border--200 bg-transparent shadow-md transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]`,
+                    `relative h-[400px] w-[220px] cursor-pointer rounded-2xl border border--200 bg-transparent shadow-md transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]`,
                     {
                       "[&_.card-content]:rotate-y-180": flippedCards[cd.cd],
                     }
                   )}
                 >
-                  <div className="absolute top-2 right-2 z-10 rounded-full bg-[#0b5599] px-2 py-[2px] text-xs font-medium text-white shadow">
-                    Ver canciones
-                  </div>
-
                   <div className="card-content h-full w-full transition-transform duration-500 [transform-style:preserve-3d]">
                     <div className="card-front absolute h-full w-full rounded-2xl bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] p-4 text-gray-800 [backface-visibility:hidden]">
                       <div className="py-4">
-                        <div className="pb-0 pt-2 px-4 flex-col items-start">
-                          <h2 className="font-bold text-large text-white text-2xl text-center md:my-6">
-                            {cd.cd}
+                        <div className="pb-0.5 px-4 flex-col items-start">
+                          <h2 className="font-bold text-white text-xl text-center md:my-6">
+                            {cd.cd === "Singles" ? (
+                              <>
+                                <br />
+                                Singles
+                                <br />
+                              </>
+                            ) : (
+                              cd.cd
+                            )}
                           </h2>
-                          <p className="text-white text-center text-tiny uppercase font-bold md:text-lg lg:text-2xl">
-                            {cd.anho_lanzamiento}
+                          <p className="text-white text-center text-xs uppercase md:text-sm lg:text-base">
+                          {cd.cd === "Singles" ? (
+                              <></>
+                            ) : (
+                              cd.anho_lanzamiento
+                            )}
                           </p>
                           <div className="overflow-visible py-2">
                             {cd.imagen && (
                               <img
                                 className="object-cover cursor-pointer object-left h-full w-full rounded-xl"
                                 src={cd.imagen}
-                                alt={cd.cd}
+                                alt={cd.cd || "N/A"}
                                 width={320}
                                 height={320}
                               />
                             )}
                           </div>
+                        </div>
+                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 rounded-full bg-[#0b5599] px-2 py-[2px] text-xs font-medium text-white shadow-lg">
+                          Ver canciones
                         </div>
                       </div>
 
