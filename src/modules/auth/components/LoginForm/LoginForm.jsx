@@ -26,26 +26,26 @@ export const LoginForm = () => {
   };
 
   return (
-    <form className="text-white" onSubmit={handleLogin}>
-      <div>
-        <label></label>
+    <form className="flex flex-col display-center gap-7 p-20 text-white text-lg font-monserrat" onSubmit={handleLogin}>
+      <div className="flex flex-col display-center gap-3">
         <input
+          className="p-1.5 border-1 border-grey-100 rounded-lg"
+          placeholder="Ingresa tu correo electrónico"
           type="email"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
           required
         />
-      </div>
-      <div>
-        <label>Password</label>
         <input
+          className="p-1.5 border-1 border-grey-100 rounded-lg"
+          placeholder="Ingresa tu contraseña"
           type="password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
           required
         />
       </div>
-      <button type="submit">Iniciar Sesión</button>
+      <button className="p-2 border-2 border-white rounded-lg" type="submit">Iniciar Sesión</button>
     </form>
   );
 };
