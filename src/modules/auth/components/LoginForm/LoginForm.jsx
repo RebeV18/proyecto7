@@ -26,7 +26,7 @@ export const LoginForm = () => {
   };
 
   return (
-    <form className="flex flex-col display-center gap-7 p-20 text-white text-lg font-monserrat" onSubmit={handleLogin}>
+    <form className="flex flex-col display-center gap-7 p-10 text-white text-lg font-monserrat" onSubmit={handleLogin}>
       <div className="flex flex-col display-center gap-3">
         <input
           className="p-1.5 border-1 border-grey-100 rounded-lg"
@@ -45,7 +45,7 @@ export const LoginForm = () => {
           required
         />
       </div>
-      <button className="p-2 border-2 border-white rounded-lg" type="submit">Iniciar Sesión</button>
+      <button className="mr-30 ml-30 p-2 border-2 border-white rounded-lg" type="submit">Iniciar Sesión</button>
     </form>
   );
 };

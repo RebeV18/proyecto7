@@ -5,8 +5,7 @@ export const Footer = () => {
     <>
       <RRSS />
       <p className="flex justify-center text-white p-10">
-        &#169; Luis Gerardo Aquino || contacto: +503 7722 5016 ||
-        luisgerardoaquinocontacto@gmail.com
+        &#169; Luis Gerardo Aquino || contacto: luisgerardoaquinocontacto@gmail.com
       </p>
     </>
   );

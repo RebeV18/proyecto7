@@ -6,9 +6,9 @@ export const ProductPage = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-5xl font-bold mb-6 text-center text-white">
+      <h2 className="text-5xl font-bold mb-6 text-center text-white">
         Discografía
-      </h1>
+      </h2>
 
       {loading && (
         <div className="flex justify-center-items-center-py-20">
