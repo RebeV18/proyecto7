@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { Link } from "react-router-dom"
-import { AuthContext } from "../../modules/auth/context/AuthContext"
 import { IoMdLogIn } from "react-icons/io"
+import { AuthContext } from "../../modules/auth/context/AuthContext"
 
 
 export const Navbar = () => {
@@ -24,7 +24,7 @@ export const Navbar = () => {
                 <p>|</p>
                 <li><Link to="/contacto">Contacto</Link></li>
             </ul>
-            <div className="text-white text-2xl">
+            <div className="flex flex-row gap-3 text-white text-2xl">
                 {
                     !user ? (
                         <Link to="/login" className="flex flex-col items-center">
