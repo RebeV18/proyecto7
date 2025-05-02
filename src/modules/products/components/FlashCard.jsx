@@ -42,7 +42,7 @@ export const FlashCard = () => {
         const groupSongs = [
           ...new Map(
             products
-              .filter((song) => song.cd)
+              .filter((song) => song.cd != "Podcast")
               .map((song) => [
                 song.cd,
                 {

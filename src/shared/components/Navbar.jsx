@@ -20,7 +20,7 @@ export const Navbar = () => {
                 <p>|</p>
                 <li><Link to="/products">Discografía</Link></li>
                 <p>|</p>
-                <li><Link to="podcast">Potcast</Link></li>
+                <li><Link to="podcast">Podcast</Link></li>
                 <p>|</p>
                 <li><Link to="/contacto">Contacto</Link></li>
             </ul>
