@@ -15,6 +15,7 @@ export const Navbar = () => {
   return (
     <nav className="bg-gray-900 p-2 lg:p-3 xl:p-5 2xl:p-7 shadow-md">
       <div className="h16 flex justify-between items-center px-4">
+        {/* >768px*/}
         <div className="hidden sm:flex">
           <Link to="/" className="text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-3xl 2xl:px-7">
             Inicio
@@ -40,6 +41,7 @@ export const Navbar = () => {
           <IoIosMenu />
         </button>
 
+        {/* <768px*/}
         <div
           className={`${
             isOpen ? "block" : "hidden"
@@ -62,7 +64,7 @@ export const Navbar = () => {
           </Link>
         </div>
 
-        {/* Botón de login o usuario */}
+        {/* Login */}
         <div className="flex flex-row gap-3 text-white text-xl xl:text-2xl 2xl:text-5xl">
           {!user ? (
             <Link to="/login" className="flex flex-col items-center">
