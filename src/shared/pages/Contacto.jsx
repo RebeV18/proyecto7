@@ -10,7 +10,7 @@ export const Contacto = () => {
         <p className="text-lg">fono: +503 7722 5016</p>
       </div>
       <h2 className="text-3xl font-bold mb-6 p-5 text-center text-white">
-        Sígueme en mis redes sociales:
+        Sígueme en mis redes sociales y suscríbete:
       </h2>
     </>
   );

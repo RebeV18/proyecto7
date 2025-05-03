@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { FiFacebook } from "react-icons/fi";
 import { IoLogoInstagram } from "react-icons/io5";
-import { PiTiktokLogo } from "react-icons/pi";
+import { CiYoutube } from "react-icons/ci";
+import { PiSpotifyLogoLight, PiTiktokLogo } from "react-icons/pi";
 
 export const RRSS = () => {
   const [facebookColor, setFacebookColor] = useState("white");
   const [instagramColor, setInstagramColor] = useState("white");
+  const [spotifyColor, setSpotifyColor] = useState("white");
+  const [ytColor, setYTColor] = useState("white");
   const [tiktokColor, setTiktokColor] = useState("white");
 
   return (
@@ -26,6 +29,20 @@ export const RRSS = () => {
       </li>
       <li>
         <a
+          href="https://www.youtube.com/channel/UC9fmY9E40ON7DqZsRrYiGFg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <CiYoutube
+            style={{ color: ytColor }}
+            className="text-3xl"
+            onMouseOver={() => setYTColor("rgb(251, 186, 82)")}
+            onMouseOut={() => setYTColor("white")}
+          />
+        </a>
+      </li>
+      <li>
+        <a
           href="https://www.instagram.com/luisgerardoaquino/"
           target="_blank"
           rel="noopener noreferrer"
@@ -35,6 +52,20 @@ export const RRSS = () => {
             className="text-3xl"
             onMouseOver={() => setInstagramColor("rgb(251, 186, 82)")}
             onMouseOut={() => setInstagramColor("white")}
+          />
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://open.spotify.com/intl-es/artist/1p8u5sYJMTQiSoJPCUancz"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <PiSpotifyLogoLight 
+            style={{ color: spotifyColor }}
+            className="text-3xl"
+            onMouseOver={() => setSpotifyColor("rgb(251, 186, 82)")}
+            onMouseOut={() => setSpotifyColor("white")}
           />
         </a>
       </li>
