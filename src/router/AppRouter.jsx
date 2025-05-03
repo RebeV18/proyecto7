@@ -4,7 +4,7 @@ import { HomePage } from "../shared/pages/HomePage"
 import { AboutPage } from "../shared/pages/AboutPage"
 import { LoginPage } from "../modules/auth/pages/Login"
 import { ProductPage } from "../modules/products/pages/ProductPage"
-import { Podcast } from "../modules/products/pages/Podcast"
+import { Podcast } from "../modules/products/pages/PodcastWCard"
 import { Contacto } from "../shared/pages/Contacto" 
 import { Footer } from "../shared/components/Footer"
 

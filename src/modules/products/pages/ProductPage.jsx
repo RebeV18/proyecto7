@@ -1,4 +1,4 @@
-import { FlashCard } from "../components/FlashCard";
+import { CD_Cards } from "../components/CD_Cards";
 import { useFetchProducts } from "../hooks/useFetchProducts";
 
 export const ProductPage = () => {
@@ -28,7 +28,7 @@ export const ProductPage = () => {
         </div>
       )}
 
-      {<FlashCard />}
+      {<CD_Cards />}
     </div>
   );
 };

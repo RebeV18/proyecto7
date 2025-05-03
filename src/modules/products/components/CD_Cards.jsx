@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import { fetchAllProducts } from "../services/productApiService";
 
-export const FlashCard = () => {
+export const CD_Cards = () => {
   const [flippedCards, setFlippedCards] = useState({});
   const [songs, setSongs] = useState([]);
   const [cds, setCds] = useState([]);
@@ -23,7 +23,7 @@ export const FlashCard = () => {
 
   const handleClickSong = (song) => {
     setTheSong(song);
-    navigate(`/ProductCard/${theSong._id}`);
+    navigate(`/PlayCard/${theSong}`);
   };
 
   useEffect(() => {
