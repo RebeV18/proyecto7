@@ -5,5 +5,5 @@ const { backendUrl } = envLoader;
 
 export const apiClient = axios.create({
     baseURL: backendUrl,
-    timeout: 5000,
+    timeout: 7000,
 });

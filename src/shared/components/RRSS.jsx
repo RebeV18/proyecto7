@@ -12,7 +12,7 @@ export const RRSS = () => {
   const [tiktokColor, setTiktokColor] = useState("white");
 
   return (
-    <ul className="flex flex-row justify-center gap-x-10 p-2">
+    <ul className="flex flex-row justify-center p-1 gap-x-7 md:gap-x-10 lg:gap-x-12 xl:gap-x-15 2xl:gap-x-25 xl:p-5">
       <li>
         <a
           href="https://www.facebook.com/LuisGerardoAquinoSV/?locale=es_LA"
@@ -21,7 +21,7 @@ export const RRSS = () => {
         >
           <FiFacebook
             style={{ color: facebookColor }}
-            className="sm:text-xl md:text-2xl lg:text-3xl"
+            className="text-xl sm:text-3xl xl:text-4xl 2xl:xl:text-6xl"
             onMouseOver={() => setFacebookColor("rgb(251, 186, 82)")}
             onMouseOut={() => setFacebookColor("white")}
           />
@@ -35,7 +35,7 @@ export const RRSS = () => {
         >
           <CiYoutube
             style={{ color: ytColor }}
-            className="sm:text-xl md:text-2xl lg:text-3xl"
+            className="text-xl sm:text-3xl xl:text-4xl 2xl:xl:text-6xl"
             onMouseOver={() => setYTColor("rgb(251, 186, 82)")}
             onMouseOut={() => setYTColor("white")}
           />
@@ -49,7 +49,7 @@ export const RRSS = () => {
         >
           <IoLogoInstagram
             style={{ color: instagramColor }}
-            className="sm:text-xl md:text-2xl lg:text-3xl"
+            className="text-xl sm:text-3xl xl:text-4xl 2xl:xl:text-6xl"
             onMouseOver={() => setInstagramColor("rgb(251, 186, 82)")}
             onMouseOut={() => setInstagramColor("white")}
           />
@@ -63,7 +63,7 @@ export const RRSS = () => {
         >
           <PiSpotifyLogoLight 
             style={{ color: spotifyColor }}
-            className="sm:text-xl md:text-2xl lg:text-3xl"
+            className="text-xl sm:text-3xl xl:text-4xl 2xl:xl:text-6xl"
             onMouseOver={() => setSpotifyColor("rgb(251, 186, 82)")}
             onMouseOut={() => setSpotifyColor("white")}
           />
@@ -77,7 +77,7 @@ export const RRSS = () => {
         >
           <PiTiktokLogo
             style={{ color: tiktokColor }}
-            className="sm:text-xl md:text-2xl lg:text-3xl"
+            className="text-xl sm:text-3xl xl:text-4xl 2xl:xl:text-6xl"
             onMouseOver={() => setTiktokColor("rgb(251, 186, 82)")}
             onMouseOut={() => setTiktokColor("white")}
           />
