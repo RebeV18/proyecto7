@@ -5,7 +5,7 @@ export const ProductPage = () => {
   const { productos, loading, error } = useFetchProducts();
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container flex flex-col justify-items-center place-items-center mx-auto px-4 py-8">
       <h2 className="text-5xl font-bold mb-6 text-center text-white">
         Discografía
       </h2>

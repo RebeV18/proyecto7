@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 import { fetchAllProducts } from "../services/productApiService";
 
+import "../Styles.css"
+
 export const CD_Cards = () => {
   const [flippedCards, setFlippedCards] = useState({});
   const [songs, setSongs] = useState([]);
@@ -94,7 +96,7 @@ export const CD_Cards = () => {
                     }
                   )}
                 >
-                  <div className="card-content h-full w-full transition-transform duration-500 [transform-style:preserve-3d]">
+                  <div className="custom-card rounded-xl card-content h-full w-full transition-transform duration-500 [transform-style:preserve-3d]">
                     <div className="card-front absolute h-full w-full rounded-2xl bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] p-4 text-gray-800 [backface-visibility:hidden]">
                       <div className="py-4">
                         <div className="pb-0.5 px-4 flex-col items-start">

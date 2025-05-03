@@ -7,8 +7,8 @@ export const Podcast = () => {
         Podcast: Con Sonido de Alabanza
       </h2>
       <div className="grid grid-cols-2 gap-10 items-center justify-center gap-5 p-10">
-        <div className="bg-background/50 dark:bg-default-100/50 max-w-[610px]">
-          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-7 sm:py-10 lg:max-w-7xl">
+        <div className="custom-card bg-background/50 dark:bg-default-100/50 max-w-[610px]">
+          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-1 py-2 sm:py-5 lg:max-w-7xl">
             <div className="flex flex-col items-center justify-center p-7">
               <h3 className="font-bold text-white text-xl text-center md:my-6">
                 Con Sonido de Alabanza
@@ -27,8 +27,8 @@ export const Podcast = () => {
           </div>
         </div>
 
-        <div className="bg-background/50 dark:bg-default-100/50 max-w-[610px]">
-          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-7 sm:py-10 lg:max-w-7xl">
+        <div className="custom-card bg-background/50 dark:bg-default-100/50 max-w-[610px]">
+          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-1 py-2 sm:py-5 lg:max-w-7xl">
             <div className="flex flex-col items-center justify-center p-5">
               <h3 className="font-bold text-white text-xl text-center md:my-6">
                 Con Sonido de Alabanza
@@ -47,8 +47,8 @@ export const Podcast = () => {
           </div>
         </div>
 
-        <div className="bg-background/50 dark:bg-default-100/50 max-w-[610px]">
-          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-7 sm:py-10 lg:max-w-7xl">
+        <div className="custom-card bg-background/50 dark:bg-default-100/50 max-w-[610px]">
+          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-1 py-2 sm:py-5 lg:max-w-7xl">
             <div className="flex flex-col items-center justify-center p-5">
               <h3 className="font-bold text-white text-xl text-center md:my-6">
                 Con Sonido de Alabanza
@@ -67,8 +67,8 @@ export const Podcast = () => {
           </div>
         </div>
 
-        <div className="bg-background/50 dark:bg-default-100/50 max-w-[610px]">
-          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-7 sm:py-10 lg:max-w-7xl">
+        <div className="custom-card bg-background/50 dark:bg-default-100/50 max-w-[610px]">
+          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-1 py-2 sm:py-5 lg:max-w-7xl">
             <div className="flex flex-col items-center justify-center p-5">
               <h3 className="font-bold text-white text-xl text-center md:my-6">
                 Con Sonido de Alabanza
@@ -87,8 +87,8 @@ export const Podcast = () => {
           </div>
         </div>
 
-        <div className="bg-background/50 dark:bg-default-100/50 max-w-[610px]">
-          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-7 sm:py-10 lg:max-w-7xl">
+        <div className="custom-card bg-background/50 dark:bg-default-100/50 max-w-[610px]">
+          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-1 py-2 sm:py-5 lg:max-w-7xl">
             <div className="flex flex-col items-center justify-center p-5">
               <h3 className="font-bold text-white text-xl text-center md:my-6">
                 Con Sonido de Alabanza
@@ -107,8 +107,8 @@ export const Podcast = () => {
           </div>
         </div>
 
-        <div className="bg-background/50 dark:bg-default-100/50 max-w-[610px]">
-          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-7 sm:py-10 lg:max-w-7xl">
+        <div className="custom-card bg-background/50 dark:bg-default-100/50 max-w-[610px]">
+          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-1 py-2 sm:py-5 lg:max-w-7xl">
             <div className="flex flex-col items-center justify-center p-5">
               <h3 className="font-bold text-white text-xl text-center md:my-6">
                 Con Sonido de Alabanza
@@ -127,8 +127,8 @@ export const Podcast = () => {
           </div>
         </div>
 
-        <div className="bg-background/50 dark:bg-default-100/50 max-w-[610px]">
-          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-7 sm:py-10 lg:max-w-7xl">
+        <div className="custom-card bg-background/50 dark:bg-default-100/50 max-w-[610px]">
+          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-1 py-2 sm:py-5 lg:max-w-7xl">
             <div className="flex flex-col items-center justify-center p-5">
               <h3 className="font-bold text-white text-xl text-center md:my-6">
                 Con Sonido de Alabanza
@@ -147,8 +147,8 @@ export const Podcast = () => {
           </div>
         </div>
 
-        <div className="bg-background/50 dark:bg-default-100/50 max-w-[610px]">
-          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-7 sm:py-10 lg:max-w-7xl">
+        <div className="custom-card bg-background/50 dark:bg-default-100/50 max-w-[610px]">
+          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-1 py-2 sm:py-5 lg:max-w-7xl">
             <div className="flex flex-col items-center justify-center p-5">
               <h3 className="font-bold text-white text-xl text-center md:my-6">
                 Con Sonido de Alabanza
@@ -167,8 +167,8 @@ export const Podcast = () => {
           </div>
         </div>
 
-        <div className="bg-background/50 dark:bg-default-100/50 max-w-[610px]">
-          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-7 sm:py-10 lg:max-w-7xl">
+        <div className="custom-card bg-background/50 dark:bg-default-100/50 max-w-[610px]">
+          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-1 py-2 sm:py-5 lg:max-w-7xl">
             <div className="flex flex-col items-center justify-center p-5">
               <h3 className="font-bold text-white text-xl text-center md:my-6">
                 Con Sonido de Alabanza
@@ -187,8 +187,8 @@ export const Podcast = () => {
           </div>
         </div>
 
-        <div className="bg-background/50 dark:bg-default-100/50 max-w-[610px]">
-          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-7 sm:py-10 lg:max-w-7xl">
+        <div className="custom-card bg-background/50 dark:bg-default-100/50 max-w-[610px]">
+          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-1 py-2 sm:py-5 lg:max-w-7xl">
             <div className="flex flex-col items-center justify-center p-5">
               <h3 className="font-bold text-white text-xl text-center md:my-6">
                 Con Sonido de Alabanza
