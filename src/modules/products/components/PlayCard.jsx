@@ -170,7 +170,7 @@ export const PlayCard = ({ product }) => {
               {product.imagen && (
                 <img
                   className="object-cover cursor-pointer object-left h-full w-full rounded-xl"
-                  src={product.imagen || product.enlace}
+                  src={product.imagen}
                   alt={"CD cover"}
                   width={320}
                   height={320}
@@ -183,7 +183,7 @@ export const PlayCard = ({ product }) => {
             <div className="flex justify-between items-start">
               <div className="flex flex-col gap-0">
                 <h3 className="font-semibold text-white/90">
-                  {product.cancion || product.nombre}
+                  {product.cancion}
                 </h3>
                 <p className="text-small text-white/90">{product.cd}</p>
                 <p className="text-small text-white/70">
