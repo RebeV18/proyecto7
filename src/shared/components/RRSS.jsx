@@ -21,7 +21,7 @@ export const RRSS = () => {
         >
           <FiFacebook
             style={{ color: facebookColor }}
-            className="text-3xl"
+            className="sm:text-xl md:text-2xl lg:text-3xl"
             onMouseOver={() => setFacebookColor("rgb(251, 186, 82)")}
             onMouseOut={() => setFacebookColor("white")}
           />
@@ -35,7 +35,7 @@ export const RRSS = () => {
         >
           <CiYoutube
             style={{ color: ytColor }}
-            className="text-3xl"
+            className="sm:text-xl md:text-2xl lg:text-3xl"
             onMouseOver={() => setYTColor("rgb(251, 186, 82)")}
             onMouseOut={() => setYTColor("white")}
           />
@@ -49,7 +49,7 @@ export const RRSS = () => {
         >
           <IoLogoInstagram
             style={{ color: instagramColor }}
-            className="text-3xl"
+            className="sm:text-xl md:text-2xl lg:text-3xl"
             onMouseOver={() => setInstagramColor("rgb(251, 186, 82)")}
             onMouseOut={() => setInstagramColor("white")}
           />
@@ -63,7 +63,7 @@ export const RRSS = () => {
         >
           <PiSpotifyLogoLight 
             style={{ color: spotifyColor }}
-            className="text-3xl"
+            className="sm:text-xl md:text-2xl lg:text-3xl"
             onMouseOver={() => setSpotifyColor("rgb(251, 186, 82)")}
             onMouseOut={() => setSpotifyColor("white")}
           />
@@ -77,7 +77,7 @@ export const RRSS = () => {
         >
           <PiTiktokLogo
             style={{ color: tiktokColor }}
-            className="text-3xl"
+            className="sm:text-xl md:text-2xl lg:text-3xl"
             onMouseOver={() => setTiktokColor("rgb(251, 186, 82)")}
             onMouseOut={() => setTiktokColor("white")}
           />
