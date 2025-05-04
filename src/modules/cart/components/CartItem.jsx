@@ -16,12 +16,12 @@ export const CartProduct = ({ product }) => {
         <img
           className="w-full h-full object-center object-cover"
           src={product.imagen}
-          alt={product.nombre}
+          alt={product.cancion}
         />
       </div>
 
       <div className="ml-4 flex-1 flex-flex-column">
-        <h3>{product.nombre}</h3>
+        <h3>{product.cancion}</h3>
         <p className="ml-4">
           {formatCurrency(product.precio, optionsCurrency)}
         </p>
@@ -35,8 +35,6 @@ export const CartProduct = ({ product }) => {
           >
             <FaLongArrowAltLeft className="h-5 w-5" />
           </button>
-
-          <span className="mx-2 text-gray-700">{product.quantity}</span>
 
           <button
             onClick={() => addItem(product)}
