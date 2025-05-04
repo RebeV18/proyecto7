@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import { fetchAllProducts } from "../services/productApiService";
 
-import "../Styles.css"
+import "../cardStyles.css"
 
 export const CD_Cards = () => {
   const [flippedCards, setFlippedCards] = useState({});

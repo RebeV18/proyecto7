@@ -1,4 +1,5 @@
 import ReactPlayer from "react-player";
+import "../cardStyles.css"
 
 export const Podcast = () => {
   return (

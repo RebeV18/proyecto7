@@ -5,6 +5,8 @@ import { CartIcon } from "../../modules/cart/components/CartIcon";
 
 import { AuthContext } from "../../modules/auth/context/AuthContext";
 
+import "./pagesStyles.css";
+
 export const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +16,7 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gray-900 p-2 lg:p-3 xl:p-5 2xl:p-7 shadow-md">
+    <nav className="nav items-center content-center p-2 lg:p-3 xl:p-5 2xl:p-7">
       <div className="h16 flex justify-between items-center px-4">
         {/* >768px*/}
         <div className="hidden sm:flex">
