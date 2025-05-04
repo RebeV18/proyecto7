@@ -31,7 +31,7 @@ export const ProductCard = ({ producto }) => {
         </div>
 
         <p className="text-gray-600 mb-4-line-clamp-2">{producto.autores}</p>
-        <button>Agregar al carrito</button>
+        <CartAddButton product={producto} />
       </div>
     </div>
   );

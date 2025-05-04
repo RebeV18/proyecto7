@@ -88,7 +88,6 @@ const useCartContext = create(
         {
             name: "cart-storage",
             getStorage: () => localStorage,
-
         } 
     )
 )
