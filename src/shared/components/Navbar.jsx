@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { IoMdLogIn, IoMdLogOut, IoIosMenu } from "react-icons/io";
-import { CartIcon } from "../../../modules/cart/components/CartIcon";
+import { CartIcon } from "../../modules/cart/components/CartIcon";
 
 import { AuthContext } from "../../modules/auth/context/AuthContext";
 
@@ -20,31 +20,31 @@ export const Navbar = () => {
         <div className="hidden sm:flex">
           <Link
             to="/"
-            className="text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-3xl 2xl:px-7"
+            className="text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-2xl 2xl:px-7"
           >
             Inicio
           </Link>
           <Link
             to="/about"
-            className="text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-3xl 2xl:px-7"
+            className="text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-2xl 2xl:px-7"
           >
             Acerca de mí
           </Link>
           <Link
             to="/products"
-            className="text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-3xl 2xl:px-7"
+            className="text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-2xl 2xl:px-7"
           >
             Discografía
           </Link>
           <Link
             to="podcast"
-            className="text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-3xl 2xl:px-7"
+            className="text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-2xl 2xl:px-7"
           >
             Podcast
           </Link>
           <Link
             to="/contacto"
-            className="text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-3xl 2xl:px-7"
+            className="text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-2xl 2xl:px-7"
           >
             Contacto
           </Link>

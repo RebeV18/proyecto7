@@ -3,7 +3,7 @@ import ReactPlayer from "react-player";
 export const Podcast = () => {
   return (
     <div className="pb-20">
-      <h2 className="font-bold text-center text-white text-xl md:text-2xl xl:text-3xl 2xl:text-6xl">
+      <h2 className="font-bold text-center text-white text-xl md:text-2xl xl:text-3xl 2xl:text-5xl">
         Podcast: Con Sonido de Alabanza
       </h2>
       <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-10 items-center justify-center gap-5 p-10">

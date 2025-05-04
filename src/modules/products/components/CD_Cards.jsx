@@ -84,7 +84,7 @@ export const CD_Cards = () => {
       <div className="py-7 mx-auto sm:py-10">
         <div className="mx-auto flex justify-center object-center px-2 py-7 sm:py-10 lg:max-w-7xl">
           <div className="flex flex-wrap justify-center object-center flex-col gap-15 sm:gap-16">
-            <div className="mx-auto grid gap-15 space-y-10 md:space-y-0 sm:gap-16 lg:grid-cols-3">
+            <div className="mx-auto grid gap-15 xl:gap-20 2xl:gap-30 space-y-10 md:space-y-0 sm:gap-16 lg:grid-cols-3">
               {cds.map((cd, index) => (
                 <div
                   key={cd.cd || index}
