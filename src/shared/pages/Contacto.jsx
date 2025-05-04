@@ -1,8 +1,8 @@
 export const Contacto = () => {
   return (
     <>
-      <div className="flex-col justify-center text-center place-items-center text-white p-10 pb-20">
-        <h1 className="text-5xl p-7">LUIS GERARDO AQUINO</h1>
+      <div className="flex-col justify-center place-items-center p-10 pb-20">
+      <h1 className="font-bold text-center text-4xl p-7 text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl 2xl:xl:text-4xl">Luis Gerardo Aquino</h1>
         <h2 className="font-bold text-center text-white text-xl md:text-2xl xl:text-3xl 2xl:text-6xl">
           Contacto
         </h2>

@@ -6,7 +6,7 @@ export const ProductPage = () => {
 
   return (
     <div className="container flex flex-col justify-items-center place-items-center mx-auto px-4 py-8">
-      <h2 className="font-bold text-center text-white text-xl md:text-2xl xl:text-3xl 2xl:text-5xl">
+      <h2 className="font-bold text-center text-white text-xl md:text-2xl xl:text-3xl 2xl:text-4xl 2xl:p-10">
         Discografía
       </h2>
 
