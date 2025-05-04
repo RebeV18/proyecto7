@@ -1,8 +1,8 @@
 export const HomePage = () => {
   return (
     <>
-      <div className="flex-col justify-center align-center place-items-center text-white p-10">
-        <h1 className="font-bold text-4xl p-7 text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl 2xl:xl:text-4xl">
+      <div className="flex-col justify-center align-center place-items-center p-10">
+        <h1 className="font-bold text-white p-7 text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl 2xl:xl:text-4xl">
           Luis Gerardo Aquino
         </h1>
         <img

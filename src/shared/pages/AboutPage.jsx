@@ -1,7 +1,7 @@
 export const AboutPage = () => {
   return (
     <div className="flex-col justify-center place-items-center p-10">
-      <h1 className="font-bold text-white text-4xl p-7 text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl 2xl:xl:text-4xl">
+      <h1 className="font-bold text-white p-7 text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl 2xl:xl:text-4xl">
         Luis Gerardo Aquino
       </h1>
       <p className="text-justify text-white xl:text-lg xl:pl-20 xl:pr-20 xl:mr-20 xl:ml-20">

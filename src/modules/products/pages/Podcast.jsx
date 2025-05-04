@@ -3,7 +3,7 @@ import "../cardStyles.css"
 
 export const Podcast = () => {
   return (
-    <div className="pb-20">
+    <div className="pb-20 pr-15 pl-15">
       <h2 className="p-18 font-bold text-center text-white text-xl md:text-2xl xl:text-3xl 2xl:text-4xl xl:p-20 xl:pb-30">
         Podcast: Con Sonido de Alabanza
       </h2>
