@@ -19,7 +19,7 @@ export const CartIcon = () => {
           onClick={handleIsOpen}
           className="p-2 text-gray-700 hover:text-gray-900 focus:outline-none"
         >
-            <LiaCartArrowDownSolid className="w-7 h-7"/>
+            <LiaCartArrowDownSolid className="text-white text-lg xl:text-4xl 2xl:text-5xl"/>
             {
               totalItems > 0 && (
                   <span className="absolute -top-1 -right-1 bg-red-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
