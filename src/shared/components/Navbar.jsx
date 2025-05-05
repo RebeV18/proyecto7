@@ -54,16 +54,16 @@ export const Navbar = () => {
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="sm:hidden text-white text-2xl sm:text-3xl"
+          className="menu-button sm:hidden text-white text-2xl sm:text-3xl"
         >
-          <IoIosMenu />
+          {isOpen ? "✖" : <IoIosMenu />}
         </button>
 
         {/* <768px*/}
         <div
           className={`${
             isOpen ? "block" : "hidden"
-          } sm:hidden absolute top-12 left-0 w-full bg-gray-800 z-10`}
+          } sm:hidden absolute top-6 left-7 w-full bg-gray-800 z-10`}
         >
           <Link
             to="/"
