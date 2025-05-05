@@ -7,7 +7,7 @@ export const Podcast = () => {
       <h2 className="p-18 font-bold text-center text-white text-xl md:text-2xl xl:text-3xl 2xl:text-4xl xl:p-20 xl:pb-30">
         Podcast: Con Sonido de Alabanza
       </h2>
-      <div className="grid place-items-center lg:grid-cols-2 md:grid-cols-1 gap-20 items-center justify-center gap-5 pr-15 pl-15">
+      <div className="grid place-items-center lg:grid-cols-2 md:grid-cols-1 gap-30 items-center justify-center gap-5 pr-15 pl-15">
         <div className="custom-card bg-background/50 dark:bg-default-100/50 max-w-[610px]">
           <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
             <div className="flex flex-col items-center justify-center p-7">
