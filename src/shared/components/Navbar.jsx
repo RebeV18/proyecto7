@@ -5,7 +5,7 @@ import { CartIcon } from "../../modules/cart/components/CartIcon";
 
 import { AuthContext } from "../../modules/auth/context/AuthContext";
 
-import "./pagesStyles.css";
+import "../../shared/Styles/Styles.css";
 
 export const Navbar = () => {
   const { user, logout } = useContext(AuthContext);

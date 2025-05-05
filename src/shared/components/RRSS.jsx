@@ -4,7 +4,7 @@ import { IoLogoInstagram } from "react-icons/io5";
 import { CiYoutube } from "react-icons/ci";
 import { PiSpotifyLogoLight, PiTiktokLogo } from "react-icons/pi";
 
-import "./pagesStyles.css";
+import "../../shared/Styles/Styles.css";
 
 export const RRSS = () => {
   const [facebookColor, setFacebookColor] = useState("white");
