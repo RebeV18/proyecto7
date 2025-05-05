@@ -12,7 +12,7 @@ export const MercadoPagoStatus = () => {
 
     return (
         <div className={`max-w-md mx-auto mt-8 p-6 rounded-lg shadow-md border-1-4 ${statusStyles[status] || statusStyles.default}`}>
-            <h2 className='text-2x1 font-bold mb-4'>{title}</h2>
+            <h2 className='text-white text-2x1 font-bold mb-4'>{title}</h2>
             <p className='text-gray-700 mb-6'>{description}</p>
             <Link
                 to={'/products'}

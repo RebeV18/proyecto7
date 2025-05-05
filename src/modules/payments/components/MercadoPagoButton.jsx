@@ -43,7 +43,7 @@ export const MercadoPagoButton = ({ cart, onPaymentSuccess }) => {
         <div className="w-full max-w-md-mt-4">
           <Wallet
             initialization={{ preferenceId }}
-            onReady={() => console.log("Mercado Pago Wallet esta listeilor")}
+            onReady={() => console.log("Wallet de Mercado Pago está lista")}
             onError={(error) =>
               console.error("Error en la pasarela de pago", error)
             }

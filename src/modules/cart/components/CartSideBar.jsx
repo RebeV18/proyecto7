@@ -27,7 +27,7 @@ export const CartSideBar = ({ onClose }) => {
       <div className="fixed inset-y-0 right-0 max-w-md bg-white shadow-2xl transform transition-all ease-in-out duration-300">
         <div className="h-full flex flex-col overflow-y-auto">
           <div className="px-4 py-6 sm:px-6 border-b border-gray-200">
-            <h2 className="text-lg font-medium text-gray-900">
+            <h2 className="text-lg text-white font-medium text-gray-900">
               Carrito de compras
             </h2>
             <button
@@ -40,7 +40,7 @@ export const CartSideBar = ({ onClose }) => {
 
           <div className="flex-1 px-4 sm:px-6 overflow-y-auto">
             {products.length === 0 ? (
-              <p className="text-center py-8">Tu Carrito esta vacio</p>
+              <p className="text-center text-white py-8">Tu carrito esta vacío</p>
             ) : (
               <div className="flow-root">
                 <ul className="divide-y divide-gray-300">
