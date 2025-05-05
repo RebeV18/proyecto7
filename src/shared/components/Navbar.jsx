@@ -17,7 +17,7 @@ export const Navbar = () => {
 
   return (
     <nav className="nav items-center content-center p-2 lg:p-3 xl:p-5 2xl:p-7">
-      <div className="h16 flex justify-between items-center px-4">
+      <div className="h16 flex justify-between items-end md:items-center md:px-4">
         {/* >768px*/}
         <div className="hidden sm:flex">
           <Link
@@ -96,12 +96,12 @@ export const Navbar = () => {
             Contacto
           </Link>
         </div>
-        <div className="flex flex-row gap-3 items-center">
+        <div className="flex flex-col md:flex-row gap-3 items-center">
           {/* Login */}
-          <div className="flex flex-row gap-3">
+          <div className="flex flex-row gap-3 sm:justify-center sm:items-center">
             {!user ? (
               <Link to="/login" className="flex flex-col items-center">
-                <IoMdLogIn className=" text-white text-lg xl:text-xl 2xl:text-3xl" />
+                <IoMdLogIn className="text-white text-lg xl:text-xl 2xl:text-3xl" />
                 <p className="text-white text-xs xl:text-sm 2xl:text-base">
                   Iniciar sesión
                 </p>
@@ -125,9 +125,7 @@ export const Navbar = () => {
               </div>
             )}
           </div>
-          <div>
-            <CartIcon />
-          </div>
+          <CartIcon />
         </div>
       </div>
     </nav>
