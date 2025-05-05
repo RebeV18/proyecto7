@@ -25,7 +25,7 @@ export const CD_Cards = () => {
 
   const handleClickSong = (song) => {
     setTheSong(song);
-    navigate(`/PlayCard/${theSong}`);
+    navigate(`/SongCard/${theSong}`);
   };
 
   useEffect(() => {
