@@ -16,7 +16,7 @@ export const CartIcon = () => {
       <div className="relative inline-block">
         <button
           onClick={handleIsOpen}
-          className="p-2 text-gray-700 hover:text-gray-900 focus:outline-none"
+          className="p-2 text-white hover:text-gray-200 focus:outline-none"
         >
             <BsCart4  className="text-white text-lg xl:text-4xl 2xl:text-5xl"/>
             {

@@ -15,12 +15,12 @@ export const Song = ({ producto }) => {
   const addItem = useCartContext((state) => state.addItem);
 
   const handleClickSong = (songSelected) => {
-    if (!songSelected) {
-      console.error("songSelected is undefined");
+    if (!songSelected || !songSelected.id) {
+      console.error("songSelected is undefined or missing id");
       return;
     }
     setTheSong(songSelected);
-    navigate(`/SongCard/${songSelected.id}`, { state: { song } });
+    navigate(`/SongCard/${songSelected.id}`, { state: { song: songSelected } });
   };
 
   const handleClickCart = (songSelected) => {

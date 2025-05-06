@@ -66,10 +66,10 @@ export const CartSideBar = ({ onClose }) => {
                   onPaymentSuccess={handleCheckout}
                 />
               </div>
-              <div className="mt-3 flex items-center justify-center text-sm text-gray-500">
+              <div className="mt-3 flex items-center justify-center text-sm text-white">
                 <button
                   onClick={clearCart}
-                  className="font-medium text-blue-600 hover:text-blue-500 cursor-pointer"
+                  className="font-medium text-white hover:text-white cursor-pointer"
                 >
                   Vaciar carrito
                 </button>
