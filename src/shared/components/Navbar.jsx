@@ -17,7 +17,7 @@ export const Navbar = () => {
 
   return (
     <nav className="nav items-center content-center p-2 lg:p-3 xl:p-5 2xl:p-7">
-      <div className="h16 flex justify-between items-end md:items-center md:px-4">
+      <div className="h16 flex justify-between items-center md:px-4">
         {/* >768px*/}
         <div className="hidden sm:flex">
           <Link
@@ -96,37 +96,36 @@ export const Navbar = () => {
             Contacto
           </Link>
         </div>
-        <div className="flex flex-col md:flex-row gap-3 items-center">
-          {/* Login */}
-          <div className="flex flex-row gap-3 justify-center items-center">
-            {!user ? (
-              <Link to="/login" className="flex flex-col items-center">
-                <IoMdLogIn className="text-white text-lg xl:text-xl 2xl:text-3xl" />
-                <p className="text-white text-xs xl:text-sm 2xl:text-base">
-                  Iniciar sesión
-                </p>
-              </Link>
-            ) : (
-              <div
-                className="flex flex-col items-center cursor-pointer gap-2"
-                id="navbar"
+        {/* <div className="flex justify-between md:flex-row gap-3 items-center"> */}
+        {/* Login */}
+        <div className="p-2">
+          {!user ? (
+            <Link to="/login" className="flex flex-col items-center">
+              <IoMdLogIn className="text-white text-lg xl:text-xl 2xl:text-3xl" />
+              <p className="text-white text-xs xl:text-sm 2xl:text-base">
+                Iniciar sesión
+              </p>
+            </Link>
+          ) : (
+            <div
+              className="flex flex-col items-center cursor-pointer gap-2"
+              id="navbar"
+            >
+              <p className="text-white text-xs flex flex-col items-center">
+                {user.nombre} {user.apellido}
+              </p>
+              <Link
+                to="/"
+                onClick={handleLogout}
+                className="flex flex-col items-center"
               >
-                <p className="text-white text-xs flex flex-col items-center">
-                  {user.nombre} {user.apellido}
-                </p>
-                <Link
-                  to="/"
-                  onClick={handleLogout}
-                  className="flex flex-col items-center"
-                >
-                  <IoMdLogOut className="text-white" />
-                  <p className="text-white text-xs">Cerrar sesión</p>
-                </Link>
-              </div>
-            )}
-          </div>
-          <CartIcon />
+                <IoMdLogOut className="text-white" />
+                <p className="text-white text-xs">Cerrar sesión</p>
+              </Link>
+            </div>
+          )}
         </div>
+        <CartIcon />
       </div>
     </nav>
   );

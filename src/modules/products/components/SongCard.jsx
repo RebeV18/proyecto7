@@ -5,8 +5,6 @@ const { optionsCurrency } = envLoader;
 
 export const SongCard = ({ product }) => {
 
-  console.log (product)
-
   return (
     <div className=" card border-none bg-background/60 dark:bg-default-100/50 max-w-[610px]">
       <div>
@@ -53,44 +51,6 @@ export const SongCard = ({ product }) => {
                 <p className="text-small">1:23</p>
                 <p className="text-small text-white/50">4:32</p>
               </div>
-            </div>
-
-            <div className="flex w-full items-center justify-center">
-              <button
-                className="data-[hover]:bg-white/10"
-                radius="full"
-                variant="light"
-              >
-                <RepeatOneIcon className="text-white/80" />
-              </button>
-              <button
-                className="data-[hover]:bg-white/10"
-                radius="full"
-                variant="light"
-              >
-                <PreviousIcon />
-              </button>
-              <button
-                className="w-auto h-auto data-[hover]:bg-white/10"
-                radius="full"
-                variant="light"
-              >
-                <PauseCircleIcon size={54} />
-              </button>
-              <button
-                className="data-[hover]:bg-white/10"
-                radius="full"
-                variant="light"
-              >
-                <NextIcon />
-              </button>
-              <button
-                className="data-[hover]:bg-white/10"
-                radius="full"
-                variant="light"
-              >
-                <ShuffleIcon className="text-white/80" />
-              </button>
             </div>
           </div>
         </div>

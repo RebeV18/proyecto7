@@ -5,11 +5,14 @@ import { FaRegCirclePlay } from "react-icons/fa6";
 
 import { formatCurrency } from "../../../shared/utils/formatCurrency";
 import { envLoader } from "../../../config/envLoader";
+import useCartContext from "../../cart/context/CartContext";
 
 export const Song = ({ producto }) => {
   const { optionsCurrency } = envLoader;
   const navigate = useNavigate();
+
   const [song, setTheSong] = useState([]);
+  const addItem = useCartContext((state) => state.addItem);
 
   const handleClickSong = (songSelected) => {
     if (!songSelected) {
@@ -22,7 +25,8 @@ export const Song = ({ producto }) => {
 
   const handleClickCart = (songSelected) => {
     setTheSong(songSelected);
-    navigate(`/CartAddButton/${song}`);
+    addItem(song);
+    console.log("Estamos agregando un producto", song);
   };
 
   return (
@@ -41,11 +45,6 @@ export const Song = ({ producto }) => {
             <span className="text-sm font-bold text-white">
               {formatCurrency(producto.precio, optionsCurrency)}
             </span>
-            {/* <span className="text-sm px-2 py-1 rounded-full text gray-600">
-            {producto.createdAt
-              ? new Date(producto.createdAt).toLocaleDateString()
-              : "Nuevo"}
-          </span> */}
           </div>
         </div>
         <div className="flex flex-row justify-center items-center gap-20">
