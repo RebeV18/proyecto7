@@ -1,20 +1,26 @@
 import { formatCurrency } from "../../../shared/utils/formatCurrency";
 import { envLoader } from "../../../config/envLoader";
-import { CartAddButton } from "../../cart/components/CartAddButton"
-import { SongCard } from "./SongCard"
 
-const { optionsCurrency } = envLoader;
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Song = ({ producto }) => {
+  const { optionsCurrency } = envLoader;
+  const navigate = useNavigate();
+  const [song, setTheSong] = useState([]);
+
+  const handleClickSong = (songSelected) => {
+    setTheSong(songSelected);
+    navigate(`/SongCard/${song}`);
+  };
+
+  const handleClickCart = (songSelected) => {
+    setTheSong(songSelected);
+    navigate(`/CartAddButton/${song}`);
+  };
+
   return (
     <div className="shadow-md p-5 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
-      {/* <div className="w-full h-48 overflow-hidden">
-        <Link
-          to={`https://proyecto6-sgv2.onrender.com/api/v1/product/readone/${producto._id}`}
-        >
-          <h3 className="w-full h-full object-cover">{producto.cancion}</h3>
-        </Link>
-      </div> */}
       <div>
         <h4 className="text-sm font-semibold mb-2 text-white">
           {producto.cancion}
@@ -32,8 +38,20 @@ export const Song = ({ producto }) => {
         </div>
 
         <p className="text-yellow-400 mb-4-line-clamp-2">{producto.autores}</p>
-        <CartAddButton product={producto} />
-        <SongCard product={producto} />
+        <button
+          key={producto.id}
+          className="p-1 cursor-pointer"
+          onClick={() => handleClickCart(producto)}
+        >
+          Agregar al carrito
+        </button>
+        <button
+          key={producto.id}
+          className="p-1 cursor-pointer"
+          onClick={() => handleClickSong(producto)}
+        >
+          Ver cancion
+        </button>
       </div>
     </div>
   );
