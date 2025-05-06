@@ -5,7 +5,6 @@ import { FaRegCirclePlay } from "react-icons/fa6";
 
 import { formatCurrency } from "../../../shared/utils/formatCurrency";
 import { envLoader } from "../../../config/envLoader";
-import { SongCard } from "./SongCard";
 
 export const Song = ({ producto }) => {
   const { optionsCurrency } = envLoader;

@@ -57,27 +57,27 @@ export const CDCards = () => {
   }, [songs, theCd]);
 
   return (
-    <div className="py-10 px-4">
+    <div className="py-10 px-5">
       <div className="grid grid-cols-1 place-items-center sm:grid-cols-2 lg:grid-cols-3 gap-15">
         {cds.map((cd, index) => (
           <div
             key={cd.cd || index}
             onClick={() => handleCardClick(cd)}
             className={clsx(
-              "relative h-[430px] w-[280px] cursor-pointer rounded-2xl border border-gray-200 bg-transparent shadow-md transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]",
+              "relative h-[430px] w-[260px] cursor-pointer rounded-2xl border border-gray-200 bg-transparent shadow-md transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]",
               {
                 "[&_.card-content]:rotate-y-180": flippedCards[cd.cd],
               }
             )}
           >
-            <div className="absolute bottom-5 left-23 text-center z-10 rounded-full bg-[#0b5599] px-2 py-[2px] text-xs font-medium text-white shadow">
+            <div className="absolute bottom-5 left-21 text-center z-10 rounded-full bg-[#0b5599] px-2 py-[2px] text-xs font-medium text-white shadow">
               Ver canciones
             </div>
 
             <div className="card-content h-full w-full transition-transform duration-500 [transform-style:preserve-3d]">
               {/* Front Side */}
               <div className="custom-card absolute h-full w-full rounded-2xl bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] p-4 text-gray-800 [backface-visibility:hidden]">
-                <h3 className="relative h-[70px] w-[245px] mb-2 flex items-center justify-center text-center gap-1 text-xl font-bold text-amber-400">
+                <h3 className="relative h-[70px] w-[226px] mb-2 flex items-center justify-center text-center gap-1 text-xl font-bold text-amber-400">
                   {cd.cd}
                 </h3>
                 <p className="text-sm text-center text-white italic">
@@ -94,7 +94,7 @@ export const CDCards = () => {
 
               {/* Back Side */}
               <div className="custom-card absolute h-full w-full rotate-y-180 rounded-2xl bg-gradient-to-br from-[#e1f4f0] to-[#b6f7df] p-4 text-gray-800 shadow-lg [backface-visibility:hidden]">
-                <h3 className="relative h-[70px] w-[245px] mb-2 flex items-center justify-center text-center gap-1 text-xl font-bold text-amber-400">
+                <h3 className="relative h-[70px] w-[226px] mb-2 flex items-center justify-center text-center gap-1 text-xl font-bold text-amber-400">
                   {cd.cd}
                 </h3>
                 <div className="overflow-y-auto max-h-[280px] mt-2 space-y-2">
