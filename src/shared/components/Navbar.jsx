@@ -98,7 +98,7 @@ export const Navbar = () => {
         </div>
         <div className="flex flex-col md:flex-row gap-3 items-center">
           {/* Login */}
-          <div className="flex flex-row gap-3 sm:justify-center sm:items-center">
+          <div className="flex flex-row gap-3 justify-center items-center">
             {!user ? (
               <Link to="/login" className="flex flex-col items-center">
                 <IoMdLogIn className="text-white text-lg xl:text-xl 2xl:text-3xl" />

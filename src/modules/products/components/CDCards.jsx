@@ -3,7 +3,6 @@ import { useState, useEffect, useMemo } from "react";
 import { fetchAllProducts } from "../services/productApiService";
 import { Song } from "./Song";
 
-
 import "../../../shared/Styles/Styles.css";
 
 export const CDCards = () => {

@@ -1,15 +1,15 @@
 import ReactPlayer from "react-player";
-import "../../../shared/Styles/Styles.css"
+import "../../../shared/Styles/Styles.css";
 
 export const Podcast = () => {
   return (
     <div className="pb-20 pr-15 pl-15">
-      <h2 className="p-18 font-bold text-center text-white text-xl md:text-2xl xl:text-3xl 2xl:text-4xl xl:p-20 xl:pb-30">
+      <h2 className="pt-10 pb-10 font-bold md:text-center text-white text-lg md:text-2xl xl:text-3xl 2xl:text-4xl xl:p-20 xl:pb-30">
         Podcast: Con Sonido de Alabanza
       </h2>
       <div className="grid place-items-center lg:grid-cols-2 md:grid-cols-1 gap-30 items-center justify-center gap-5 pr-15 pl-15">
         <div className="custom-card bg-background/50 dark:bg-default-100/50 max-w-[610px]">
-          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
+          <div className="mx-auto flex flex-col md:flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
             <div className="flex flex-col items-center justify-center p-7">
               <h3 className="text-white text-center font-bold text-sm md:text-base lg:text-lg">
                 Con Sonido de Alabanza
@@ -29,7 +29,7 @@ export const Podcast = () => {
         </div>
 
         <div className="custom-card bg-background/50 dark:bg-default-100/50 max-w-[610px]">
-          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
+          <div className="mx-auto flex flex-col md:flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
             <div className="flex flex-col items-center justify-center p-7">
               <h3 className="text-white text-center font-bold text-sm md:text-base lg:text-lg">
                 Con Sonido de Alabanza
@@ -49,7 +49,7 @@ export const Podcast = () => {
         </div>
 
         <div className="custom-card bg-background/50 dark:bg-default-100/50 max-w-[610px]">
-          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
+          <div className="mx-auto flex flex-col md:flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
             <div className="flex flex-col items-center justify-center p-7">
               <h3 className="text-white text-center font-bold text-sm md:text-base lg:text-lg">
                 Con Sonido de Alabanza
@@ -69,7 +69,7 @@ export const Podcast = () => {
         </div>
 
         <div className="custom-card bg-background/50 dark:bg-default-100/50 max-w-[610px]">
-          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
+          <div className="mx-auto flex flex-col md:flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
             <div className="flex flex-col items-center justify-center p-7">
               <h3 className="text-white text-center font-bold text-sm md:text-base lg:text-lg">
                 Con Sonido de Alabanza
@@ -89,7 +89,7 @@ export const Podcast = () => {
         </div>
 
         <div className="custom-card bg-background/50 dark:bg-default-100/50 max-w-[610px]">
-          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
+          <div className="mx-auto flex flex-col md:flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
             <div className="flex flex-col items-center justify-center p-7">
               <h3 className="text-white text-center font-bold text-sm md:text-base lg:text-lg">
                 Con Sonido de Alabanza
@@ -109,7 +109,7 @@ export const Podcast = () => {
         </div>
 
         <div className="custom-card bg-background/50 dark:bg-default-100/50 max-w-[610px]">
-          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
+          <div className="mx-auto flex flex-col md:flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
             <div className="flex flex-col items-center justify-center p-7">
               <h3 className="text-white text-center font-bold text-sm md:text-base lg:text-lg">
                 Con Sonido de Alabanza
@@ -129,7 +129,7 @@ export const Podcast = () => {
         </div>
 
         <div className="custom-card bg-background/50 dark:bg-default-100/50 max-w-[610px]">
-          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
+          <div className="mx-auto flex flex-col md:flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
             <div className="flex flex-col items-center justify-center p-7">
               <h3 className="text-white text-center font-bold text-sm md:text-base lg:text-lg">
                 Con Sonido de Alabanza
@@ -149,7 +149,7 @@ export const Podcast = () => {
         </div>
 
         <div className="custom-card bg-background/50 dark:bg-default-100/50 max-w-[610px]">
-          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
+          <div className="mx-auto flex flex-col md:flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
             <div className="flex flex-col items-center justify-center p-7">
               <h3 className="text-white text-center font-bold text-sm md:text-base lg:text-lg">
                 Con Sonido de Alabanza
@@ -169,7 +169,7 @@ export const Podcast = () => {
         </div>
 
         <div className="custom-card bg-background/50 dark:bg-default-100/50 max-w-[610px]">
-          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
+          <div className="mx-auto flex flex-col md:flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
             <div className="flex flex-col items-center justify-center p-7">
               <h3 className="text-white text-center font-bold text-sm md:text-base lg:text-lg">
                 Con Sonido de Alabanza
@@ -189,7 +189,7 @@ export const Podcast = () => {
         </div>
 
         <div className="custom-card bg-background/50 dark:bg-default-100/50 max-w-[610px]">
-          <div className="mx-auto flex flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
+          <div className="mx-auto flex flex-col md:flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
             <div className="flex flex-col items-center justify-center p-7">
               <h3 className="text-white text-center font-bold text-sm md:text-base lg:text-lg">
                 Con Sonido de Alabanza
@@ -200,7 +200,7 @@ export const Podcast = () => {
             </div>
             <div className="place-items-center border-2 border-solid border-[rgb(5,11,31)]">
               <ReactPlayer
-                url="https://youtu.be/jGfeaBksbMc?si=V_TpLOvWz9gA2n61"
+                url="https://youtu.be/jGfeaBksbMc?si=aEyOZ27j5UmwLk6r"
                 width="85%"
                 height="auto"
               />
