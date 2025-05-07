@@ -1,34 +1,41 @@
 import { useFetchProducts } from "../hooks/useFetchProducts";
 import { CDCards } from "../components/CDCards";
+import { Background } from "../../../shared/components/Background";
 
 export const ProductPage = () => {
   const { productos, loading, error } = useFetchProducts();
 
   return (
-    <div className="container flex flex-col justify-items-center place-items-center mx-auto px-4 py-8">
-      <h2 className="font-bold text-center text-white text-xl md:text-2xl xl:text-3xl 2xl:text-4xl 2xl:p-10">
-        Discografía
-      </h2>
+    <>
+      <Background />
 
-      {loading && (
-        <div className="flex justify-center-items-center-py-20">
-          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
-        </div>
-      )}
+      <div className="container flex flex-col justify-items-center place-items-center mx-auto px-4 py-8">
+        <h2 className="font-bold text-center text-white text-xl md:text-2xl xl:text-3xl 2xl:text-4xl 2xl:p-10">
+          DISCOGRAFíA
+        </h2>
 
-      {error && (
-        <div className="bg-red-100 text-red-700 p-4 rounded md text-center mb-6">
-          <p className="font-semibold">Error: {error.message}</p>
-        </div>
-      )}
+        {loading && (
+          <div className="flex justify-center-items-center-py-20">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+          </div>
+        )}
 
-      {productos.length === 0 && !loading && !error && (
-        <div className="text-center-py-10 text-gray-500">
-          <p className="text-xl font-semibold">No hay productos disponibles</p>
-        </div>
-      )}
+        {error && (
+          <div className="bg-red-100 text-red-700 p-4 rounded md text-center mb-6">
+            <p className="font-semibold">Error: {error.message}</p>
+          </div>
+        )}
 
-      {<CDCards />}
-    </div>
+        {productos.length === 0 && !loading && !error && (
+          <div className="text-center-py-10 text-gray-500">
+            <p className="text-xl font-semibold">
+              No hay productos disponibles
+            </p>
+          </div>
+        )}
+
+        {<CDCards />}
+      </div>
+    </>
   );
 };
