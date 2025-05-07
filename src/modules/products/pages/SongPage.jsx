@@ -42,7 +42,7 @@ export const SongPage = () => {
 
       {theSong && <SongCard key={theSong._id} song={theSong} />}
       <button
-        className="border-4 border-amber-500 rounded-lg text-white p-1.5 text-base lg:text-lg xl:text-xl 2xl:text-4xl"
+        className="border-3 border-amber-500 rounded-lg text-white p-1.5 text-sm lg:text-base xl:text-lg 2xl:text-2xl"
         onClick={() => window.history.back()}
       >
         Volver
