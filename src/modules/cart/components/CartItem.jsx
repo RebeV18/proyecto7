@@ -2,7 +2,7 @@ import { envLoader } from "../../../config/envLoader";
 import { formatCurrency } from "../../../shared/utils/formatCurrency";
 import useCartContext from "../context/CartContext";
 
-import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
+import { CiCirclePlus, CiCircleMinus } from "react-icons/ci";
 
 const { optionsCurrency } = envLoader;
 
@@ -11,38 +11,39 @@ export const CartProduct = ({ product }) => {
   const removeOneItem = useCartContext((state) => state.removeOneItem);
 
   return (
-    <li className="py-6 flex z-50">
-      <div className="flex-shrink-0 w-24 h24 border border-gray-200 rounded-md-overflow-hidden">
+    <div className="flex flex-col">
+      <h4 className="text-white text-xs p-1">{product.cancion}</h4>
+      <div className="flex justify-between w-full h-24 rounded-md-overflow-hidden">
         <img
-          className="w-full h-full object-center object-cover"
+          className="w-24 h-24 object-center object-cover"
           src={product.imagen}
           alt={product.cancion}
         />
-      </div>
+        <div>
+          <div className="flex flex-col text-center p-1 mb-4">
+            <p className="ml-4 text-white text-xs p-1">
+              {formatCurrency(product.precio, optionsCurrency)}
+            </p>
+            <p className="text-white text-xs">{product.quantity}</p>
+          </div>
 
-      <div className="ml-4 flex-1 flex-flex-column">
-        <p className="ml-4">
-          {formatCurrency(product.precio, optionsCurrency)}
-        </p>
-      </div>
+          <div className="flex justify-center gap-2 p-1 text-sm">
+            <button
+              onClick={() => removeOneItem(product._id)}
+              className="text-gray-100 hover:text-gray-700 cursor-pointer"
+            >
+              <CiCircleMinus className="h-5 w-5" />
+            </button>
 
-      <div className="flex-1 flex items-end justify-between text-sm">
-        <div className="flex items center">
-          <button
-            onClick={() => removeOneItem(product._id)}
-            className="text-gray-500 hover:text-gray-700 cursor-pointer"
-          >
-            <FaLongArrowAltLeft className="h-5 w-5" />
-          </button>
-
-          <button
-            onClick={() => addItem(product)}
-            className="text-gray-500 hover:text-gray-700 cursor-pointer"
-          >
-            <FaLongArrowAltRight className="h-5 w-5" />
-          </button>
+            <button
+              onClick={() => addItem(product)}
+              className="text-gray-100 hover:text-gray-700 cursor-pointer"
+            >
+              <CiCirclePlus className="h-5 w-5" />
+            </button>
+          </div>
         </div>
       </div>
-    </li>
+    </div>
   );
 };

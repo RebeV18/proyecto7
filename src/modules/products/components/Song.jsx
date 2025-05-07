@@ -15,18 +15,23 @@ export const Song = ({ producto }) => {
   const addItem = useCartContext((state) => state.addItem);
 
   const handleClickSong = (songSelected) => {
-    if (!songSelected || !songSelected.id) {
+    if (!songSelected || !songSelected._id) {
       console.error("songSelected is undefined or missing id");
       return;
     }
     setTheSong(songSelected);
-    navigate(`/SongCard/${songSelected.id}`, { state: { song: songSelected } });
+    navigate(`/SongCard/${songSelected._id}`, {
+      state: { song: song },
+    });
   };
 
   const handleClickCart = (songSelected) => {
-    setTheSong(songSelected);
-    addItem(song);
-    console.log("Estamos agregando un producto", song);
+    if (!songSelected || !songSelected._id) {
+      console.error("songSelected is undefined or missing id");
+      return;
+    }
+    addItem(songSelected);
+    console.log("Estamos agregando un producto", songSelected);
   };
 
   return (
@@ -59,7 +64,7 @@ export const Song = ({ producto }) => {
           <button
             key={producto.id}
             className="text-white align-center p-1 cursor-pointer"
-            onClick={() => handleClickSong(producto)} // Pasa el objeto producto
+            onClick={() => handleClickSong(producto)}
           >
             <FaRegCirclePlay />
           </button>

@@ -21,7 +21,7 @@ export const CartSideBar = ({ onClose }) => {
     <>
       <div
         onClick={onClose}
-        className="fixed inset-0 bg-gray-800/30 backdrop-blur-sm transition-opacity duration-300"
+        className="fixed inset-y-0 right-0 max-w-xl bg-white shadow-2xl transform transition-all ease-in-out duration-300"
       ></div>
 
       <div className="fixed inset-y-0 right-0 max-w-md bg-white shadow-2xl transform transition-all ease-in-out duration-300">
@@ -40,13 +40,18 @@ export const CartSideBar = ({ onClose }) => {
 
           <div className="flex-1 px-4 sm:px-6 overflow-y-auto">
             {products.length === 0 ? (
-              <p className="text-center text-white py-8">Tu carrito esta vacío</p>
+              <p className="text-center text-white py-8">
+                Tu carrito esta vacío
+              </p>
             ) : (
               <div className="flow-root">
                 <ul className="divide-y divide-gray-300">
-                  {products.map((product) => (
-                    <CartProduct key={product._id} product={product} />
-                  ))}
+                  {products.map((product) => {
+                    console.log(
+                      `Producto: ${product.name}, Precio: ${product.price}`
+                    );
+                    return <CartProduct key={product._id} product={product} />;
+                  })}
                 </ul>
               </div>
             )}
@@ -55,11 +60,13 @@ export const CartSideBar = ({ onClose }) => {
           {products.length > 0 && (
             <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
               <div className="flex justify-between text-base font-medium text-gray-900">
-                <p>Total</p>
-                <p>{formatCurrency(totalPrice, optionsCurrency)}</p>
+                <p className="text-white">Total</p>
+                <p className="text-white">
+                  {formatCurrency(totalPrice, optionsCurrency)}
+                </p>
               </div>
 
-              <div className="mt-6">
+              <div className="mt-6 text-white">
                 <MercadoPagoButton
                   cart={products}
                   total={totalPrice}
