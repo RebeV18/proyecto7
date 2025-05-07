@@ -18,7 +18,7 @@ export const Contacto = () => {
           fono: +503 7722 5016
         </p>
       </div>
-      <h2 className="pt-10 font-bold text-white text-center text-4xl p-7 text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
+      <h2 className="pt-10 font-bold text-white text-center text-4xl p-2 text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
         Sígueme en mis redes sociales y suscríbete:
       </h2>
     </>

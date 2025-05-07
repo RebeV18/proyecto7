@@ -21,10 +21,10 @@ export const CartSideBar = ({ onClose }) => {
     <>
       <div
         onClick={onClose}
-        className="fixed inset-y-0 right-0 max-w-xl bg-white shadow-2xl transform transition-all ease-in-out duration-300"
+        className="fixed inset-y-0 right-0 max-w-xl bg-transparent shadow-2xl transform transition-all ease-in-out duration-300"
       ></div>
 
-      <div className="fixed inset-y-0 right-0 max-w-md bg-white shadow-2xl transform transition-all ease-in-out duration-300">
+      <div className="fixed inset-y-0 right-0 max-w-md bg-transparent shadow-2xl transform transition-all ease-in-out duration-300">
         <div className="h-full flex flex-col overflow-y-auto">
           <div className="px-4 py-6 sm:px-6 border-b border-gray-200">
             <h2 className="text-lg text-white font-medium text-gray-900">
