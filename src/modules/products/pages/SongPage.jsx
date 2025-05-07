@@ -1,0 +1,52 @@
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useFetchProducts } from "../hooks/useFetchProducts";
+
+import { SongCard } from "../components/SongCard";
+
+export const SongPage = () => {
+  const { id } = useParams();
+  const { productos, loading, error } = useFetchProducts();
+  const [theSong, setSong] = useState(null);
+
+  useEffect(() => {
+    if (productos.length > 0) {
+      const selectedSong = productos.find((s) => s._id === id);
+      setSong(selectedSong);
+    }
+  }, [productos, id]);
+
+  return (
+    <div className="container flex flex-col justify-items-center place-items-center mx-auto px-4 py-8">
+      <h2 className="font-bold text-center text-white text-xl md:text-2xl xl:text-3xl 2xl:text-4xl 2xl:p-10">
+        Discografía
+      </h2>
+
+      {loading && (
+        <div className="flex justify-center-items-center-py-20">
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+        </div>
+      )}
+
+      {error && (
+        <div className="bg-red-100 text-red-700 p-4 rounded md text-center mb-6">
+          <p className="font-semibold">Error: {error.message}</p>
+        </div>
+      )}
+
+      {productos.length === 0 && !loading && !error && (
+        <div className="text-center-py-10 text-gray-500">
+          <p className="text-xl font-semibold">No hay productos disponibles</p>
+        </div>
+      )}
+
+      {theSong && <SongCard key={theSong._id} song={theSong} />}
+      <button
+        className="border-4 border-amber-500 rounded-lg text-white p-1.5 text-base lg:text-lg xl:text-xl 2xl:text-4xl"
+        onClick={() => window.history.back()}
+      >
+        Volver
+      </button>
+    </div>
+  );
+};

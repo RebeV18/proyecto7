@@ -20,7 +20,7 @@ export const Song = ({ producto }) => {
       return;
     }
     setTheSong(songSelected);
-    navigate(`/SongCard/${songSelected._id}`, {
+    navigate(`/SongPage/${songSelected._id}`, {
       state: { song: song },
     });
   };
