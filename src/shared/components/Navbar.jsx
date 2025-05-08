@@ -6,6 +6,7 @@ import { CartIcon } from "../../modules/cart/components/CartIcon";
 import { AuthContext } from "../../modules/auth/context/AuthContext";
 
 import "../../shared/Styles/Styles.css";
+import "@fontsource/oswald";
 
 export const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
@@ -22,9 +23,9 @@ export const Navbar = () => {
         <div className="hidden sm:flex">
           <Link
             to="/"
-            className="text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-xl"
+            className="font-oswald text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-xl"
           >
-            Inicio
+            INICIO
           </Link>
           <Link
             to="/about"

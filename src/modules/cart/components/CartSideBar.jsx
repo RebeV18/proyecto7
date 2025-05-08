@@ -1,8 +1,10 @@
+import { TbBackground } from "react-icons/tb";
 import { envLoader } from "../../../config/envLoader";
 import { formatCurrency } from "../../../shared/utils/formatCurrency";
 import { MercadoPagoButton } from "../../payments/components/MercadoPagoButton";
 import useCartContext from "../context/CartContext";
 import { CartProduct } from "./CartItem";
+import { Background } from "../../../shared/components/Background"
 
 const { optionsCurrency } = envLoader;
 
@@ -19,6 +21,7 @@ export const CartSideBar = ({ onClose }) => {
 
   return (
     <>
+    <Background/>
       <div
         onClick={onClose}
         className="fixed inset-y-0 right-0 max-w-xl bg-transparent shadow-2xl transform transition-all ease-in-out duration-300"

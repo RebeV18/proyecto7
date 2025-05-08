@@ -10,7 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/alumni-sans-pinstripe": "^5.2.5",
     "@fontsource/montserrat": "^5.2.5",
+    "@fontsource/oswald": "^5.2.5",
+    "@fontsource/poppins": "^5.2.6",
     "@mercadopago/sdk-react": "^1.0.2",
     "@tailwindcss/vite": "^4.1.4",
     "axios": "^1.8.4",
