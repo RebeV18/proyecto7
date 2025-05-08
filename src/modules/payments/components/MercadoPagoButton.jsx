@@ -20,10 +20,14 @@ export const MercadoPagoButton = ({ cart, onPaymentSuccess }) => {
   const handleGeneratePreference = async () => {
     setLoading(true);
     try {
+      console.log("Datos enviados al backend:", cart);
       const { data } = await mercadoPagoPreference({ cart });
       setPreferenceId(data.id);
     } catch (error) {
-      console.error("Error al procesar el pago", error);
+      console.error("Error al procesar el pago:", error.message || error);
+      alert(
+        "Hubo un problema al procesar el pago. Por favor, inténtalo de nuevo."
+      );
     } finally {
       setLoading(false);
     }
