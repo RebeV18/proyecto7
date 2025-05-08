@@ -23,33 +23,33 @@ export const Navbar = () => {
         <div className="hidden sm:flex">
           <Link
             to="/"
-            className="font-oswald text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-xl"
+            className="font-oswald font-thin text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-xl"
           >
             INICIO
           </Link>
           <Link
             to="/about"
-            className="text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-xl"
+            className="font-oswald font-thin text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-xl"
           >
-            Acerca de mí
+            ACERCA DE Mí
           </Link>
           <Link
             to="/products"
-            className="text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-xl"
+            className="font-oswald font-thin text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-xl"
           >
-            Discografía
+            DISCOGRAFIA
           </Link>
           <Link
             to="podcast"
-            className="text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-xl"
+            className="font-oswald font-thin text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-xl"
           >
-            Podcast
+            PODCAST
           </Link>
           <Link
             to="/contacto"
-            className="text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-xl"
+            className="font-oswald font-thin text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-xl"
           >
-            Contacto
+            CONTACTO
           </Link>
         </div>
 
@@ -68,31 +68,31 @@ export const Navbar = () => {
         >
           <Link
             to="/"
-            className="text-white text-xs sm:text-sm px-5 gap-y-10 block"
+            className="font-oswald font-thin text-white text-xs sm:text-sm px-5 gap-y-10 block"
           >
             Inicio
           </Link>
           <Link
             to="/about"
-            className="text-white text-xs sm:text-sm px-5 gap-y-10 block"
+            className="font-oswald font-thin text-white text-xs sm:text-sm px-5 gap-y-10 block"
           >
             Acerca de mí
           </Link>
           <Link
             to="/products"
-            className="text-white text-xs sm:text-sm px-5 gap-y-10 block"
+            className="font-oswald font-thin text-white text-xs sm:text-sm px-5 gap-y-10 block"
           >
             Discografía
           </Link>
           <Link
             to="podcast"
-            className="text-white text-xs sm:text-sm px-5 gap-y-10 block"
+            className="font-oswald font-thin text-white text-xs sm:text-sm px-5 gap-y-10 block"
           >
             Podcast
           </Link>
           <Link
             to="/contacto"
-            className="text-white text-xs sm:text-sm px-5 gap-y-10 block"
+            className="font-oswald font-thin text-white text-xs sm:text-sm px-5 gap-y-10 block"
           >
             Contacto
           </Link>
@@ -121,7 +121,7 @@ export const Navbar = () => {
                 className="flex flex-col items-center"
               >
                 <IoMdLogOut className="text-white" />
-                <p className="text-white text-xs">Cerrar sesión</p>
+                <p className="font-oswald font-thin text-white text-xs">Cerrar sesión</p>
               </Link>
             </div>
           )}
