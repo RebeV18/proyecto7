@@ -8,12 +8,12 @@ export const Podcast = () => {
     <>
       <Background />
       <div className="pb-20 pr-15 pl-15">
-        <h2 className="pt-10 pb-10 font-bold md:text-center text-white text-lg md:text-2xl xl:text-3xl 2xl:text-4xl xl:p-20 xl:pb-30">
+        <h2 className="text-white text-center mt-3 md:mt-20 lg:mt-25 xl:mt-35 2xl:mt-120 mb-7 lg:mb-10 xl:mb-12 2xl:mb-30 text-lg sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:xl:text-8xl">
           PODCAST
         </h2>
         <div className="grid place-items-center lg:grid-cols-2 md:grid-cols-1 gap-30 items-center justify-center gap-5 pr-15 pl-15">
-          <div className="custom-card bg-background/50 dark:bg-default-100/50 max-w-[610px]">
-            <div className="mx-auto flex flex-col md:flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
+          <div className="custom-card bg-gradient-to-b from-amber-400 to-pink-600 max-w-[610px]">
+            <div className="mx-auto flex flex-col md:flex-row justify-center object-center rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
               <div className="flex flex-col items-center justify-center p-7">
                 <h3 className="text-white text-center font-bold text-sm md:text-base lg:text-lg">
                   Con Sonido de Alabanza
@@ -33,7 +33,7 @@ export const Podcast = () => {
           </div>
 
           <div className="custom-card bg-background/50 dark:bg-default-100/50 max-w-[610px]">
-            <div className="mx-auto flex flex-col md:flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
+            <div className="mx-auto flex flex-col md:flex-row justify-center object-center rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
               <div className="flex flex-col items-center justify-center p-7">
                 <h3 className="text-white text-center font-bold text-sm md:text-base lg:text-lg">
                   Con Sonido de Alabanza

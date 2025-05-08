@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { LoginForm } from "../components/LoginForm/LoginForm";
+import { Background } from "../../../shared/components/Background"
 
 export const LoginPage = () => {
   return (

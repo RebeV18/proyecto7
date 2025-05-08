@@ -63,7 +63,7 @@ export const Navbar = () => {
         <div
           className={`${
             isOpen ? "block" : "hidden"
-          } sm:hidden absolute top-6 left-7 w-full bg-gray-800 z-10`}
+          } sm:hidden absolute top-6 left-7 w-full bg-transparent z-10`}
         >
           <Link
             to="/"

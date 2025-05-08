@@ -5,7 +5,7 @@ export const AboutPage = () => {
     <>
       <Background />
       <div className="flex-col justify-center place-items-center p-10">
-        <h1 className="font-bold text-white p-7 text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl 2xl:xl:text-4xl">
+        <h1 className="text-white mt-30 lg:mt-32 xl:mt-41 2xl:mt-120 mb-7 lg:mb-10 xl:mb-12 2xl:mb-30 text-lg sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:xl:text-8xl">
           LUIS GERARDO AQUINO
         </h1>
         <p className="text-justify text-white xl:text-lg xl:pl-20 xl:pr-20 xl:mr-20 xl:ml-20">

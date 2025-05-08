@@ -1,9 +1,9 @@
 export const SongCard = ({ song }) => {
   return (
-    <div className="custom-card cursor-pointer rounded-2xl border border-gray-200 bg-transparent shadow-md m-15">
-      <div className="mx-auto flex flex-col md:flex-row justify-center object-center bg-gradient-to-br from-[#f0f4f8] to-[#e2ebf3] rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
+    <div className="custom-card cursor-pointer rounded-2xl bg-transparent shadow-md mt-2 mb-10">
+      <div className="mx-auto flex flex-col md:flex-row justify-center object-center rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
         <div className="flex flex-col items-center justify-center p-7">
-          <h3 className="text-white text-center font-bold mb-2 text-sm md:text-base lg:text-lg">
+          <h3 className="text-white text-center font-bold mb-2 text-sm md:text-base lg:text-3xl">
             {song.cancion}
           </h3>
           <div className="flex flex-col md:justify-between p-2 items-center">

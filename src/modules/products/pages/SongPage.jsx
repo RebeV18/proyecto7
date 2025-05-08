@@ -21,7 +21,7 @@ export const SongPage = () => {
     <>
       <Background />
       <div className="container flex flex-col justify-items-center place-items-center mx-auto px-4 py-8">
-        <h2 className="font-bold text-center text-white text-xl md:text-2xl xl:text-3xl 2xl:text-4xl 2xl:p-10">
+        <h2 className="text-white mt-3 md:mt-20 lg:mt-25 xl:mt-30 2xl:mt-120 mb-7 lg:mb-10 xl:mb-12 2xl:mb-30 text-lg sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:xl:text-8xl">
           DISCOGRAFíA
         </h2>
 
