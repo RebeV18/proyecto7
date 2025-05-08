@@ -37,7 +37,7 @@ export const MercadoPagoButton = ({ cart, onPaymentSuccess }) => {
     <div className="flex flex-col items-center justify-center space-y-4">
       <button
         onClick={handleGeneratePreference}
-        className="cursor-pointer w-full py-3 px-4 bg-blue-500 text-white rounded-md font-medium shadow-md hover:bg-blue-700 transition duration-300 disabled:bg-gray-300 disabled:cursor-not-alloweed"
+        className="cursor-pointer w-full py-3 px-4 bg-blue-500 text-white rounded-md font-medium shadow-md hover:bg-blue-700 transition duration-300 disabled:bg-blue-800 disabled:cursor-not-alloweed"
         disabled={loading}
       >
         {loading ? "Cargando pasarela de pago..." : "Pagar con Mercado Pago"}
