@@ -4,11 +4,11 @@ export const AboutPage = () => {
   return (
     <>
       <Background />
-      <div className="flex-col justify-center place-items-center p-10">
-        <h1 className="text-white mt-30 lg:mt-32 xl:mt-41 2xl:mt-120 mb-7 lg:mb-10 xl:mb-12 2xl:mb-30 text-lg sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:xl:text-8xl">
+      <div className="flex-col justify-center place-items-center p-10 xl:p-5">
+        <h1 className="font-alumni-sans-pinstripe tracking-widest text-white text-center mt-30 xl:mt-40 2xl:mt-100 mb-7 lg:mb-10 xl:mb-12 2xl:mb-30 text-lg sx:text-2xl sm:text-2xl md:text-5xl lg:text-6xl xl:text-8xl 2xl:text-9xl">
           LUIS GERARDO AQUINO
         </h1>
-        <p className="text-justify text-white xl:text-lg xl:pl-20 xl:pr-20 xl:mr-20 xl:ml-20">
+        <p className="font-montserrat text-justify text-white sm:px-7 md:px-10 lg:px-24 2xl:px-110 xl:text-2xl 2xl:text-4xl xl:leading-relaxed">
           <br />
           Pastor, salmista, compositor y productor musical con más de 20 años de
           experiencia en el ministerio musical.

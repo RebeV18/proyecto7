@@ -1,5 +1,5 @@
 import { Background } from "../components/Background";
-import "../Styles/Styles.css"
+import "../Styles/Styles.css";
 import "@fontsource/alumni-sans-pinstripe";
 
 export const HomePage = () => {
@@ -7,11 +7,12 @@ export const HomePage = () => {
     <>
       <Background />
       <div className="flex-col justify-center align-center place-items-center p-10">
-        <h1 className="font-Alumni-alumni-sans-pinstripe text-white mt-30 lg:mt-32 xl:mt-40 2xl:mt-50 mb-7 lg:mb-10 xl:mb-12 2xl:mb-30 text-lg sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:xl:text-8xl">
+        <h1 className="font-alumni-sans-pinstripe tracking-widest text-white text-center mt-30 xl:mt-40 2xl:mt-100 mb-7 lg:mb-10 xl:mb-12 2xl:mb-30 text-lg sx:text-2xl sm:text-2xl md:text-5xl lg:text-6xl xl:text-8xl 2xl:text-9xl">
           LUIS GERARDO AQUINO
         </h1>
-        <p className="custom-card border-1 border-white rounded-lg text-white text-center item-center p-8 text-xs sm:text-base md:text-lg lg:text-xl 2xl:text-4xl">
-          "Enseñar el cómo, el para qué y el poder transformador de la adoración"
+        <p className="custom-card border-1 border-white rounded-lg text-white text-center item-center px-3 py-8 text-xs sm:text-base md:text-lg lg:text-2xl 2xl:text-4xl">
+          "Enseñar el cómo, el para qué y el poder transformador de la
+          adoración"
         </p>
       </div>
     </>
