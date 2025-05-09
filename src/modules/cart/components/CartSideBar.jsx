@@ -50,7 +50,7 @@ export const CartSideBar = ({ onClose }) => {
                 <ul className="divide-y divide-gray-300">
                   {products.map((product) => {
                     console.log(
-                      `Producto: ${product.name}, Precio: ${product.price}`
+                      `Producto: ${product.cancion}, Precio: ${product.precio}`
                     );
                     return <CartProduct key={product._id} product={product} />;
                   })}

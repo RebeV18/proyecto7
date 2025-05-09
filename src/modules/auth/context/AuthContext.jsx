@@ -8,6 +8,8 @@ export const AuthProvider = ({ children }) => {
   const login = () => setIsAuthenticated(true);
   const logout = () => setIsAuthenticated(false);
 
+  console.log("Estado de autenticación:", isAuthenticated); // Esto es válido
+
   return (
     <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
       {children}
@@ -16,3 +18,4 @@ export const AuthProvider = ({ children }) => {
 };
 
 export const useAuthContext = () => useContext(AuthContext);
+console.log("Auth:", useAuthContext);

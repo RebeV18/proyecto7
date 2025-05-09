@@ -13,13 +13,9 @@ export const AuthProvider = ({ children }) => {
 
   const login = async ({ email, password }) => {
     try {
-      console.log("email", email);
-      console.log("psw", password);
-
       const dataLogin = await loginService({ email, password });
       const { token } = dataLogin;
       const user = dataLogin.data;
-      console.log("dataLogin", dataLogin);
 
       if (!token || !user) {
         throw new Error("No se pudo iniciar sesión");

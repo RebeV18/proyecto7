@@ -1,5 +1,6 @@
 import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { mercadoPagoPreference } from "../services/paymentService";
 import { envLoader } from "../../../config/envLoader";
@@ -12,8 +13,10 @@ const {
 
 export const MercadoPagoButton = ({ cart, onPaymentSuccess }) => {
   const { isAuthenticated } = useAuthContext();
+  console.log("Estado de autenticaciónPM:", isAuthenticated);
   const [preferenceId, setPreferenceId] = useState(null);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     initMercadoPago(mp_publicKey, { locale });
@@ -21,19 +24,27 @@ export const MercadoPagoButton = ({ cart, onPaymentSuccess }) => {
 
   const handleGeneratePreference = async () => {
     setLoading(true);
-    try {
-      console.log("Datos enviados al backend:", cart);
-      const { data } = await mercadoPagoPreference({ cart });
-      setPreferenceId(data.id);
-      const preferenceUrl = data.init_point;
-      window.open(preferenceUrl, "_blank");
-    } catch (error) {
-      console.error("Error al procesar el pago:", error.message || error);
-      alert(
-        "Hubo un problema al procesar el pago. Por favor, inténtalo de nuevo."
-      );
-    } finally {
-      setLoading(false);
+    if (!isAuthenticated) {
+    console.log("Estado de autenticación:", isAuthenticated);
+    if (typeof onClose === "function") {
+      cart.onClose();
+    }
+      navigate("/login");
+    } else {
+      try {
+        console.log("Datos enviados al backend:", cart);
+        const { data } = await mercadoPagoPreference({ cart });
+        setPreferenceId(data.id);
+        const preferenceUrl = data.init_point;
+        window.open(preferenceUrl, "_blank");
+      } catch (error) {
+        console.error("Error al procesar el pago:", error.message || error);
+        alert(
+          "Hubo un problema al procesar el pago. Por favor, inténtalo de nuevo."
+        );
+      } finally {
+        setLoading(false);
+      }
     }
   };
 
@@ -45,13 +56,13 @@ export const MercadoPagoButton = ({ cart, onPaymentSuccess }) => {
     }
   };
 
-  if (!isAuthenticated) {
-    return (
-      <div className="text-center text-gray-500">
-        Por favor, inicia sesión para realizar el pago.
-      </div>
-    );
-  }
+  // if (!isAuthenticated) {
+  //   return (
+  //     <div className="text-center text-gray-500">
+  //       Por favor, inicia sesión para realizar el pago.
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="flex flex-col items-center justify-center space-y-4">
