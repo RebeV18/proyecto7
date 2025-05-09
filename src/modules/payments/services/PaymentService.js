@@ -2,7 +2,6 @@ import { apiClient } from '../../../shared/services/apiClient';
 
 export const mercadoPagoPreference = async({ cart }) => {
     try {
-        console.log("Datos enviados al backend:", cart);
         const { data } = await apiClient.post("https://proyecto6-sgv2.onrender.com/api/v1/payment/mercadopago", { cart });
         return data;
     } catch (error) {
