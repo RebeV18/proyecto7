@@ -49,9 +49,6 @@ export const CartSideBar = ({ onClose }) => {
               <div className="flow-root">
                 <ul className="divide-y divide-gray-300">
                   {products.map((product) => {
-                    console.log(
-                      `Producto: ${product.cancion}, Precio: ${product.precio}`
-                    );
                     return <CartProduct key={product._id} product={product} />;
                   })}
                 </ul>
