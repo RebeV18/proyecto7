@@ -1,15 +1,15 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { IoMdLogIn, IoMdLogOut, IoIosMenu } from "react-icons/io";
 import { CartIcon } from "../../modules/cart/components/CartIcon";
 
-import { AuthContext } from "../../modules/auth/context/AuthContext";
+import { useAuthContext } from "../../modules/auth/context/AuthGlobalState";
 
 import "../../shared/Styles/Styles.css";
 import "@fontsource/oswald";
 
 export const Navbar = () => {
-  const { user, logout } = useContext(AuthContext);
+  const { user, logout } = useAuthContext();
   const [isOpen, setIsOpen] = useState(false);
 
   const handleLogout = () => {

@@ -1,7 +1,11 @@
 import { useReducer } from "react";
 import { authReducer } from "./authReducer";
 import { loginService } from "../services/authApiService";
-import { AuthContext } from "./AuthContext";
+//import { AuthContext } from "./AuthContext";
+
+import { createContext, useContext, useState } from "react";
+
+const AuthContext = createContext();
 
 const initialState = {
   user: null,
@@ -10,6 +14,7 @@ const initialState = {
 
 export const AuthProvider = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, initialState);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const login = async ({ email, password }) => {
     try {
@@ -23,6 +28,7 @@ export const AuthProvider = ({ children }) => {
 
       localStorage.setItem("token", token);
       localStorage.setItem("user", JSON.stringify(user));
+      setIsAuthenticated(true);
 
       dispatch({
         type: "LOGIN",
@@ -37,7 +43,7 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-
+    setIsAuthenticated(false);
     dispatch({
       type: "LOGOUT",
     });
@@ -50,9 +56,12 @@ export const AuthProvider = ({ children }) => {
         token: state.token,
         login,
         logout,
+        isAuthenticated,
       }}
     >
       {children}
     </AuthContext.Provider>
   );
 };
+
+export const useAuthContext = () => useContext(AuthContext);

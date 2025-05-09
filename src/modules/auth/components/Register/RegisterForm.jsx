@@ -1,5 +1,5 @@
 import { useCallback, useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../context/AuthContext";
+import { useAuthContext } from "../../context/AuthGlobalState";
 import { useNavigate } from "react-router-dom";
 
 import { FormField } from "./FormFiled";
@@ -9,7 +9,7 @@ import { useValidateRegisterForm } from "../../Hooks/useValidateRegisterForm";
 import { formatDataRegister } from "../../utils/formatDataRegister";
 
 export const RegisterForm = () => {
-  const { register } = useContext(AuthContext);
+  const { register } = useContext(useAuthContext);
   const navigate = useNavigate();
   const [formData, setFormData] = useState(FORM_INITIAL_STATE);
   const [formError, setFormError] = useState("");

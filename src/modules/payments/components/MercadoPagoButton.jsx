@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 import { mercadoPagoPreference } from "../services/paymentService";
 import { envLoader } from "../../../config/envLoader";
-import { useAuthContext } from "../../auth/context/AuthContext";
+import { useAuthContext } from "../../auth/context/AuthGlobalState";
 
 const {
   mp_publicKey,
