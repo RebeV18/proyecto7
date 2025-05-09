@@ -24,7 +24,6 @@ export const SongCard = ({ song }) => {
       return;
     }
     addItem(songSelected);
-    console.log("Estamos agregando un producto", songSelected);
   };
 
   return (

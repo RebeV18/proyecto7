@@ -12,7 +12,6 @@ const {
 
 export const MercadoPagoButton = ({ cart, onPaymentSuccess }) => {
   const { isAuthenticated } = useAuthContext();
-  console.log("isAuth", isAuthenticated);
   const [preferenceId, setPreferenceId] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -23,7 +22,6 @@ export const MercadoPagoButton = ({ cart, onPaymentSuccess }) => {
   const handleGeneratePreference = async () => {
     setLoading(true);
     try {
-      console.log("Datos enviados al backend:", cart);
       const { data } = await mercadoPagoPreference({ cart });
       setPreferenceId(data.id);
       const preferenceUrl = data.init_point;
@@ -39,7 +37,6 @@ export const MercadoPagoButton = ({ cart, onPaymentSuccess }) => {
   };
 
   const handlePaymentSuccess = (details) => {
-    console.log("Detalles del pago exitoso:", details);
     cart.clearCart();
     if (onPaymentSuccess) {
       onPaymentSuccess(details);

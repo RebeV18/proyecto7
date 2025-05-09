@@ -17,7 +17,6 @@ export const LoginForm = () => {
     };
 
     try {
-      console.log("format", formatData);
       await login(formatData);
       navigate("/");
     } catch (error) {

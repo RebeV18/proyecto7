@@ -33,7 +33,6 @@ export const Song = ({ producto }) => {
       return;
     }
     addItem(songSelected);
-    console.log("Estamos agregando un producto", songSelected);
   };
 
   return (

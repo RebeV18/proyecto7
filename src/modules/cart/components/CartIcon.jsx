@@ -9,7 +9,6 @@ export const CartIcon = () => {
 
     const handleIsOpen = () => {
         setIsOpen(!isOpen);
-        console.log(isOpen);
     }
 
     return (
