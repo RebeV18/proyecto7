@@ -1,67 +1,62 @@
-import { useReducer } from "react"
-import { authReducer } from "./authReducer"
+import { useReducer } from "react";
+import { authReducer } from "./authReducer";
 import { loginService } from "../services/authApiService";
 import { AuthContext } from "./AuthContext";
 
-
 const initialState = {
-    user: null,
-    token: null
-}
-
+  user: null,
+  token: null,
+};
 
 export const AuthProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(authReducer, initialState);
 
-    const [ state, dispatch ] = useReducer(authReducer, initialState);
+  const login = async ({ email, password }) => {
+    try {
+      console.log("email", email);
+      console.log("psw", password);
 
-    const login = async({ email, password }) => {
-        try {
-            console.log("email", email);
-            console.log("psw", password);
+      const dataLogin = await loginService({ email, password });
+      const { token } = dataLogin;
+      const user = dataLogin.data;
+      console.log("dataLogin", dataLogin);
 
-            const dataLogin = await loginService({ email, password });
-            const { token } = dataLogin;
-            const user = dataLogin.data; 
-            console.log("dataLogin", dataLogin);
+      if (!token || !user) {
+        throw new Error("No se pudo iniciar sesión");
+      }
 
-            if(!token || !user) {
-                throw new Error("No se pudo iniciar sesión");
-            }
+      localStorage.setItem("token", token);
+      localStorage.setItem("user", JSON.stringify(user));
 
-            localStorage.setItem('token', token);
-            localStorage.setItem('user', JSON.stringify(user));
-
-            dispatch({
-                type: 'LOGIN',
-                payload: { user, token }
-            });
-
-        } catch (error) {
-            console.error("Error logging in:", error);
-            throw new Error(error);
-        }
+      dispatch({
+        type: "LOGIN",
+        payload: { user, token },
+      });
+    } catch (error) {
+      console.error("Error logging in:", error);
+      throw new Error(error);
     }
+  };
 
-    const logout = () => {
-        localStorage.removeItem('token');
-        localStorage.removeItem('user');
+  const logout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
 
-        dispatch({
-            type: 'LOGOUT'
-            
-        })
-    }
+    dispatch({
+      type: "LOGOUT",
+    });
+  };
 
-    return (
-        <AuthContext.Provider
-            value={{
-                user: state.user,
-                token: state.token,
-                login,
-                logout
-            }}
-        >
-            {children}
-        </AuthContext.Provider>
-    )
-}
+  return (
+    <AuthContext.Provider
+      value={{
+        user: state.user,
+        token: state.token,
+        login,
+        logout,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
+};
