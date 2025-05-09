@@ -12,6 +12,7 @@ const {
 
 export const MercadoPagoButton = ({ cart, onPaymentSuccess }) => {
   const { isAuthenticated } = useAuthContext();
+  console.log("isAuth", isAuthenticated);
   const [preferenceId, setPreferenceId] = useState(null);
   const [loading, setLoading] = useState(false);
 
