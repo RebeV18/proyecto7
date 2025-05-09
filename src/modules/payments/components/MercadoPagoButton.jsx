@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { mercadoPagoPreference } from "../services/paymentService";
 
 import { envLoader } from "../../../config/envLoader";
+import { useAuthContext } from "../../auth/context/AuthContext";
 
 const {
   mp_publicKey,
@@ -10,6 +11,7 @@ const {
 } = envLoader;
 
 export const MercadoPagoButton = ({ cart, onPaymentSuccess }) => {
+  const { isAuthenticated } = useAuthContext();
   const [preferenceId, setPreferenceId] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -23,6 +25,8 @@ export const MercadoPagoButton = ({ cart, onPaymentSuccess }) => {
       console.log("Datos enviados al backend:", cart);
       const { data } = await mercadoPagoPreference({ cart });
       setPreferenceId(data.id);
+      const preferenceUrl = data.init_point;
+      window.open(preferenceUrl, "_blank");
     } catch (error) {
       console.error("Error al procesar el pago:", error.message || error);
       alert(
@@ -32,6 +36,18 @@ export const MercadoPagoButton = ({ cart, onPaymentSuccess }) => {
       setLoading(false);
     }
   };
+
+  const handlePaymentSuccess = (details) => {
+    console.log("Detalles del pago exitoso:", details);
+    cart.clearCart();
+    if (onPaymentSuccess) {
+      onPaymentSuccess(details);
+    }
+  };
+
+  if (!isAuthenticated) {
+    return <p>Por favor, inicia sesión para realizar el pago.</p>;
+  }
 
   return (
     <div className="flex flex-col items-center justify-center space-y-4">
@@ -51,7 +67,7 @@ export const MercadoPagoButton = ({ cart, onPaymentSuccess }) => {
             onError={(error) =>
               console.error("Error en la pasarela de pago", error)
             }
-            onPayment={(details) => onPaymentSuccess(details)}
+            onPayment={handlePaymentSuccess}
           />
         </div>
       )}

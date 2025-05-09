@@ -8,7 +8,13 @@ export const apiClient = axios.create({
     timeout: 20000,
 });
 
-apiClient.interceptors.request.use((config) => {
-    const token = localStorage.getItem("token");
-    token ? config.headers.authorization = `Bearer ${token}` : config;
-}, (error) => Promise.reject(error));
+apiClient.interceptors.request.use(
+    (config) => {
+        const token = localStorage.getItem("token");
+        if (token) {
+            config.headers.authorization = `Bearer ${token}`;
+        }
+        return config;
+    },
+    (error) => Promise.reject(error)
+);
