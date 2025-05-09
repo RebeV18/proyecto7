@@ -1,7 +1,7 @@
 import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
 import { useEffect, useState } from "react";
-import { mercadoPagoPreference } from "../services/paymentService";
 
+import { mercadoPagoPreference } from "../services/paymentService";
 import { envLoader } from "../../../config/envLoader";
 import { useAuthContext } from "../../auth/context/AuthContext";
 
@@ -46,7 +46,11 @@ export const MercadoPagoButton = ({ cart, onPaymentSuccess }) => {
   };
 
   if (!isAuthenticated) {
-    return <p>Por favor, inicia sesión para realizar el pago.</p>;
+    return (
+      <div className="text-center text-gray-500">
+        Por favor, inicia sesión para realizar el pago.
+      </div>
+    );
   }
 
   return (

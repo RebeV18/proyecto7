@@ -1,4 +1,3 @@
-import { TbBackground } from "react-icons/tb";
 import { envLoader } from "../../../config/envLoader";
 import { formatCurrency } from "../../../shared/utils/formatCurrency";
 import { MercadoPagoButton } from "../../payments/components/MercadoPagoButton";
