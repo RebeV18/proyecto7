@@ -4,6 +4,8 @@ import { fetchAllProducts } from "../services/productApiService";
 import { Song } from "./Song";
 
 import "../../../shared/Styles/Styles.css";
+import "@fontsource/poppins";
+
 
 export const CDCards = () => {
   const [flippedCards, setFlippedCards] = useState({});
@@ -58,29 +60,29 @@ export const CDCards = () => {
 
   return (
     <div className="py-10 px-5">
-      <div className="grid grid-cols-1 place-items-center sm:grid-cols-2 lg:grid-cols-3 gap-15">
+      <div className="grid grid-cols-1 place-items-center sm:grid-cols-2 xl:grid-cols-3 gap-15 xl:gap-25">
         {cds.map((cd, index) => (
           <div
             key={cd.cd || index}
             onClick={() => handleCardClick(cd)}
             className={clsx(
-              "relative h-[430px] w-[260px] cursor-pointer rounded-2xl bg-gradient-to-r from-amber-400 to-pink-600 pg-50 shadow-md transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]",
+              "relative h-[440px] w-[260px] cursor-pointer rounded-2xl bg-gradient-to-r from-amber-400 to-pink-600 pg-50 shadow-md transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]",
               {
                 "[&_.card-content]:rotate-y-180": flippedCards[cd.cd],
               }
             )}
           >
-            <div className="absolute bottom-5 left-21 text-center z-10 border-1 border-amber-200 rounded-lg px-2 py-[2px] text-xs font-medium text-white shadow">
+            <div className="absolute bottom-5 left-20 text-center z-10 border-1 border-amber-200 rounded-lg px-2 py-[2px] text-md font-medium text-white shadow">
               Ver canciones
             </div>
 
             <div className="card-content h-full w-full transition-transform duration-500 [transform-style:preserve-3d]">
               {/* Front Side */}
               <div className="custom-card absolute h-full w-full rounded-2xl p-4 text-gray-800 [backface-visibility:hidden]">
-                <h3 className="relative h-[70px] w-[226px] mb-2 flex items-center justify-center text-center gap-1 text-xl font-bold text-white">
+                <h3 className="relative h-[80px] w-[230px] flex items-center justify-center py-2 mt-1 mb-3 shadow text-center gap-1 text-xl text-white font-semibold font-poppins">
                   {cd.cd}
                 </h3>
-                <p className="text-sm text-center text-white italic">
+                <p className="font-poppins text-base text-center text-white italic">
                   {cd.anho_lanzamiento}
                 </p>
                 <div className="mt-4 overflow-hidden rounded-xl">
@@ -94,7 +96,7 @@ export const CDCards = () => {
 
               {/* Back Side */}
               <div className="custom-card absolute h-full w-full rotate-y-180 rounded-2xl p-4 text-gray-800 shadow-lg [backface-visibility:hidden]">
-                <h3 className="relative h-[70px] w-[226px] mb-2 flex items-center justify-center text-center gap-1 text-xl font-bold text-white">
+                <h3 className="relative h-[80px] w-[230px] flex items-center justify-center py-2 mt-1 mb-3 shadow text-center gap-1 text-xl text-white font-semibold font-poppins">
                   {cd.cd}
                 </h3>
                 <div className="overflow-y-auto max-h-[280px] mt-2 space-y-2">

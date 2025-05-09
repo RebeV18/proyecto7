@@ -1,11 +1,12 @@
 import { Background } from "../components/Background";
+import "@fontsource/alumni-sans-pinstripe";
 
 export const AboutPage = () => {
   return (
     <>
       <Background />
-      <div className="flex-col justify-center place-items-center p-10 xl:p-5">
-        <h1 className="font-alumni-sans-pinstripe font-thin tracking-widest text-white text-center mt-30 xl:mt-40 2xl:mt-100 mb-7 lg:mb-10 xl:mb-12 2xl:mb-30 text-lg sx:text-2xl sm:text-2xl md:text-5xl lg:text-6xl xl:text-8xl 2xl:text-9xl">
+      <div className="flex-col justify-center align-center place-items-center p-10 2xl:mb-15">
+        <h1 className="font-alumni-sans-pinstripe font-thin tracking-widest text-white text-center mt-20 xl:mt-30 2xl:mt-100 mb-7 md:mb-18 lg:mb-15 xl:mb-20 2xl:mb-30 text-lg xs:text-xl sm:text-2xl md:text-5xl lg:text-6xl xl:text-8xl 2xl:text-9xl">
           LUIS GERARDO AQUINO
         </h1>
         <p className="font-montserrat text-justify text-white sm:px-7 md:px-10 lg:px-24 2xl:px-110 xl:text-2xl 2xl:text-4xl xl:leading-relaxed">

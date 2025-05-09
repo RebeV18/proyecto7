@@ -2,6 +2,8 @@ import { useFetchProducts } from "../hooks/useFetchProducts";
 import { CDCards } from "../components/CDCards";
 import { Background } from "../../../shared/components/Background";
 
+import "@fontsource/alumni-sans-pinstripe";
+
 export const ProductPage = () => {
   const { productos, loading, error } = useFetchProducts();
 
@@ -10,9 +12,9 @@ export const ProductPage = () => {
       <Background />
 
       <div className="container flex flex-col justify-items-center place-items-center mx-auto px-4 py-8">
-        <h2 className="text-white mt-3 md:mt-20 lg:mt-25 xl:mt-30 2xl:mt-120 mb-7 lg:mb-10 xl:mb-12 2xl:mb-30 text-lg sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:xl:text-8xl">
-          DISCOGRAFíA
-        </h2>
+        <h1 className="font-alumni-sans-pinstripe font-thin tracking-widest text-white text-center mt-20 xl:mt-30 2xl:mt-100 mb-7 md:mb-18 lg:mb-15 xl:mb-20 2xl:mb-30 text-lg xs:text-xl sm:text-2xl md:text-5xl lg:text-6xl xl:text-8xl 2xl:text-9xl">
+          DISCOGRAFIA
+        </h1>
 
         {loading && (
           <div className="flex justify-center-items-center-py-20">

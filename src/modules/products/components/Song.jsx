@@ -7,6 +7,8 @@ import { formatCurrency } from "../../../shared/utils/formatCurrency";
 import { envLoader } from "../../../config/envLoader";
 import useCartContext from "../../cart/context/CartContext";
 
+import "@fontsource/montserrat";
+
 export const Song = ({ producto }) => {
   const { optionsCurrency } = envLoader;
   const navigate = useNavigate();
@@ -35,19 +37,17 @@ export const Song = ({ producto }) => {
   };
 
   return (
-    <div className="shadow-md p-3 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+    <div className="shadow p-3 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
       <div className="border-1 border-amber-300 rounded-lg p-2">
-        <div className="flex justify-between items-center mb-2">
-          <div className="flex flex-col">
-            <h4 className="text-sm font-bold mb-1 text-white">
-              {producto.cancion}
-            </h4>
-            <p className="text-white text-xs mb-4-line-clamp-2">
-              {producto.autores}
-            </p>
-          </div>
+        <div className="flex flex-col gap-y-1">
+          <h4 className="font-montserrat text-sm font-bold text-white">
+            {producto.cancion}
+          </h4>
+          <p className="font-montserrat text-white text-xs mb-4-line-clamp-2">
+            {producto.autores}
+          </p>
           <div className="mb-2">
-            <span className="text-sm font-bold text-white">
+            <span className="font-montserrat text-sm font-semibold text-white">
               {formatCurrency(producto.precio, optionsCurrency)}
             </span>
           </div>
@@ -55,7 +55,7 @@ export const Song = ({ producto }) => {
         <div className="flex flex-row justify-center items-center gap-20">
           <button
             key={producto.id}
-            className="text-white text-center p-1 cursor-pointer"
+            className="font-montserrat text-white text-center p-1 cursor-pointer"
             onClick={() => handleClickCart(producto)}
           >
             <MdAddShoppingCart />
