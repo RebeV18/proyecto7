@@ -14,7 +14,7 @@ export const RRSS = () => {
   const [tiktokColor, setTiktokColor] = useState("white");
 
   return (
-    <ul className="icon flex flex-row justify-center gap-x-8 sm:gap-x-10 md:gap-x-20 lg:gap-x-30 xl:gap-x-45 2xl:gap-x-60 xl:p-5 2xl:mt-5 2xl:mb-10">
+    <ul className="icon flex flex-row justify-center gap-x-5 md:gap-x-8 lg:gap-x-10 xl:gap-x-15 2xl:gap-x-25 xl:p-5 2xl:mt-5 2xl:mb-10">
       <li>
         <a
           href="https://www.facebook.com/LuisGerardoAquinoSV/?locale=es_LA"
