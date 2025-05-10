@@ -119,7 +119,7 @@ export const Navbar = () => {
                 className="flex flex-col items-center cursor-pointer gap-2"
                 id="navbar"
               >
-                <p className="text-white text-xs flex flex-col items-center">
+                <p className="text-white text-xs xl:text-sm 2xl:text-base flex flex-col items-center">
                   {user.nombre} {user.apellido}
                 </p>
                 <Link
@@ -128,7 +128,7 @@ export const Navbar = () => {
                   className="flex flex-col items-center"
                 >
                   <IoMdLogOut className="text-white" />
-                  <p className="font-oswald font-thin text-white text-xs">
+                  <p className="text-white text-xs xl:text-sm 2xl:text-base">
                     Cerrar sesión
                   </p>
                 </Link>
@@ -145,14 +145,11 @@ export const Navbar = () => {
               </Link>
             ) : (
               <div
-                className="flex flex-col items-center cursor-pointer gap-2"
+                className="flex flex-col items-center gap-2"
                 id="navbar"
               >
-                <p className="text-white text-xs flex flex-col items-center">
-                  {user.nombre} {user.apellido}
-                </p>
-                <MdOutlineErrorOutline className="text-white" />
-                <p className="font-oswald font-thin text-white text-xs">
+                <MdOutlineErrorOutline className="text-white text-lg xl:text-2xl 2xl:text-3xl" />
+                <p className="font-oswald font-thin text-white text-xs xl:text-sm 2xl:text-base">
                   ¡Ya estás registrado!
                 </p>
               </div>
