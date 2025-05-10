@@ -102,7 +102,7 @@ export const Navbar = () => {
         <div className="p-2">
           {!user ? (
             <Link to="/login" className="flex flex-col items-center">
-              <IoMdLogIn className="text-white text-lg xl:text-xl 2xl:text-3xl" />
+              <IoMdLogIn className="text-white text-lg xl:text-2xl 2xl:text-3xl" />
               <p className="text-white text-xs xl:text-sm 2xl:text-base">
                 Iniciar sesión
               </p>
