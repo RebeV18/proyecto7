@@ -9,6 +9,7 @@ import { Contacto } from "../shared/pages/Contacto";
 import { Footer } from "../shared/components/Footer";
 import { SongPage } from "../modules/products/pages/SongPage";
 import { MercadoPagoStatus } from "../modules/payments/components/MercadoPagoStatus";
+import { RegisterPage } from "../modules/auth/pages/Register"
 
 export const AppRouter = () => {
   return (
@@ -18,6 +19,7 @@ export const AppRouter = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
         <Route path="/products" element={<ProductPage />} />
         <Route path="/podcast" element={<Podcast />} />
         <Route path="/contacto" element={<Contacto />} />

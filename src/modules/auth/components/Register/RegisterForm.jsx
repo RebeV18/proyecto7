@@ -2,14 +2,14 @@ import { useCallback, useContext, useEffect, useState } from "react";
 import { useAuthContext } from "../../context/AuthGlobalState";
 import { useNavigate } from "react-router-dom";
 
-import { FormField } from "./FormFiled";
+import { FormField } from "./FormField";
 
 import { FORM_INITIAL_STATE } from "../../utils/initialFormat";
 import { useValidateRegisterForm } from "../../Hooks/useValidateRegisterForm";
 import { formatDataRegister } from "../../utils/formatDataRegister";
 
 export const RegisterForm = () => {
-  const { register } = useContext(useAuthContext);
+  const { register } = useAuthContext();
   const navigate = useNavigate();
   const [formData, setFormData] = useState(FORM_INITIAL_STATE);
   const [formError, setFormError] = useState("");
