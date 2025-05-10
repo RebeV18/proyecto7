@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { registerRules } from "../utils/registerRules";
+import { registerRules } from "../Utils/registerRules";
 
 export const useValidateRegisterForm = (formData) => {
   const [errors, setErrors] = useState({});

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { RegisterForm } from "../components/Register/RegisterForm";
 import { Background } from "../../../shared/components/Background";
 
-import "@fontsource/montserrat"
+import "@fontsource/montserrat";
 
 export const RegisterPage = () => {
   return (
@@ -15,7 +15,7 @@ export const RegisterPage = () => {
         </h2>
         <RegisterForm />
         <p className="font-montserrat mt-15 text-base md:text-lg lg:text-xl 2xl:text-2xl text-gray-200 text-center">
-          Usuario creado con éxito.{" "}
+          ¿Ya estás registrado?{" "}
           <Link to="/login" className="text-amber-400 hover:underline">
             Iniciar Sesión
           </Link>
