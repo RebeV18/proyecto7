@@ -1,8 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { IoMdLogIn, IoMdLogOut, IoIosMenu } from "react-icons/io";
-import { CartIcon } from "../../modules/cart/components/CartIcon";
+import {
+  IoMdLogIn,
+  IoMdLogOut,
+  IoIosMenu,
+  IoMdPersonAdd,
+} from "react-icons/io";
+import { MdOutlineErrorOutline } from "react-icons/md";
 
+import { CartIcon } from "../../modules/cart/components/CartIcon";
 import { useAuthContext } from "../../modules/auth/context/AuthGlobalState";
 
 import "../../shared/Styles/Styles.css";
@@ -98,35 +104,60 @@ export const Navbar = () => {
           </Link>
         </div>
 
-        {/* Login */}
-        <div className="p-2">
-          {!user ? (
-            <Link to="/login" className="flex flex-col items-center">
-              <IoMdLogIn className="text-white text-lg xl:text-2xl 2xl:text-3xl" />
-              <p className="text-white text-xs xl:text-sm 2xl:text-base">
-                Iniciar sesión
-              </p>
-            </Link>
-          ) : (
-            <div
-              className="flex flex-col items-center cursor-pointer gap-2"
-              id="navbar"
-            >
-              <p className="text-white text-xs flex flex-col items-center">
-                {user.nombre} {user.apellido}
-              </p>
-              <Link
-                to="/"
-                onClick={handleLogout}
-                className="flex flex-col items-center"
-              >
-                <IoMdLogOut className="text-white" />
-                <p className="font-oswald font-thin text-white text-xs">
-                  Cerrar sesión
+        {/* Login / Register */}
+        <div className="flex flex-row gap-5">
+          <div className="p-2">
+            {!user ? (
+              <Link to="/login" className="flex flex-col items-center">
+                <IoMdLogIn className="text-white text-lg xl:text-2xl 2xl:text-3xl" />
+                <p className="text-white text-xs xl:text-sm 2xl:text-base">
+                  Iniciar sesión
                 </p>
               </Link>
-            </div>
-          )}
+            ) : (
+              <div
+                className="flex flex-col items-center cursor-pointer gap-2"
+                id="navbar"
+              >
+                <p className="text-white text-xs flex flex-col items-center">
+                  {user.nombre} {user.apellido}
+                </p>
+                <Link
+                  to="/"
+                  onClick={handleLogout}
+                  className="flex flex-col items-center"
+                >
+                  <IoMdLogOut className="text-white" />
+                  <p className="font-oswald font-thin text-white text-xs">
+                    Cerrar sesión
+                  </p>
+                </Link>
+              </div>
+            )}
+          </div>
+          <div className="p-2">
+            {!user ? (
+              <Link to="/register" className="flex flex-col items-center">
+                <IoMdPersonAdd className="text-white text-lg xl:text-2xl 2xl:text-3xl" />
+                <p className="text-white text-xs xl:text-sm 2xl:text-base">
+                  Regístrate
+                </p>
+              </Link>
+            ) : (
+              <div
+                className="flex flex-col items-center cursor-pointer gap-2"
+                id="navbar"
+              >
+                <p className="text-white text-xs flex flex-col items-center">
+                  {user.nombre} {user.apellido}
+                </p>
+                <MdOutlineErrorOutline className="text-white" />
+                <p className="font-oswald font-thin text-white text-xs">
+                  ¡Ya estás registrado!
+                </p>
+              </div>
+            )}
+          </div>
         </div>
         <CartIcon />
       </div>

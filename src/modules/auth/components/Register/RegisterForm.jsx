@@ -66,7 +66,7 @@ export const RegisterForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md space-y-4 place-content-center">
+    <form onSubmit={handleSubmit} className="space-y-4 place-content-center md:mx-10 xl:mx-25 2xl:mx-70">
       {formError && (
         <div className="bg-amber-200 text-red-700 p-3 rounded-md background-transparent">
           {formError}
@@ -153,12 +153,14 @@ export const RegisterForm = () => {
         />
       </div>
 
-      <button
-        className="custom-card mt-5 mb-5 text-white font-montserrat px-4 py-2 rounded-md hover:bg-amber-400 transition duration-200 ease-in-out transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95]"
-        type="submit"
-      >
-        Regístrate
-      </button>
+      <div className="flex justify-center">
+        <button
+          className="custom-card font-montserra mt-5 mb-5 text-white text-base md:text-lg lg:text-xl font-montserrat px-10 lg:px-15 xl:px-18 2xl:px-20 py-3 xl:py-4 rounded-md hover:bg-amber-400 transition duration-200 ease-in-out transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95]"
+          type="submit"
+        >
+          Regístrate
+        </button>
+      </div>
     </form>
   );
 };
