@@ -11,7 +11,7 @@ export const CartProduct = ({ product }) => {
   const removeOneItem = useCartContext((state) => state.removeOneItem);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col mb-2">
       <h4 className="text-white text-xs p-1">{product.cancion}</h4>
       <div className="flex justify-between w-full h-24 rounded-md-overflow-hidden">
         <img

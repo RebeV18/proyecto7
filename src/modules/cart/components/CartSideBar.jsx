@@ -21,13 +21,13 @@ export const CartSideBar = ({ onClose }) => {
     <>
       <div
         onClick={onClose}
-        className="fixed inset-y-0 right-0 max-w-xl bg-transparent shadow-2xl transform transition-all ease-in-out duration-300"
+        className="fixed inset-y-0 right-0 max-w-xl shadow-2xl transform transition-all ease-in-out duration-300"
       ></div>
 
-      <div className="fixed inset-y-0 right-0 max-w-md bg-transparent shadow-2xl transform transition-all ease-in-out duration-300">
+      <div className="fixed inset-y-0 right-0 max-w-md shadow-2xl transform transition-all ease-in-out duration-300  bg-slate-900 shadow">
         <div className="h-full flex flex-col overflow-y-auto">
           <div className="px-4 py-6 sm:px-6 border-b border-gray-200">
-            <h2 className="text-lg text-white font-medium text-gray-900">
+            <h2 className="text-lg text-white font-medium text-gray-900 bg-[#3053458] shadow p-2">
               Carrito de compras
             </h2>
             <button
@@ -38,7 +38,7 @@ export const CartSideBar = ({ onClose }) => {
             </button>
           </div>
 
-          <div className="flex-1 px-4 sm:px-6 overflow-y-auto">
+          <div className="flex-1 px-4 sm:px-6 overflow-y-auto bg-[#3053458] shadow p-2">
             {products.length === 0 ? (
               <p className="text-center text-white py-8">
                 Tu carrito esta vacío

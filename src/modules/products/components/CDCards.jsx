@@ -73,10 +73,6 @@ export const CDCards = () => {
               }
             )}
           >
-            <div className="custom-card absolute bottom-3 left-28 text-center z-10 border-1 border-amber-200 rounded-full p-2 text-lg font-bold text-white shadow transition-transform duration-500 hover:scale-[1.30] active:scale-[0.95]">
-              <PiCursorClickLight />
-            </div>
-
             <div className="card-content h-full w-full transition-transform duration-500 [transform-style:preserve-3d]">
               {/* Front Side */}
               <div className="custom-card absolute h-full w-full rounded-2xl p-4 text-gray-800 [backface-visibility:hidden]">
@@ -92,6 +88,9 @@ export const CDCards = () => {
                     src={cd.imagen}
                     alt={cd.cd || "CD"}
                   />
+                </div>
+                <div className="flex justify-center text-center z-10 text-3xl font-bold text-white mt-5 transition-transform duration-500 hover:scale-[1.30] active:scale-[0.95]">
+                  <PiCursorClickLight className="shadow rounded-full" />
                 </div>
               </div>
 
