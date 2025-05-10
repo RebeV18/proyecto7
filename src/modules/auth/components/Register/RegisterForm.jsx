@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useAuthContext } from "../../context/AuthGlobalState";
 import { useNavigate } from "react-router-dom";
 
@@ -7,6 +7,8 @@ import { FormField } from "./FormField";
 import { FORM_INITIAL_STATE } from "../../utils/initialFormat";
 import { useValidateRegisterForm } from "../../Hooks/useValidateRegisterForm";
 import { formatDataRegister } from "../../utils/formatDataRegister";
+
+import "@fontsource/montserrat";
 
 export const RegisterForm = () => {
   const { register } = useAuthContext();
@@ -40,7 +42,12 @@ export const RegisterForm = () => {
     event.preventDefault();
     setFormError("");
 
-    if (validateForm()) {
+    if (formData.password !== formData.confirmPassword) {
+      setFormError("Las contraseñas no coinciden.");
+      return;
+    }
+
+    if (!validateForm()) {
       setFormError("Por favor, corrige los errores antes de continuar.");
       return;
     }
@@ -61,12 +68,12 @@ export const RegisterForm = () => {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       {formError && (
-        <div className="bg-red-200 text-red-700 p-3 rounded-md">
+        <div className="bg-amber-200 text-red-700 p-3 rounded-md background-transparent">
           {formError}
         </div>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 background-transparent">
         <FormField
           id="nombre"
           label="Nombre"
@@ -121,7 +128,7 @@ export const RegisterForm = () => {
         error={errors.telefono}
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 background-transparent">
         <FormField
           id="password"
           label="Contraseña"
@@ -147,7 +154,7 @@ export const RegisterForm = () => {
       </div>
 
       <button
-        className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-200 ease-in-out"
+        className="custom-card text-white px-4 py-2 rounded-md hover:bg-amber-400 transition duration-200 ease-in-out transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95]"
         type="submit"
       >
         Regístrate
