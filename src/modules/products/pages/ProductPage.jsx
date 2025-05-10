@@ -11,8 +11,8 @@ export const ProductPage = () => {
     <>
       <Background />
 
-      <div className="container flex flex-col justify-items-center place-items-center mx-auto px-4 py-8">
-        <h1 className="font-alumni-sans-pinstripe font-thin tracking-widest text-white text-center mt-20 xl:mt-30 2xl:mt-50 mb-7 md:mb-18 lg:mb-15 xl:mb-20 2xl:mb-30 text-lg xs:text-xl sm:text-2xl md:text-5xl lg:text-6xl xl:text-6xl 2xl:text-7xl">
+      <div className="container flex flex-col justify-items-center place-items-center mx-auto mt-20 2xl:mt-1 px-4 py-8">
+        <h1 className="font-alumni-sans-pinstripe font-thin tracking-widest text-white text-center mt-20 xl:mt-30 2xl:mt-50 mb-7 md:mb-10 lg:mb-15 xl:mb-18 2xl:mb-20 text-lg xs:text-xl sm:text-2xl md:text-5xl lg:text-6xl xl:text-6xl 2xl:text-7xl">
           DISCOGRAFIA
         </h1>
 

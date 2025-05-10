@@ -1,5 +1,7 @@
 import clsx from "clsx";
 import { useState, useEffect, useMemo } from "react";
+import { PiCursorClickLight } from "react-icons/pi";
+
 import { fetchAllProducts } from "../services/productApiService";
 import { Song } from "./Song";
 
@@ -59,20 +61,20 @@ export const CDCards = () => {
 
   return (
     <div className="py-10 px-5">
-      <div className="grid grid-cols-1 place-items-center sm:grid-cols-2 xl:grid-cols-3 gap-15 xl:gap-25">
+      <div className="grid grid-cols-1 content-center sm:grid-cols-2 xl:grid-cols-3 gap-15 xl:gap-25">
         {cds.map((cd, index) => (
           <div
             key={cd.cd || index}
             onClick={() => handleCardClick(cd)}
             className={clsx(
-              "relative h-[440px] w-[260px] cursor-pointer rounded-2xl bg-gradient-to-r from-amber-400 to-pink-600 pg-50 shadow-md transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]",
+              "relative h-[445px] w-[260px] cursor-pointer rounded-2xl bg-gradient-to-r from-amber-400 to-pink-600 pg-50 shadow-md",
               {
                 "[&_.card-content]:rotate-y-180": flippedCards[cd.cd],
               }
             )}
           >
-            <div className="absolute bottom-5 left-20 text-center z-10 border-1 border-amber-200 rounded-lg px-2 py-[2px] text-md font-medium text-white shadow">
-              Ver canciones
+            <div className="custom-card absolute bottom-3 left-28 text-center z-10 border-1 border-amber-200 rounded-full p-2 text-lg font-bold text-white shadow transition-transform duration-500 hover:scale-[1.30] active:scale-[0.95]">
+              <PiCursorClickLight />
             </div>
 
             <div className="card-content h-full w-full transition-transform duration-500 [transform-style:preserve-3d]">
