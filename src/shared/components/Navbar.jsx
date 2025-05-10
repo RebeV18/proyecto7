@@ -31,13 +31,13 @@ export const Navbar = () => {
             to="/about"
             className="font-oswald font-thin text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-xl"
           >
-            ACERCA DE Mí
+            ACERCA DE MÍ
           </Link>
           <Link
             to="/products"
             className="font-oswald font-thin text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-xl"
           >
-            DISCOGRAFIA
+            DISCOGRAFÍA
           </Link>
           <Link
             to="podcast"
@@ -97,7 +97,7 @@ export const Navbar = () => {
             Contacto
           </Link>
         </div>
-        {/* <div className="flex justify-between md:flex-row gap-3 items-center"> */}
+
         {/* Login */}
         <div className="p-2">
           {!user ? (
