@@ -11,7 +11,7 @@ export const FormField = ({
 }) => {
   return (
     <div className="flex flex-col space-y-1">
-      <label htmlFor={id} className="text-gray-300">
+      <label htmlFor={id} className="text-gray-300 font-montserrat">
         {label}
         {required && "*"}
       </label>

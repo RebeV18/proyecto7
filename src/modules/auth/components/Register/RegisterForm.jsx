@@ -66,14 +66,14 @@ export const RegisterForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="max-w-md space-y-4 place-content-center">
       {formError && (
         <div className="bg-amber-200 text-red-700 p-3 rounded-md background-transparent">
           {formError}
         </div>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 background-transparent">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 background-transparent font-montserrat">
         <FormField
           id="nombre"
           label="Nombre"
@@ -128,7 +128,7 @@ export const RegisterForm = () => {
         error={errors.telefono}
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 background-transparent">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 background-transparent font-montserrat">
         <FormField
           id="password"
           label="Contraseña"
@@ -154,7 +154,7 @@ export const RegisterForm = () => {
       </div>
 
       <button
-        className="custom-card text-white px-4 py-2 rounded-md hover:bg-amber-400 transition duration-200 ease-in-out transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95]"
+        className="custom-card mt-5 mb-5 text-white font-montserrat px-4 py-2 rounded-md hover:bg-amber-400 transition duration-200 ease-in-out transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95]"
         type="submit"
       >
         Regístrate
