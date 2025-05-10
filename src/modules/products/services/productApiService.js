@@ -14,7 +14,9 @@ export const fetchAllProducts = async () => {
 
 export const fetchProductById = async (id) => {
   try {
-    const { data } = await apiClient.get(`https://proyecto6-sgv2.onrender.com/api/v1/product/readone/${id}`);
+    const { data } = await apiClient.get(
+      `https://proyecto6-sgv2.onrender.com/api/v1/product/readone/${id}`
+    );
     return data;
   } catch (error) {
     console.error(`Error obteniendo el producto con el id: ${id}`, error);

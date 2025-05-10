@@ -1,6 +1,6 @@
 .nav {
   height: 8rem;
-  box-shadow: 0 2px 2px 0 rgb(255, 164, 78), 0 2px 10px 0 rgb(252, 203, 68);
+  box-shadow: 0 4px 0 0 rgb(255, 164, 78);
   position: relative;
   z-index: 10;
 }
@@ -11,7 +11,7 @@
   text-shadow: 2px 2px 4px rgba(252, 203, 68);
 }
 
-.custom-card{
+.custom-card {
   box-shadow: 0 4px 5px 0 rgb(255, 164, 78), 0 3px 15px 0 rgb(252, 203, 68);
 }
 

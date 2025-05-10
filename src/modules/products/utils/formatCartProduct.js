@@ -1,7 +1,15 @@
 export const formatCartProducts = (products, productID) => {
-    const filteredProduct = products.filter((product) => product.id !== productID);
-    const totalItemsUpdated = products.reduce((acc, product) => acc + product.quantity, 0);
-    const totalPriceUpdated = products.reduce((acc, product) => acc + product.precio * product.quantity, 0);
+  const filteredProduct = products.filter(
+    (product) => product.id !== productID
+  );
+  const totalItemsUpdated = products.reduce(
+    (acc, product) => acc + product.quantity,
+    0
+  );
+  const totalPriceUpdated = products.reduce(
+    (acc, product) => acc + product.precio * product.quantity,
+    0
+  );
 
-    return [ filteredProduct, totalItemsUpdated, totalPriceUpdated ];
-}
+  return [filteredProduct, totalItemsUpdated, totalPriceUpdated];
+};

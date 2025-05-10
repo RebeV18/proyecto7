@@ -3,93 +3,100 @@ import { persist } from "zustand/middleware";
 import { formatCartProducts } from "../../products/utils/formatCartProduct";
 
 const useCartContext = create(
-    persist(
-        (set, get) => ({
-            products: [],
-            totalItems: 0,
-            totalPrice: 0,
+  persist(
+    (set, get) => ({
+      products: [],
+      totalItems: 0,
+      totalPrice: 0,
 
-            addItem: (product) => {
-                const products = get().products;
-                const existingProduct = products.find((item) => item._id === product._id);
+      addItem: (product) => {
+        const products = get().products;
+        const existingProduct = products.find(
+          (item) => item._id === product._id
+        );
 
-                if(existingProduct) {
-                    const updateProduct = products.map((product) => product._id === existingProduct._id 
-                        ? { ...product, quantity: product.quantity + 1}
-                        : product
-                    )
+        if (existingProduct) {
+          const updateProduct = products.map((product) =>
+            product._id === existingProduct._id
+              ? { ...product, quantity: product.quantity + 1 }
+              : product
+          );
 
+          set((state) => ({
+            products: updateProduct,
+            totalItems: state.totalItems + 1,
+            totalPrice: state.totalPrice + product.precio,
+          }));
+        } else {
+          const productWithQuantity = { ...product, quantity: 1 };
 
-                    set((state) => ({
-                        products: updateProduct,
-                        totalItems: state.totalItems + 1,
-                        totalPrice: state.totalPrice + product.precio
+          set((state) => ({
+            products: [...state.products, productWithQuantity],
+            totalItems: state.totalItems + 1,
+            totalPrice: state.totalPrice + product.precio,
+          }));
+        }
+      },
+      removeOneItem: (productID) => {
+        const products = get().products;
+        const existingProduct = products.find(
+          (product) => product._id === productID
+        );
 
-                    }));                  
-                } else {
-                    const productWithQuantity = { ...product, quantity: 1 };
-         
+        if (!existingProduct) return;
 
-                    set((state) => ({
-                        products: [...state.products, productWithQuantity],
-                        totalItems: state.totalItems + 1,
-                        totalPrice: state.totalPrice + product.precio
-                    }))
-                }
-            },
-            removeOneItem: (productID) => {
-                const products = get().products;
-                const existingProduct = products.find(
-                  (product) => product._id === productID
-                );
+        if (existingProduct.quantity === 1) {
+          set((state) => ({
+            products: state.products.filter(
+              (product) => product._id !== productID
+            ),
+            totalItems: state.totalItems - 1,
+            totalPrice: state.totalPrice - existingProduct.precio,
+          }));
+        } else {
+          const updatedProducts = products.map((product) =>
+            product._id === productID
+              ? { ...product, quantity: product.quantity - 1 }
+              : product
+          );
 
-                if (!existingProduct) return;
+          set((state) => ({
+            products: updatedProducts,
+            totalItems: state.totalItems - 1,
+            totalPrice: state.totalPrice - existingProduct.precio,
+          }));
+        }
+      },
+      removeItem: (productID) => {
+        const products = get().products;
+        const existingProduct = products.find(
+          (product) => product._id === productID
+        );
 
-                if(existingProduct.quantity === 1) {
-                    set((state) => ({
-                        products: state.products.filter((product) => product._id !== productID),
-                        totalItems: state.totalItems - 1,
-                        totalPrice: state.totalPrice - existingProduct.precio
-                    }))
-                } else {
-                    const updatedProducts = products.map((product) =>
-                        product._id === productID ? { ...product, quantity: product.quantity - 1 } : product
-                    )
+        if (!existingProduct) return;
 
-                    set((state) => ({
-                        products: updatedProducts,
-                        totalItems: state.totalItems - 1,
-                        totalPrice: state.totalPrice - existingProduct.precio
-                    }))
-                }
-            },
-            removeItem: (productID) => {
-                const products = get().products;
-                const existingProduct = products.find(product => product._id === productID);
+        const [updatedProducts, totalItemsUpdated, totalPriceUpdated] =
+          formatCartProducts(products, productID);
 
-                if(!existingProduct) return;
+        set(() => ({
+          products: updatedProducts,
+          totalItems: totalItemsUpdated,
+          totalPrice: totalPriceUpdated,
+        }));
+      },
+      clearCart: () => {
+        set(() => ({
+          products: [],
+          totalItems: 0,
+          totalPrice: 0,
+        }));
+      },
+    }),
+    {
+      name: "cart-storage",
+      getStorage: () => localStorage,
+    }
+  )
+);
 
-                const [ updatedProducts, totalItemsUpdated, totalPriceUpdated ] = formatCartProducts(products, productID);               
-
-                set(() => ({
-                    products: updatedProducts,
-                    totalItems: totalItemsUpdated,
-                    totalPrice: totalPriceUpdated
-                }))
-            },
-            clearCart: () => {
-                set(() => ({
-                    products: [],
-                    totalItems: 0,
-                    totalPrice: 0
-                }))
-            }
-        }),
-        {
-            name: "cart-storage",
-            getStorage: () => localStorage,
-        } 
-    )
-)
-
-export default useCartContext
+export default useCartContext;

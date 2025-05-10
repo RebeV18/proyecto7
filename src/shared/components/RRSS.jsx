@@ -14,7 +14,7 @@ export const RRSS = () => {
   const [tiktokColor, setTiktokColor] = useState("white");
 
   return (
-    <ul className="icon flex flex-row justify-center gap-x-5 md:gap-x-8 lg:gap-x-10 xl:gap-x-15 2xl:gap-x-25 xl:p-5 2xl:mt-5 2xl:mb-10">
+    <ul className="icon flex flex-row justify-center gap-x-5 md:gap-x-8 lg:gap-x-10 xl:gap-x-15 2xl:gap-x-15 xl:p-5 2xl:mt-5 2xl:mb-10">
       <li>
         <a
           href="https://www.facebook.com/LuisGerardoAquinoSV/?locale=es_LA"
@@ -23,7 +23,7 @@ export const RRSS = () => {
         >
           <FiFacebook
             style={{ color: facebookColor }}
-            className="icon font-thin text-xl sm:text-3xl xl:text-4xl 2xl:text-7xl"
+            className="icon font-thin text-xl sm:text-3xl xl:text-4xl 2xl:text-5xl"
             onMouseOver={() => setFacebookColor("rgb(251, 186, 82)")}
             onMouseOut={() => setFacebookColor("white")}
           />
@@ -37,7 +37,7 @@ export const RRSS = () => {
         >
           <CiYoutube
             style={{ color: ytColor }}
-            className="icon font-thin text-xl sm:text-3xl xl:text-4xl 2xl:text-7xl"
+            className="icon font-thin text-xl sm:text-3xl xl:text-4xl 2xl:text-5xl"
             onMouseOver={() => setYTColor("rgb(251, 186, 82)")}
             onMouseOut={() => setYTColor("white")}
           />
@@ -51,7 +51,7 @@ export const RRSS = () => {
         >
           <IoLogoInstagram
             style={{ color: instagramColor }}
-            className="icon font-thin text-xl sm:text-3xl xl:text-4xl 2xl:text-7xl"
+            className="icon font-thin text-xl sm:text-3xl xl:text-4xl 2xl:text-5xl"
             onMouseOver={() => setInstagramColor("rgb(251, 186, 82)")}
             onMouseOut={() => setInstagramColor("white")}
           />
@@ -63,9 +63,9 @@ export const RRSS = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <PiSpotifyLogoLight 
+          <PiSpotifyLogoLight
             style={{ color: spotifyColor }}
-            className="icon font-thin text-xl sm:text-3xl xl:text-4xl 2xl:text-7xl"
+            className="icon font-thin text-xl sm:text-3xl xl:text-4xl 2xl:text-5xl"
             onMouseOver={() => setSpotifyColor("rgb(251, 186, 82)")}
             onMouseOut={() => setSpotifyColor("white")}
           />
@@ -79,7 +79,7 @@ export const RRSS = () => {
         >
           <PiTiktokLogo
             style={{ color: tiktokColor }}
-            className="icon font-thin text-xl sm:text-3xl xl:text-4xl 2xl:text-7xl"
+            className="icon font-thin text-xl sm:text-3xl xl:text-4xl 2xl:text-5xl"
             onMouseOver={() => setTiktokColor("rgb(251, 186, 82)")}
             onMouseOut={() => setTiktokColor("white")}
           />

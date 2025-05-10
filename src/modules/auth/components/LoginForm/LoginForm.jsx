@@ -26,10 +26,13 @@ export const LoginForm = () => {
   };
 
   return (
-    <form className="flex flex-col display-center gap-7 p-10 lg:gap-10 2xl:gap-20" onSubmit={handleLogin}>
+    <form
+      className="flex flex-col display-center gap-7 p-10 lg:gap-10 2xl:gap-20"
+      onSubmit={handleLogin}
+    >
       <div className="flex flex-col display-center gap-3 2xl:gap-7">
         <input
-          className="border-1 border-grey-100 rounded-lg text-center p-1.5 text-sm md:text-base xl:text-lg 2xl:xl:text-3xl 2xl:p-5"
+          className="border-1 border-grey-100 rounded-lg text-center p-1 text-sm md:text-base xl:text-lg 2xl:text-xl 2xl:p-4"
           placeholder="Ingresa tu correo electrónico"
           type="email"
           value={email}
@@ -37,7 +40,7 @@ export const LoginForm = () => {
           required
         />
         <input
-          className="border-1 border-grey-100 rounded-lg text-center p-1.5 text-sm md:text-base xl:text-lg 2xl:xl:text-3xl 2xl:p-5"
+          className="border-1 border-grey-100 rounded-lg text-center p-1 text-sm md:text-base xl:text-lg 2xl:text-xl 2xl:p-4"
           placeholder="Ingresa tu contraseña"
           type="password"
           value={password}
@@ -45,7 +48,12 @@ export const LoginForm = () => {
           required
         />
       </div>
-      <button className="p-2 border-2 border-white rounded-lg text-sm md:text-base xl:text-lg 2xl:text-3xl 2xl:p-5" type="submit">Iniciar Sesión</button>
+      <button
+        className="p-2 border-2 border-white rounded-lg text-sm md:text-base xl:text-lg 2xl:text-2xl 2xl:p-4"
+        type="submit"
+      >
+        Iniciar Sesión
+      </button>
     </form>
   );
 };

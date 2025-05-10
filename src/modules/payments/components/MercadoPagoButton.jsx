@@ -44,7 +44,11 @@ export const MercadoPagoButton = ({ cart, onPaymentSuccess }) => {
   };
 
   if (!isAuthenticated) {
-    return <p className="border-3 border-amber-500 rounded-lg text-white py-2 px-7 2xl:py-4 2xl:px-10 text-[10px] lg:text-sm xl:text-base text-center">Por favor, inicia sesión para realizar el pago</p>;
+    return (
+      <p className="border-3 border-amber-500 rounded-lg text-white py-2 px-7 2xl:py-4 2xl:px-10 text-[10px] lg:text-sm xl:text-base text-center">
+        Por favor, inicia sesión para realizar el pago
+      </p>
+    );
   }
 
   return (

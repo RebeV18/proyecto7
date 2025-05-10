@@ -17,8 +17,8 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="nav z-20 fixed top-0 left-0 w-full bg-transparent items-center content-center p-2 lg:p-3 xl:p-5 2xl:p-7 font-sans">
-      <div className="h16 flex justify-between items-center md:px-4">
+    <nav className="nav z-20 fixed top-0 left-0 w-full bg-transparent items-center content-center px-3 lg:px-4 xl:px-5 2xl:px-8 ">
+      <div className="h16 flex justify-between items-center gap-5">
         {/* >768px*/}
         <div className="hidden sm:flex">
           <Link
@@ -121,7 +121,9 @@ export const Navbar = () => {
                 className="flex flex-col items-center"
               >
                 <IoMdLogOut className="text-white" />
-                <p className="font-oswald font-thin text-white text-xs">Cerrar sesión</p>
+                <p className="font-oswald font-thin text-white text-xs">
+                  Cerrar sesión
+                </p>
               </Link>
             </div>
           )}

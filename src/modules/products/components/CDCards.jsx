@@ -6,7 +6,6 @@ import { Song } from "./Song";
 import "../../../shared/Styles/Styles.css";
 import "@fontsource/poppins";
 
-
 export const CDCards = () => {
   const [flippedCards, setFlippedCards] = useState({});
   const [songs, setSongs] = useState([]);
