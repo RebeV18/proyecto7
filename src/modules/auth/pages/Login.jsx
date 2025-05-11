@@ -4,7 +4,6 @@ import { LoginForm } from "../components/LoginForm/LoginForm";
 import { Background } from "../../../shared/components/Background";
 
 export const LoginPage = () => {
-
   return (
     <>
       <Background />
@@ -15,7 +14,10 @@ export const LoginPage = () => {
         <LoginForm />
         <p className="text-center text-white mt-5 mb-25 p-5 text-base md:text-lg lg:text-xl xl:text-2xl 2xl:xl:text-2xl">
           ¿No tienes cuenta?{" → "}
-          <Link to="/register" className="shadow-lg text-amber-400 hover:underline">
+          <Link
+            to="/register"
+            className="shadow-lg text-amber-400 hover:underline"
+          >
             Regístrate
           </Link>
         </p>

@@ -9,7 +9,7 @@ import { Contacto } from "../shared/pages/Contacto";
 import { Footer } from "../shared/components/Footer";
 import { SongPage } from "../modules/products/pages/SongPage";
 import { MercadoPagoStatus } from "../modules/payments/components/MercadoPagoStatus";
-import { RegisterPage } from "../modules/auth/pages/Register"
+import { RegisterPage } from "../modules/auth/pages/Register";
 
 export const AppRouter = () => {
   return (

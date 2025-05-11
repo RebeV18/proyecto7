@@ -10,10 +10,25 @@ export const loginService = async ({ email, password }) => {
   }
 };
 
-
-export const registerService = async ({nombre, apellido, pais, email, telefono, password, confirmPassword}) => {
+export const registerService = async ({
+  nombre,
+  apellido,
+  pais,
+  email,
+  telefono,
+  password,
+  confirmPassword,
+}) => {
   try {
-    const { data } = await apiClient.post("/user/register", {nombre, apellido, pais, email, telefono, password, confirmPassword});
+    const { data } = await apiClient.post("/user/register", {
+      nombre,
+      apellido,
+      pais,
+      email,
+      telefono,
+      password,
+      confirmPassword,
+    });
     return data;
   } catch (error) {
     console.error("Error al registrar el usuario:", error);
