@@ -40,9 +40,7 @@ export const RegisterForm = () => {
     }
 
     try {
-      console.log(formData);
       const formDataToSend = formatDataRegister(formData);
-      console.log("Datos enviados al servidor:", formDataToSend);
       await register(formDataToSend);
       alert("Usuario registrado correctamente, por favor inicie sesión.");
       navigate("/login");
