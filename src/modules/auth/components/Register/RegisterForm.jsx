@@ -1,14 +1,12 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { useAuthContext } from "../../context/AuthGlobalState";
 import { useNavigate } from "react-router-dom";
 
 import { FormField } from "./FormField";
 
 import { FORM_INITIAL_STATE } from "../../utils/initialFormat";
-import { useValidateRegisterForm } from "../../Hooks/useValidateRegisterForm";
+import { useValidateRegisterForm } from "../../hooks/useValidateRegisterForm";
 import { formatDataRegister } from "../../utils/formatDataRegister";
-
-import "@fontsource/montserrat";
 
 export const RegisterForm = () => {
   const { register } = useAuthContext();
@@ -32,28 +30,19 @@ export const RegisterForm = () => {
     [validateField]
   );
 
-  useEffect(() => {
-    if (formData.confirmPassword) {
-      validateField("confirmPassword", formData.confirmPassword);
-    }
-  }, [formData.password, formData.confirmPassword, validateField]);
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     setFormError("");
 
-    if (formData.password !== formData.confirmPassword) {
-      setFormError("Las contraseñas no coinciden.");
-      return;
-    }
-
-    if (!validateForm()) {
+    if (validateForm()) {
       setFormError("Por favor, corrige los errores antes de continuar.");
       return;
     }
 
     try {
+      console.log(formData);
       const formDataToSend = formatDataRegister(formData);
+      console.log("Datos enviados al servidor:", formDataToSend);
       await register(formDataToSend);
       alert("Usuario registrado correctamente, por favor inicie sesión.");
       navigate("/login");
@@ -66,7 +55,10 @@ export const RegisterForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 place-content-center md:mx-10 xl:mx-25 2xl:mx-70">
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-4 place-content-center md:mx-10 xl:mx-25 2xl:mx-70"
+    >
       {formError && (
         <div className="bg-amber-200 text-red-700 p-3 rounded-md background-transparent">
           {formError}

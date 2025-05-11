@@ -5,7 +5,10 @@ const { backendUrl } = envLoader;
 
 export const apiClient = axios.create({
   baseURL: backendUrl,
-  timeout: 20000,
+  timeout: 30000,
+  headers: {
+    "Content-Type": "application/json",
+  },
 });
 
 apiClient.interceptors.request.use(

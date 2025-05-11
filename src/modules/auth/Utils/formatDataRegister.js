@@ -1,17 +1,8 @@
-export const formatDataRegister = (formData) => {
-  const formDataToSend = new FormData();
-
-  const fieldsToExclude = ["confirmPassword"];
-
-  Object.entries(formData).forEach(([key, value]) => {
-    if (
-      !fieldsToExclude.includes(key) &&
-      value !== null &&
-      value !== undefined
-    ) {
-      formDataToSend.append(key, value);
-    }
-  });
-
-  return formDataToSend;
-};
+export const formatDataRegister = (formData) => ({
+  nombre: formData.nombre,
+  apellido: formData.apellido,
+  pais: formData.pais,
+  email: formData.email,
+  telefono: formData.telefono,
+  password: formData.password,
+});
