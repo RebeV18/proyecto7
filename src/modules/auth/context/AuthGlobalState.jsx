@@ -42,19 +42,13 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (userData) => {
     try {
-      const dataRegister = await registerService(userData); // Llama al servicio de registro
+      const dataRegister = await registerService(userData);
       const user = dataRegister.data;
 
       if (!user) {
         throw new Error("No se pudo registrar el usuario");
       }
-
-      setIsAuthenticated(false);
-
-      dispatch({
-        type: "REGISTER",
-        payload: { user },
-      });
+      alert("Usuario registrado correctamente, por favor inicie sesión.");
     } catch (error) {
       console.error("Error registering user:", error);
       throw new Error(error);

@@ -105,58 +105,61 @@ export const Navbar = () => {
         </div>
 
         {/* Login / Register */}
-        <div className="flex flex-row gap-5">
-          <div className="p-2">
-            {!user ? (
-              <Link to="/login" className="flex flex-col items-center">
-                <IoMdLogIn className="text-white text-lg xl:text-2xl 2xl:text-3xl" />
-                <p className="text-white text-xs xl:text-sm 2xl:text-base">
-                  Iniciar sesión
-                </p>
-              </Link>
-            ) : (
-              <div
-                className="flex flex-col items-center cursor-pointer gap-2"
-                id="navbar"
-              >
-                <p className="text-white text-xs xl:text-sm 2xl:text-base flex flex-col items-center">
-                  {user.nombre} {user.apellido}
-                </p>
+        <div className="flex flex-row items-end gap-2">
+          <div className="flex flex-row gap-2 items-end">
+            <div className="flex-flex-row">
+              {!user ? (
+                <Link
+                  to="/login"
+                  className="flex flex-col items-center display-center"
+                >
+                  <IoMdLogIn className="text-white text-xl xl:text-2xl 2xl:text-3xl" />
+                  <p className="text-white text-center text-xs xl:text-sm 2xl:text-base">
+                    Iniciar sesión
+                  </p>
+                </Link>
+              ) : (
                 <Link
                   to="/"
                   onClick={handleLogout}
-                  className="flex flex-col items-center"
+                  className="flex flex-col items-center display-center"
                 >
-                  <IoMdLogOut className="text-white" />
-                  <p className="text-white text-xs xl:text-sm 2xl:text-base">
+                  <IoMdLogOut className="text-white text-xl xl:text-2xl 2xl:text-5xl" />
+                  <p className="text-white text-center text-xs xl:text-sm 2xl:text-base">
                     Cerrar sesión
                   </p>
                 </Link>
-              </div>
-            )}
+              )}
+            </div>
+            <div className="items-end">
+              {!user && (
+                <Link
+                  to="/register"
+                  className="flex flex-col items-center display-center"
+                >
+                  <IoMdPersonAdd className="text-white text-xl xl:text-2xl 2xl:text-3xl" />
+                  <p className="text-white text-center text-xs xl:text-sm 2xl:text-base">
+                    Regístrate
+                  </p>
+                </Link>
+              )}
+            </div>
           </div>
-          <div className="p-2">
+          <div>
             {!user ? (
-              <Link to="/register" className="flex flex-col items-center">
-                <IoMdPersonAdd className="text-white text-lg xl:text-2xl 2xl:text-3xl" />
-                <p className="text-white text-xs xl:text-sm 2xl:text-base">
-                  Regístrate
-                </p>
-              </Link>
+              <CartIcon className="text-white text-xl xl:text-2xl 2xl:text-3xl" />
             ) : (
-              <div
-                className="flex flex-col items-center gap-2"
-                id="navbar"
-              >
-                <MdOutlineErrorOutline className="text-white text-lg xl:text-2xl 2xl:text-3xl" />
-                <p className="font-oswald font-thin text-white text-xs xl:text-sm 2xl:text-base">
-                  ¡Ya estás registrado!
-                </p>
+              <div className="flex flex-row items-center">
+                <div className="flex flex-col items-center">
+                  <CartIcon className="text-white text-xl xl:text-2xl 2xl:text-3xl" />
+                  <p className="text-white text-center text-xs xl:text-sm 2xl:text-base">
+                    {user.nombre} {user.apellido}
+                  </p>
+                </div>
               </div>
             )}
           </div>
         </div>
-        <CartIcon />
       </div>
     </nav>
   );

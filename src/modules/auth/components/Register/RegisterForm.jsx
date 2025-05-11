@@ -34,6 +34,11 @@ export const RegisterForm = () => {
     event.preventDefault();
     setFormError("");
 
+    if (formData.password !== formData.confirmPassword) {
+      setFormError("Las contraseñas no coinciden.");
+      return;
+    }
+
     if (validateForm()) {
       setFormError("Por favor, corrige los errores antes de continuar.");
       return;
@@ -42,7 +47,6 @@ export const RegisterForm = () => {
     try {
       const formDataToSend = formatDataRegister(formData);
       await register(formDataToSend);
-      alert("Usuario registrado correctamente, por favor inicie sesión.");
       navigate("/login");
     } catch (error) {
       console.error("Error registering:", error);
