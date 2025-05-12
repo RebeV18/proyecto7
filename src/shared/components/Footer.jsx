@@ -7,7 +7,7 @@ export const Footer = () => {
       <RRSS />
       <p className="flex font-oswald justify-center items-center text-white text-center p-10 text-[10px] sm:text-xs md:text-sm lg:text-sm xl:text-base 2xl:text-lg">
         &#169; Luis Gerardo Aquino || contacto:
-        luisgerardoaquinocontacto@gmail.com
+        luisgerardoaquinocontacto@gmail.com  || Realizado por Rebeca Vargas
       </p>
     </div>
   );
