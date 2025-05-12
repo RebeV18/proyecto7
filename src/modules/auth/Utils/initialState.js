@@ -1,4 +1,4 @@
-export const FORM_INITIAL_STATE = {
+export const initialState = {
   nombre: "",
   apellido: "",
   pais: "",

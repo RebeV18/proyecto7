@@ -4,14 +4,14 @@ import { useNavigate } from "react-router-dom";
 
 import { FormField } from "./FormField";
 
-import { FORM_INITIAL_STATE } from "../../utils/initialFormat";
+import { initialState } from "../../utils/initialState";
 import { useValidateRegisterForm } from "../../hooks/useValidateRegisterForm";
 import { formatDataRegister } from "../../utils/formatDataRegister";
 
 export const RegisterForm = () => {
   const { register } = useAuthContext();
   const navigate = useNavigate();
-  const [formData, setFormData] = useState(FORM_INITIAL_STATE);
+  const [formData, setFormData] = useState(initialState);
   const [formError, setFormError] = useState("");
 
   const { errors, validateField, validateForm } =
