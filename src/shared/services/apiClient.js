@@ -5,7 +5,7 @@ const { backendUrl } = envLoader;
 
 export const apiClient = axios.create({
   baseURL: backendUrl,
-  timeout: 30000,
+  timeout: 20000,
   headers: {
     "Content-Type": "application/json",
   },

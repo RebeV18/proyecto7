@@ -36,7 +36,7 @@ export const Song = ({ producto }) => {
   };
 
   return (
-    <div className="shadow p-3 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+    <div className="shadow p-3">
       <div className="border-1 border-amber-300 rounded-lg p-2">
         <div className="flex flex-col gap-y-1">
           <h4 className="font-montserrat text-sm font-bold text-white">
@@ -54,7 +54,7 @@ export const Song = ({ producto }) => {
         <div className="flex flex-row justify-center items-center gap-20">
           <button
             key={producto.id}
-            className="font-montserrat text-white text-center p-1 cursor-pointer"
+            className="font-montserrat text-white text-center p-1 cursor-pointer transition-transform duration-500 hover:scale-[1.70] active:scale-[0.95] hover:text-amber-200"
             onClick={() => handleClickCart(producto)}
           >
             <MdAddShoppingCart />
@@ -62,7 +62,7 @@ export const Song = ({ producto }) => {
           </button>
           <button
             key={producto.id}
-            className="text-white align-center p-1 cursor-pointer"
+            className="text-white align-center p-1 cursor-pointer transition-transform duration-500 hover:scale-[1.70] active:scale-[0.95] hover:text-amber-200"
             onClick={() => handleClickSong(producto)}
           >
             <FaRegCirclePlay />

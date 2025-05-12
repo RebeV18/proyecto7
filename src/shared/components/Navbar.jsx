@@ -6,7 +6,6 @@ import {
   IoIosMenu,
   IoMdPersonAdd,
 } from "react-icons/io";
-import { MdOutlineErrorOutline } from "react-icons/md";
 
 import { CartIcon } from "../../modules/cart/components/CartIcon";
 import { useAuthContext } from "../../modules/auth/context/AuthGlobalState";
@@ -111,10 +110,10 @@ export const Navbar = () => {
               {!user ? (
                 <Link
                   to="/login"
-                  className="flex flex-col items-center display-center"
+                  className="flex flex-col text-white items-center display-center transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95] hover:text-amber-300"
                 >
-                  <IoMdLogIn className="text-white text-xl xl:text-2xl 2xl:text-3xl" />
-                  <p className="text-white text-center text-xs xl:text-sm 2xl:text-base">
+                  <IoMdLogIn className="text-xl xl:text-2xl 2xl:text-3xl" />
+                  <p className="text-center text-xs xl:text-sm 2xl:text-base">
                     Iniciar sesión
                   </p>
                 </Link>
@@ -122,10 +121,10 @@ export const Navbar = () => {
                 <Link
                   to="/"
                   onClick={handleLogout}
-                  className="flex flex-col items-center display-center"
+                  className="flex flex-col text-white items-center display-center transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95] hover:text-amber-300"
                 >
-                  <IoMdLogOut className="text-white text-xl xl:text-2xl 2xl:text-5xl" />
-                  <p className="text-white text-center text-xs xl:text-sm 2xl:text-base">
+                  <IoMdLogOut className="text-xl xl:text-2xl 2xl:text-5xl" />
+                  <p className="text-center text-xs xl:text-sm 2xl:text-base">
                     Cerrar sesión
                   </p>
                 </Link>
@@ -135,10 +134,10 @@ export const Navbar = () => {
               {!user && (
                 <Link
                   to="/register"
-                  className="flex flex-col items-center display-center"
+                  className="flex flex-col items-center display-center text-white transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95] hover:text-amber-300"
                 >
-                  <IoMdPersonAdd className="text-white text-xl xl:text-2xl 2xl:text-3xl" />
-                  <p className="text-white text-center text-xs xl:text-sm 2xl:text-base">
+                  <IoMdPersonAdd className="text-xl xl:text-2xl 2xl:text-3xl" />
+                  <p className="text-center text-xs xl:text-sm 2xl:text-base">
                     Regístrate
                   </p>
                 </Link>
@@ -147,11 +146,11 @@ export const Navbar = () => {
           </div>
           <div>
             {!user ? (
-              <CartIcon className="text-white text-xl xl:text-2xl 2xl:text-3xl" />
+              <CartIcon className="text-white text-xl xl:text-2xl 2xl:text-3xl transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95] hover:text-amber-300" />
             ) : (
               <div className="flex flex-row items-center">
                 <div className="flex flex-col items-center">
-                  <CartIcon className="text-white text-xl xl:text-2xl 2xl:text-3xl" />
+                  <CartIcon className="text-white text-xl xl:text-2xl 2xl:text-3xl transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95] hover:text-amber-300" />
                   <p className="text-white text-center text-xs xl:text-sm 2xl:text-base">
                     {user.nombre} {user.apellido}
                   </p>

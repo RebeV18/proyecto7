@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import { CiYoutube } from "react-icons/ci";
 import { PiSpotifyLogoLight } from "react-icons/pi";
 import { SiApplemusic } from "react-icons/si";
@@ -11,11 +9,6 @@ import "@fontsource/poppins";
 import "@fontsource/montserrat";
 
 export const SongCard = ({ song }) => {
-  const [appleColor, setAppleColor] = useState("white");
-  const [spotifyColor, setSpotifyColor] = useState("white");
-  const [ytColor, setYTColor] = useState("white");
-  const [cartColor, setCartColor] = useState("white");
-
   const addItem = useCartContext((state) => state.addItem);
 
   const handleClickCart = (songSelected) => {
@@ -57,44 +50,25 @@ export const SongCard = ({ song }) => {
           <ul className="icon flex flex-row justify-center gap-x-7 md:gap-x-10 lg:gap-x-12 xl:gap-x-15 2xl:gap-x-20 xl:p-5 2xl:mt:10">
             <li>
               <a href={song.apple} target="_blank" rel="noopener noreferrer">
-                <SiApplemusic
-                  style={{ color: appleColor }}
-                  className="icon text-xl sm:text-3xl xl:text-4xl 2xl:xl:text-6xl"
-                  onMouseOver={() => setAppleColor("rgb(251, 186, 82)")}
-                  onMouseOut={() => setAppleColor("white")}
-                />
+                <SiApplemusic className="icon text-xl sm:text-3xl xl:text-4xl 2xl:xl:text-6xl transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95] hover:text-amber-300" />
               </a>
             </li>
             <li>
               <a href={song.youtube} target="_blank" rel="noopener noreferrer">
-                <CiYoutube
-                  style={{ color: ytColor }}
-                  className="icon text-xl sm:text-3xl xl:text-4xl 2xl:xl:text-6xl"
-                  onMouseOver={() => setYTColor("rgb(251, 186, 82)")}
-                  onMouseOut={() => setYTColor("white")}
-                />
+                <CiYoutube className="icon text-xl sm:text-3xl xl:text-4xl 2xl:xl:text-6xl transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95] hover:text-amber-300" />
               </a>
             </li>
             <li>
               <a href={song.spotify} target="_blank" rel="noopener noreferrer">
-                <PiSpotifyLogoLight
-                  style={{ color: spotifyColor }}
-                  className="icon text-xl sm:text-3xl xl:text-4xl 2xl:xl:text-6xl"
-                  onMouseOver={() => setSpotifyColor("rgb(251, 186, 82)")}
-                  onMouseOut={() => setSpotifyColor("white")}
-                />
+                <PiSpotifyLogoLight className="icon text-xl sm:text-3xl xl:text-4xl 2xl:xl:text-6xl transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95] hover:text-amber-300" />
               </a>
             </li>
             <button
               key={song.id}
-              className="icon text-xl sm:text-3xl xl:text-4xl 2xl:xl:text-6xl"
+              className="icon text-xl sm:text-3xl xl:text-4xl 2xl:xl:text-6xl transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95] hover:text-amber-300"
               onClick={() => handleClickCart(song)}
             >
-              <MdAddShoppingCart
-                style={{ color: cartColor }}
-                onMouseOver={() => setCartColor("rgb(251, 186, 82)")}
-                onMouseOut={() => setCartColor("white")}
-              />
+              <MdAddShoppingCart />
             </button>
           </ul>
         </div>
