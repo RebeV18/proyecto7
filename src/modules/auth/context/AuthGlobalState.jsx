@@ -2,10 +2,12 @@ import { useReducer } from "react";
 import { authReducer } from "./authReducer";
 import { loginService } from "../services/authApiService";
 import { registerService } from "../services/authApiService";
+import SessionContext from "./SessionContext";
 
 import { createContext, useContext, useState } from "react";
 
 const AuthContext = createContext();
+const { setSessionData } = useContext(SessionContext); 
 
 const initialState = {
   user: null,
@@ -28,6 +30,8 @@ export const AuthProvider = ({ children }) => {
 
       localStorage.setItem("token", token);
       localStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem("session", JSON.stringify(sessionData));
+      setSessionData(sessionData);
       setIsAuthenticated(true);
 
       dispatch({
@@ -58,6 +62,7 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
+    localStorage.removeItem("session");
     setIsAuthenticated(false);
     dispatch({
       type: "LOGOUT",
