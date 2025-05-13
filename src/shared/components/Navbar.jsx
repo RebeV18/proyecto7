@@ -11,7 +11,6 @@ import { CartIcon } from "../../modules/cart/components/CartIcon";
 import { useAuthContext } from "../../modules/auth/context/AuthGlobalState";
 
 import "../../shared/Styles/Styles.css";
-import "@fontsource/oswald";
 
 export const Navbar = () => {
   const { user, logout } = useAuthContext();
@@ -28,31 +27,31 @@ export const Navbar = () => {
         <div className="hidden sm:flex">
           <Link
             to="/"
-            className="font-oswald font-thin text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-xl"
+            className="navFont text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-xl"
           >
             INICIO
           </Link>
           <Link
             to="/about"
-            className="font-oswald font-thin text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-xl"
+            className="navFont text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-xl"
           >
             ACERCA DE MÍ
           </Link>
           <Link
             to="/products"
-            className="font-oswald font-thin text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-xl"
+            className="navFont text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-xl"
           >
             DISCOGRAFÍA
           </Link>
           <Link
             to="podcast"
-            className="font-oswald font-thin text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-xl"
+            className="navFont text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-xl"
           >
             PODCAST
           </Link>
           <Link
             to="/contacto"
-            className="font-oswald font-thin text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-xl"
+            className="navFont text-white text-sm px-2 xl:text-lg xl:px-3 2xl:text-xl"
           >
             CONTACTO
           </Link>
@@ -73,31 +72,31 @@ export const Navbar = () => {
         >
           <Link
             to="/"
-            className="font-oswald font-thin text-white text-xs sm:text-sm px-5 gap-y-10 block"
+            className="navFont text-white text-xs sm:text-sm px-5 gap-y-10 block"
           >
             Inicio
           </Link>
           <Link
             to="/about"
-            className="font-oswald font-thin text-white text-xs sm:text-sm px-5 gap-y-10 block"
+            className="navFont text-white text-xs sm:text-sm px-5 gap-y-10 block"
           >
             Acerca de mí
           </Link>
           <Link
             to="/products"
-            className="font-oswald font-thin text-white text-xs sm:text-sm px-5 gap-y-10 block"
+            className="navFont text-white text-xs sm:text-sm px-5 gap-y-10 block"
           >
             Discografía
           </Link>
           <Link
             to="podcast"
-            className="font-oswald font-thin text-white text-xs sm:text-sm px-5 gap-y-10 block"
+            className="navFont text-white text-xs sm:text-sm px-5 gap-y-10 block"
           >
             Podcast
           </Link>
           <Link
             to="/contacto"
-            className="font-oswald font-thin text-white text-xs sm:text-sm px-5 gap-y-10 block"
+            className="navFont text-white text-xs sm:text-sm px-5 gap-y-10 block"
           >
             Contacto
           </Link>

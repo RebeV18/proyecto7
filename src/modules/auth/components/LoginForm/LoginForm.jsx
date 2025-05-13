@@ -32,7 +32,7 @@ export const LoginForm = () => {
     >
       <div className="flex flex-col display-center gap-3 2xl:gap-7">
         <input
-          className="border-1 border-grey-100 rounded-lg text-center p-1 text-sm md:text-base xl:text-lg 2xl:text-xl 2xl:p-4"
+          className="border-1 border-amber-300 rounded-lg text-center p-1 text-sm md:text-base xl:text-lg 2xl:text-xl 2xl:p-4"
           placeholder="Ingresa tu correo electrónico"
           type="email"
           value={email}
@@ -40,7 +40,7 @@ export const LoginForm = () => {
           required
         />
         <input
-          className="border-1 border-grey-100 rounded-lg text-center p-1 text-sm md:text-base xl:text-lg 2xl:text-xl 2xl:p-4"
+          className="border-1 border-amber-300 rounded-lg text-center p-1 text-sm md:text-base xl:text-lg 2xl:text-xl 2xl:p-4"
           placeholder="Ingresa tu contraseña"
           type="password"
           value={password}
@@ -49,7 +49,7 @@ export const LoginForm = () => {
         />
       </div>
       <button
-        className="custom-card p-2 border-2 border-white rounded-lg text-sm md:text-base xl:text-lg 2xl:text-2xl 2xl:p-4"
+        className="custom-card p-2 border-2 border-amber-300 rounded-lg text-sm md:text-base xl:text-lg 2xl:text-2xl 2xl:p-4"
         type="submit"
       >
         Iniciar Sesión

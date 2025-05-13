@@ -62,12 +62,12 @@ export const RegisterForm = () => {
       className="space-y-4 place-content-center md:mx-10 xl:mx-25 2xl:mx-70"
     >
       {formError && (
-        <div className="bg-amber-200 text-red-700 p-3 rounded-md background-transparent">
+        <div className="bg-transparent text-red-700 p-3 rounded-md border-2 border-amber-200">
           {formError}
         </div>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 background-transparent font-montserrat">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 background-transparent">
         <FormField
           id="nombre"
           label="Nombre"
@@ -122,7 +122,7 @@ export const RegisterForm = () => {
         error={errors.telefono}
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 background-transparent font-montserrat">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 background-transparent">
         <FormField
           id="password"
           label="Contraseña"
@@ -149,7 +149,7 @@ export const RegisterForm = () => {
 
       <div className="flex justify-center">
         <button
-          className="custom-card font-montserra mt-5 mb-5 text-white text-base md:text-lg lg:text-xl font-montserrat px-10 lg:px-15 xl:px-18 2xl:px-20 py-3 xl:py-4 rounded-md hover:bg-amber-400 transition duration-200 ease-in-out transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95]"
+          className="custom-card border-2 border-amber-300 mt-5 mb-5 text-white text-base md:text-lg lg:text-xl px-10 lg:px-15 xl:px-18 2xl:px-20 py-3 xl:py-4 rounded-md hover:bg-amber-400 transition duration-200 ease-in-out transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95]"
           type="submit"
         >
           Regístrate

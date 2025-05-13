@@ -6,7 +6,6 @@ import { fetchAllProducts } from "../services/productApiService";
 import { Song } from "./Song";
 
 import "../../../shared/Styles/Styles.css";
-import "@fontsource/poppins";
 
 export const CDCards = () => {
   const [flippedCards, setFlippedCards] = useState({});
@@ -76,7 +75,7 @@ export const CDCards = () => {
             <div className="card-content h-full w-full transition-transform duration-500 [transform-style:preserve-3d]">
               {/* Front Side */}
               <div className="custom-card absolute h-full w-full rounded-2xl p-4 text-gray-800 [backface-visibility:hidden]">
-                <h3 className="relative h-[80px] w-[230px] flex items-center justify-center py-2 mt-1 mb-3 shadow text-center gap-1 text-xl text-white font-semibold font-poppins">
+                <h3 className="relative h-[80px] w-[230px] flex items-center justify-center py-2 mt-1 mb-3 shadow text-center gap-1 text-xl text-white font-semibold">
                   {cd.cd}
                 </h3>
                 <p className="font-poppins text-base text-center text-white italic">
@@ -96,7 +95,7 @@ export const CDCards = () => {
 
               {/* Back Side */}
               <div className="custom-card absolute h-full w-full rotate-y-180 rounded-2xl p-4 text-gray-800 shadow-lg [backface-visibility:hidden]">
-                <h3 className="relative h-[80px] w-[230px] flex items-center justify-center py-2 mt-1 mb-3 shadow text-center gap-1 text-xl text-white font-semibold font-poppins">
+                <h3 className="relative h-[80px] w-[230px] flex items-center justify-center py-2 mt-1 mb-3 shadow text-center gap-1 text-xl text-white font-semibold">
                   {cd.cd}
                 </h3>
                 <div className="overflow-y-auto max-h-[280px] mt-2 space-y-2">

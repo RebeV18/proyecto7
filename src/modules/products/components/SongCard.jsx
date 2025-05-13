@@ -5,9 +5,6 @@ import { MdAddShoppingCart } from "react-icons/md";
 
 import useCartContext from "../../cart/context/CartContext";
 
-import "@fontsource/poppins";
-import "@fontsource/montserrat";
-
 export const SongCard = ({ song }) => {
   const addItem = useCartContext((state) => state.addItem);
 
@@ -23,7 +20,7 @@ export const SongCard = ({ song }) => {
     <div className="bg-gradient-to-r from-amber-400 to-pink-600 pg-50 shadow cursor-pointer rounded-2xl bg-transparent shadow-md mt-2 mb-10">
       <div className="mx-auto flex flex-col md:flex-row justify-center object-center rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
         <div className="flex flex-col items-center justify-center p-7">
-          <h3 className="text-white text-center font-poppins font-bold mb-2 text-xl md:text-2xl lg:text-3xl 2xl:text-5xl">
+          <h3 className="text-white text-center font-bold mb-2 text-xl md:text-2xl lg:text-3xl 2xl:text-5xl">
             {song.cancion}
           </h3>
           <div className="flex flex-col md:justify-between p-2 items-center">

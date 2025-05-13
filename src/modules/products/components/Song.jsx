@@ -7,8 +7,6 @@ import { formatCurrency } from "../../../shared/utils/formatCurrency";
 import { envLoader } from "../../../config/envLoader";
 import useCartContext from "../../cart/context/CartContext";
 
-import "@fontsource/montserrat";
-
 export const Song = ({ producto }) => {
   const { optionsCurrency } = envLoader;
   const navigate = useNavigate();
@@ -39,14 +37,14 @@ export const Song = ({ producto }) => {
     <div className="shadow p-3">
       <div className="border-1 border-amber-300 rounded-lg p-2">
         <div className="flex flex-col gap-y-1">
-          <h4 className="font-montserrat text-sm font-bold text-white">
+          <h4 className="text-sm font-bold text-white">
             {producto.cancion}
           </h4>
-          <p className="font-montserrat text-white text-xs mb-4-line-clamp-2">
+          <p className="text-white text-xs mb-4-line-clamp-2">
             {producto.autores}
           </p>
           <div className="mb-2">
-            <span className="font-montserrat text-sm font-semibold text-white">
+            <span className="text-sm font-semibold text-white">
               {formatCurrency(producto.precio, optionsCurrency)}
             </span>
           </div>
@@ -54,7 +52,7 @@ export const Song = ({ producto }) => {
         <div className="flex flex-row justify-center items-center gap-20">
           <button
             key={producto.id}
-            className="font-montserrat text-white text-center p-1 cursor-pointer transition-transform duration-500 hover:scale-[1.70] active:scale-[0.95] hover:text-amber-200"
+            className="text-white text-center p-1 cursor-pointer transition-transform duration-500 hover:scale-[1.70] active:scale-[0.95] hover:text-amber-200"
             onClick={() => handleClickCart(producto)}
           >
             <MdAddShoppingCart />
