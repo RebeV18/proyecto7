@@ -6,6 +6,11 @@ export const authReducer = (state, action) => {
         user: action.payload.user,
         token: action.payload.token,
       };
+    case "SET_SESSION_DATA":
+      return {
+        ...state,
+        sessionData: action.payload,
+      };
     case "REGISTER":
       return {
         ...state,

@@ -1,22 +1,44 @@
-import { useReducer } from "react";
+import {
+  useReducer,
+  useEffect,
+  createContext,
+  useContext,
+  useState,
+} from "react";
 import { authReducer } from "./authReducer";
+
 import { loginService } from "../services/authApiService";
 import { registerService } from "../services/authApiService";
-import SessionContext from "./SessionContext";
-
-import { createContext, useContext, useState } from "react";
 
 const AuthContext = createContext();
-const { setSessionData } = useContext(SessionContext); 
 
 const initialState = {
   user: null,
   token: null,
+  sessionData: null,
 };
 
 export const AuthProvider = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, initialState);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    const user = JSON.parse(localStorage.getItem("user"));
+    const sessionData = JSON.parse(localStorage.getItem("session"));
+
+    if (token && user) {
+      dispatch({
+        type: "LOGIN",
+        payload: { user, token },
+      });
+      dispatch({
+        type: "SET_SESSION_DATA",
+        payload: sessionData,
+      });
+      setIsAuthenticated(true);
+    }
+  }, []);
 
   const login = async ({ email, password }) => {
     try {
@@ -24,14 +46,22 @@ export const AuthProvider = ({ children }) => {
       const { token } = dataLogin;
       const user = dataLogin.data;
 
+      console.log(user);
+
       if (!token || !user) {
         throw new Error("No se pudo iniciar sesión");
       }
 
+      const sessionData = { user, token };
       localStorage.setItem("token", token);
       localStorage.setItem("user", JSON.stringify(user));
       localStorage.setItem("session", JSON.stringify(sessionData));
-      setSessionData(sessionData);
+
+      dispatch({
+        type: "SET_SESSION_DATA",
+        payload: sessionData,
+      });
+
       setIsAuthenticated(true);
 
       dispatch({
@@ -74,6 +104,7 @@ export const AuthProvider = ({ children }) => {
       value={{
         user: state.user,
         token: state.token,
+        // sessionData: state.sessionData,
         login,
         register,
         logout,
