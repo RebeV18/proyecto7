@@ -5,7 +5,7 @@ export const AboutPage = () => {
     <>
       <Background />
       <div className="flex-col justify-center align-center p-10 2xl:mb-15 2xl:mx-30">
-        <h1 className="font-thin tracking-widest text-white text-center mt-20 xl:mt-30 2xl:mt-25 mb-7 md:mb-18 lg:mb-15 xl:mb-20 2xl:mb-30 text-lg xs:text-xl sm:text-2xl md:text-5xl lg:text-6xl xl:text-8xl 2xl:text-7xl">
+        <h1 className="title font-thin tracking-widest text-white text-center mt-20 xl:mt-30 2xl:mt-25 mb-7 md:mb-18 lg:mb-15 xl:mb-20 2xl:mb-30 text-lg xs:text-xl sm:text-2xl md:text-5xl lg:text-6xl xl:text-8xl 2xl:text-7xl">
           LUIS GERARDO AQUINO
         </h1>
         <p className="text-justify text-white text-base sm:px-7 md:px-10 lg:px-24 xl:text-2xl 2xl:px-20 2xl:text-xl xl:leading-relaxed">

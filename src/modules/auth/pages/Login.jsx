@@ -8,7 +8,7 @@ export const LoginPage = () => {
     <>
       <Background />
       <div className="flex flex-col justify-items-center text-white text-lg p-2 mt-25 sm:mt-28 md:mt-30 lg:mt-25 lg:pr-20 lg:pl-20 xl:pr-25 xl:pr-25 2xl:pr-50 2xl:pl-50">
-        <h2 className="font-thin tracking-widest text-white text-center mt-20 xl:mt-30 2xl:mt-30 mb-5 md:mb- lg:mb-5 xl:mb-10 2xl:mb-8 text-lg xs:text-xl sm:text-2xl md:text-5xl lg:text-6xl xl:text-6xl 2xl:text-7xl">
+        <h2 className="title font-thin tracking-widest text-white text-center mt-20 xl:mt-30 2xl:mt-30 mb-5 md:mb- lg:mb-5 xl:mb-10 2xl:mb-8 text-lg xs:text-xl sm:text-2xl md:text-5xl lg:text-6xl xl:text-6xl 2xl:text-7xl">
           INICIA TU SESIÓN
         </h2>
         <LoginForm />

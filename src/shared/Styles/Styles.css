@@ -8,10 +8,12 @@
 .navFont {
   font-family: "Oswald", sans-serif;
   font-weight: 100;
+  letter-spacing: 0.01em;
 }
 
-.font-ultra-thin {
+.title {
   font-weight: 100;
+  letter-spacing: 0.13em;
 }
 
 .icon {
