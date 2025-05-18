@@ -46,8 +46,6 @@ export const AuthProvider = ({ children }) => {
       const { token } = dataLogin;
       const user = dataLogin.data;
 
-      console.log(user);
-
       if (!token || !user) {
         throw new Error("No se pudo iniciar sesión");
       }
