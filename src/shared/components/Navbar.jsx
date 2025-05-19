@@ -5,6 +5,7 @@ import {
   IoMdLogOut,
   IoIosMenu,
   IoMdPersonAdd,
+  IoIosPerson,
 } from "react-icons/io";
 
 import { CartIcon } from "../../modules/cart/components/CartIcon";
@@ -103,8 +104,8 @@ export const Navbar = () => {
         </div>
 
         {/* Login / Register */}
-        <div className="flex flex-row items-end gap-2">
-          <div className="flex flex-row gap-2 items-end">
+        <div className="flex flex-row items-end gap-2 xl:gap-4">
+          <div className="flex flex-row gap-2 xl:gap-4 items-end">
             <div className="flex-flex-row">
               {!user ? (
                 <Link
@@ -122,7 +123,7 @@ export const Navbar = () => {
                   onClick={handleLogout}
                   className="flex flex-col text-white items-center display-center transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95] hover:text-amber-300"
                 >
-                  <IoMdLogOut className="text-xl xl:text-2xl 2xl:text-5xl" />
+                  <IoMdLogOut className="text-xl xl:text-2xl 2xl:text-3xl" />
                   <p className="text-center text-xs xl:text-sm 2xl:text-base">
                     Cerrar sesión
                   </p>
@@ -130,7 +131,7 @@ export const Navbar = () => {
               )}
             </div>
             <div className="items-end">
-              {!user && (
+              {!user ? (
                 <Link
                   to="/register"
                   className="flex flex-col items-center display-center text-white transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95] hover:text-amber-300"
@@ -140,16 +141,26 @@ export const Navbar = () => {
                     Regístrate
                   </p>
                 </Link>
+              ) : (
+                <Link
+                  to={`/update/${user._id}`}
+                  className="flex flex-col items-center display-center text-white transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95] hover:text-amber-300"
+                >
+                  <IoIosPerson className="text-xl xl:text-2xl 2xl:text-3xl" />
+                  <p className="text-center text-xs xl:text-sm 2xl:text-base">
+                    Actualizar
+                  </p>
+                </Link>
               )}
             </div>
           </div>
           <div>
             {!user ? (
-              <CartIcon className="text-white text-xl xl:text-2xl 2xl:text-3xl transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95] hover:text-amber-300" />
+              <CartIcon className="text-white text-xl xl:text-2xl 2xl:text-2xl transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95] hover:text-amber-300" />
             ) : (
               <div className="flex flex-row items-center">
                 <div className="flex flex-col items-center">
-                  <CartIcon className="text-white text-xl xl:text-2xl 2xl:text-3xl transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95] hover:text-amber-300" />
+                  <CartIcon className="text-white text-xl xl:text-2xl 2xl:text-xl transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95] hover:text-amber-300" />
                   <p className="text-white text-center text-xs xl:text-sm 2xl:text-base">
                     {user.nombre} {user.apellido}
                   </p>

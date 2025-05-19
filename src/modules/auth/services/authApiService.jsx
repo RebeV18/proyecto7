@@ -35,3 +35,22 @@ export const registerService = async ({
     throw new Error(error);
   }
 };
+
+export const updateService = async ({ id, nombre, apellido, pais, telefono}) => {
+  try {
+    const token = localStorage.getItem("token");
+    const { data } = await apiClient.put(
+      `/user/update/${id}`,
+      { nombre, apellido, pais, telefono },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    return data;
+  } catch (error) {
+    console.error("Error al actualizar el usuario:", error);
+    throw new Error(error);
+  }
+};

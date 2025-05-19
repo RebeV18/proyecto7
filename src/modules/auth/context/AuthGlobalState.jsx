@@ -9,6 +9,7 @@ import { authReducer } from "./authReducer";
 
 import { loginService } from "../services/authApiService";
 import { registerService } from "../services/authApiService";
+import { updateService } from "../services/authApiService";
 
 const AuthContext = createContext();
 
@@ -72,6 +73,34 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const update = async (userData) => {
+    try {
+      const email = state.user?.email;
+      if (!email) {
+        throw new Error("No hay usuario logueado.");
+      }
+      const dataUpdate = await updateService({ ...userData, email });
+      const user = dataUpdate.data;
+
+      if (!user) {
+        throw new Error("No se pudo actualizar el usuario");
+      }
+      alert(
+        "Usuario actualizado correctamente, por favor inicie sesión nuevamente."
+      );
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+      localStorage.removeItem("session");
+      setIsAuthenticated(false);
+      dispatch({
+        type: "UPDATE",
+      });
+    } catch (error) {
+      console.error("Error updating user:", error);
+      throw new Error(error);
+    }
+  };
+
   const register = async (userData) => {
     try {
       const dataRegister = await registerService(userData);
@@ -102,8 +131,8 @@ export const AuthProvider = ({ children }) => {
       value={{
         user: state.user,
         token: state.token,
-        // sessionData: state.sessionData,
         login,
+        update,
         register,
         logout,
         isAuthenticated,

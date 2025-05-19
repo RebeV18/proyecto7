@@ -2,7 +2,7 @@ import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { mercadoPagoPreference } from "../services/paymentService";
+import { mercadoPagoPreference } from "../services/PaymentService";
 import { envLoader } from "../../../config/envLoader";
 import { useAuthContext } from "../../auth/context/AuthGlobalState";
 

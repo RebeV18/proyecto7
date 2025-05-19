@@ -10,6 +10,7 @@ import { Footer } from "../shared/components/Footer";
 import { SongPage } from "../modules/products/pages/SongPage";
 import { MercadoPagoStatus } from "../modules/payments/components/MercadoPagoStatus";
 import { RegisterPage } from "../modules/auth/pages/Register";
+import { UpdatePage } from "../modules/auth/pages/Update";
 
 export const AppRouter = () => {
   return (
@@ -20,6 +21,7 @@ export const AppRouter = () => {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/update/:id" element={<UpdatePage />} />
         <Route path="/products" element={<ProductPage />} />
         <Route path="/podcast" element={<Podcast />} />
         <Route path="/contacto" element={<Contacto />} />
