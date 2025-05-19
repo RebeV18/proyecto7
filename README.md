@@ -10,14 +10,14 @@ El objetivo de este proyecto es desarrollar una aplicación Fullstack de comerci
 
 
 Para el desarrollo de este proyecto, te recomendamos emplear las siguientes tecnologías:
-Frontend
+### Frontend
 React (con vite)
 Uso de manejo de estado con useContext y useReducer
 Manejo de ruteo con react-router-dom. Puedes utilizar la v5 o v6
 CSS (TailwindCSS, MUI, Bootstrap, CSS Modules o Styled Components)
 Axios
-Backend
 
+### Backend
 Node
 Express.js
 JWT
@@ -30,7 +30,12 @@ openapi-backend
 stripe u otra librería de comercio electrónico
 swagger-jsdoc
 swagger-ui-express
-Base de datos
 
+### Base de datos
 MongoDB
 
+## Links importantes
+- Backend GitHub: https://github.com/RebeV18/proyecto6
+- Backend Deployment: https://proyecto6-sgv2.onrender.com
+
+- Frontend Deployment: luisgerardoaquino.netlify.app
