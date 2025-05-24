@@ -14,7 +14,7 @@ export const RegisterPage = () => {
         <RegisterForm />
         <p className="mt-15 text-base md:text-lg lg:text-xl 2xl:text-2xl text-gray-200 text-center">
           ¿Ya estás registrado?{" "}
-          <Link to="/login" className="text-amber-400 hover:underline">
+          <Link to="/login" className="text-amber-400 hover:underline hover:text-[#47a1eb]">
             Iniciar Sesión
           </Link>
         </p>

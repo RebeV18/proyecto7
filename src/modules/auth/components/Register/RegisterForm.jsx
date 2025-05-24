@@ -149,7 +149,7 @@ export const RegisterForm = () => {
 
       <div className="flex justify-center">
         <button
-          className="custom-card border-2 border-amber-300 mt-5 mb-5 text-white text-base md:text-lg lg:text-xl px-10 lg:px-15 xl:px-18 2xl:px-20 py-3 xl:py-4 rounded-md hover:bg-amber-400 transition duration-200 ease-in-out transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95]"
+          className="custom-button border-2 border-amber-300 mt-5 mb-5 text-white text-base md:text-lg lg:text-xl px-10 lg:px-15 xl:px-18 2xl:px-20 py-3 xl:py-4 rounded-md cursor-pointer transition duration-200 ease-in-out transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95]"
           type="submit"
         >
           Regístrate

@@ -14,8 +14,8 @@ export const Podcast = () => {
           CON SONIDO DE ALABANZA
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-center justify-center gap-10 lg:gap-20">
-          <div className="flex flex-col items-center justify-center p-5 cursor-pointer rounded-2xl bg-gradient-to-r from-amber-400 to-pink-600 pg-50 shadow transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]">
-            <h3 className="relative h-[50px] w-[230px] flex items-center justify-center shadow text-center gap-1 text-xl xl:text-2xl 2xl:text-4xl 2xl:mb-8 text-white font-semibold mb-2">
+          <div className="custom-card flex flex-col items-center justify-center p-5 cursor-pointer rounded-2xl bg-transparent border-1 border-amber-400 pg-50 shadow transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]">
+            <h3 className="relative h-[50px] w-[230px] flex items-center justify-center shadow text-center gap-1 text-2xl xl:text-3xl 2xl:text-4xl 2xl:mb-8 text-white font-semibold mb-2">
               Podcast #1
             </h3>
             <div className="place-items-center rounded-lg shadow">
@@ -27,7 +27,7 @@ export const Podcast = () => {
             </div>
           </div>
 
-          <div className="custom-card flex flex-col items-center justify-center p-5 cursor-pointer rounded-2xl bg-transparent border-1 border-white pg-50 shadow transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]">
+          <div className="custom-card flex flex-col items-center justify-center p-5 cursor-pointer rounded-2xl bg-transparent border-1 border-amber-400 pg-50 shadow transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]">
             <h3 className="relative h-[50px] w-[230px] flex items-center justify-center shadow text-center gap-1 text-2xl xl:text-3xl 2xl:text-4xl 2xl:mb-8 text-white font-semibold mb-2">
               Podcast #2
             </h3>
@@ -41,8 +41,8 @@ export const Podcast = () => {
             </div>
           </div>
 
-          <div className="flex flex-col items-center justify-center p-5 cursor-pointer rounded-2xl bg-gradient-to-r from-amber-400 to-pink-600 pg-50 shadow transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]">
-            <h3 className="relative h-[50px] w-[230px] flex items-center justify-center shadow text-center gap-1 text-xl xl:text-2xl mb-2 2xl:text-4xl 2xl:mb-8 text-white font-semibold">
+          <div className="custom-card flex flex-col items-center justify-center p-5 cursor-pointer rounded-2xl bg-transparent border-1 border-amber-400 pg-50 shadow transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]">
+            <h3 className="relative h-[50px] w-[230px] flex items-center justify-center shadow text-center gap-1 text-2xl xl:text-3xl 2xl:text-4xl 2xl:mb-8 text-white font-semibold mb-2">
               Podcast #3
             </h3>
             <div className="place-items-center rounded-lg shadow">
@@ -54,8 +54,8 @@ export const Podcast = () => {
             </div>
           </div>
 
-          <div className="custom-card flex flex-col items-center justify-center p-5 cursor-pointer rounded-2xl bg-transparent border-1 border-white pg-50 shadow transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]">
-            <h3 className="relative h-[50px] w-[230px] flex items-center justify-center shadow text-center gap-1 text-2xl xl:text-3xl mb-2 2xl:text-4xl 2xl:mb-8 text-white font-semibold">
+          <div className="custom-card flex flex-col items-center justify-center p-5 cursor-pointer rounded-2xl bg-transparent border-1 border-amber-400 pg-50 shadow transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]">
+            <h3 className="relative h-[50px] w-[230px] flex items-center justify-center shadow text-center gap-1 text-2xl xl:text-3xl 2xl:text-4xl 2xl:mb-8 text-white font-semibold mb-2">
               Podcast #4
             </h3>
             <div className="place-items-center rounded-lg shadow">
@@ -67,8 +67,8 @@ export const Podcast = () => {
             </div>
           </div>
 
-          <div className="flex flex-col items-center justify-center p-5 cursor-pointer rounded-2xl bg-gradient-to-r from-amber-400 to-pink-600 pg-50 shadow transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]">
-            <h3 className="relative h-[50px] w-[230px] flex items-center justify-center shadow text-center gap-1 text-xl xl:text-2xl mb-2 2xl:text-4xl 2xl:mb-8 text-white font-semibold">
+          <div className="custom-card flex flex-col items-center justify-center p-5 cursor-pointer rounded-2xl bg-transparent border-1 border-amber-400 pg-50 shadow transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]">
+            <h3 className="relative h-[50px] w-[230px] flex items-center justify-center shadow text-center gap-1 text-2xl xl:text-3xl 2xl:text-4xl 2xl:mb-8 text-white font-semibold mb-2">
               Podcast #5
             </h3>
             <div className="place-items-center rounded-lg shadow">
@@ -80,8 +80,8 @@ export const Podcast = () => {
             </div>
           </div>
 
-          <div className="custom-card flex flex-col items-center justify-center p-5 cursor-pointer rounded-2xl bg-transparent border-1 border-white pg-50 shadow transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]">
-            <h3 className="relative h-[50px] w-[230px] flex items-center justify-center shadow text-center gap-1 text-2xl xl:text-3xl mb-2 2xl:text-4xl 2xl:mb-8 text-white font-semibold">
+          <div className="custom-card flex flex-col items-center justify-center p-5 cursor-pointer rounded-2xl bg-transparent border-1 border-amber-400 pg-50 shadow transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]">
+            <h3 className="relative h-[50px] w-[230px] flex items-center justify-center shadow text-center gap-1 text-2xl xl:text-3xl 2xl:text-4xl 2xl:mb-8 text-white font-semibold mb-2">
               Podcast #6
             </h3>
             <div className="place-items-center shadow">
@@ -93,8 +93,8 @@ export const Podcast = () => {
             </div>
           </div>
 
-          <div className="flex flex-col items-center justify-center p-5 cursor-pointer rounded-2xl bg-gradient-to-r from-amber-400 to-pink-600 pg-50 shadow transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]">
-            <h3 className="relative h-[50px] w-[230px] flex items-center justify-center shadow text-center gap-1 text-xl xl:text-2xl mb-2 2xl:text-4xl 2xl:mb-8 text-white font-semibold">
+          <div className="custom-card flex flex-col items-center justify-center p-5 cursor-pointer rounded-2xl bg-transparent border-1 border-amber-400 pg-50 shadow transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]">
+            <h3 className="relative h-[50px] w-[230px] flex items-center justify-center shadow text-center gap-1 text-2xl xl:text-3xl 2xl:text-4xl 2xl:mb-8 text-white font-semibold mb-2">
               Podcast #7
             </h3>
             <div className="place-items-center rounded-lg shadow">
@@ -106,8 +106,8 @@ export const Podcast = () => {
             </div>
           </div>
 
-          <div className="custom-card flex flex-col items-center justify-center p-5 cursor-pointer rounded-2xl bg-transparent border-1 border-white pg-50 shadow transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]">
-            <h3 className="relative h-[50px] w-[230px] flex items-center justify-center shadow text-center gap-1 text-2xl xl:text-3xl mb-2 2xl:text-4xl 2xl:mb-8 text-white font-semibold">
+          <div className="custom-card flex flex-col items-center justify-center p-5 cursor-pointer rounded-2xl bg-transparent border-1 border-amber-400 pg-50 shadow transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]">
+            <h3 className="relative h-[50px] w-[230px] flex items-center justify-center shadow text-center gap-1 text-2xl xl:text-3xl 2xl:text-4xl 2xl:mb-8 text-white font-semibold mb-2">
               Podcast #8
             </h3>
             <div className="place-items-center rounded-lg shadow">
@@ -119,8 +119,8 @@ export const Podcast = () => {
             </div>
           </div>
 
-          <div className="flex flex-col items-center justify-center p-5 cursor-pointer rounded-2xl bg-gradient-to-r from-amber-400 to-pink-600 pg-50 shadow transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]">
-            <h3 className="relative h-[50px] w-[230px] flex items-center justify-center shadow text-center gap-1 text-xl xl:text-2xl mb-2 2xl:text-4xl 2xl:mb-8 text-white font-semibold">
+          <div className="custom-card flex flex-col items-center justify-center p-5 cursor-pointer rounded-2xl bg-transparent border-1 border-amber-400 pg-50 shadow transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]">
+            <h3 className="relative h-[50px] w-[230px] flex items-center justify-center shadow text-center gap-1 text-2xl xl:text-3xl 2xl:text-4xl 2xl:mb-8 text-white font-semibold mb-2">
               Podcast #9
             </h3>
             <div className="place-items-center rounded-lg shadow">
@@ -132,8 +132,8 @@ export const Podcast = () => {
             </div>
           </div>
 
-          <div className="custom-card flex flex-col items-center justify-center p-5 cursor-pointer rounded-2xl bg-transparent border-1 border-white pg-50 shadow transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]">
-            <h3 className="relative h-[50px] w-[230px] flex items-center justify-center shadow text-center gap-1 text-2xl xl:text-3xl mb-2 2xl:text-4xl 2xl:mb-8 text-white font-semibold">
+          <div className="custom-card flex flex-col items-center justify-center p-5 cursor-pointer rounded-2xl bg-transparent border-1 border-amber-400 pg-50 shadow transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]">
+            <h3 className="relative h-[50px] w-[230px] flex items-center justify-center shadow text-center gap-1 text-2xl xl:text-3xl 2xl:text-4xl 2xl:mb-8 text-white font-semibold mb-2">
               Podcast #10
             </h3>
             <div className="place-items-center rounded-lg shadow">
@@ -145,8 +145,8 @@ export const Podcast = () => {
             </div>
           </div>
 
-          <div className="flex flex-col items-center justify-center p-5 cursor-pointer rounded-2xl bg-gradient-to-r from-amber-400 to-pink-600 pg-50 shadow transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]">
-            <h3 className="relative h-[50px] w-[230px] flex items-center justify-center shadow text-center gap-1 text-xl xl:text-2xl mb-2 2xl:text-4xl 2xl:mb-8 text-white font-semibold">
+          <div className="custom-card flex flex-col items-center justify-center p-5 cursor-pointer rounded-2xl bg-transparent border-1 border-amber-400 pg-50 shadow transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]">
+            <h3 className="relative h-[50px] w-[230px] flex items-center justify-center shadow text-center gap-1 text-2xl xl:text-3xl 2xl:text-4xl 2xl:mb-8 text-white font-semibold mb-2">
               Podcast #11
             </h3>
             <div className="flex flex-col items-center justify-center rounded-lg shadow p-3 lg:py-5">
@@ -157,8 +157,8 @@ export const Podcast = () => {
             </div>
           </div>
 
-          <div className="custom-card flex flex-col items-center justify-center p-5 cursor-pointer rounded-2xl bg-transparent border-1 border-white pg-50 shadow transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]">
-            <h3 className="relative h-[50px] w-[230px] flex items-center justify-center shadow text-center gap-1 text-2xl xl:text-3xl mb-2 2xl:text-4xl 2xl:mb-8 text-white font-semibold">
+          <div className="custom-card flex flex-col items-center justify-center p-5 cursor-pointer rounded-2xl bg-transparent border-1 border-amber-400 pg-50 shadow transition-transform duration-500 hover:scale-[1.02] active:scale-[0.98]">
+            <h3 className="relative h-[50px] w-[230px] flex items-center justify-center shadow text-center gap-1 text-2xl xl:text-3xl 2xl:text-4xl 2xl:mb-8 text-white font-semibold mb-2">
               Podcast #12
             </h3>
             <div className="flex flex-col items-center justify-center rounded-lg shadow lg:border-1 lg:border-white p-3 lg:py-5">

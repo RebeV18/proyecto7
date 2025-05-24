@@ -30,7 +30,7 @@ export const UpdatePage = () => {
         </h2>
         <UpdateForm userUpdate={userToUpdate} />
         <button
-          className="mx-15 my-10 lg:mx-20 xl:mx-25 2xl:mx-100 border-3 border-amber-500 rounded-lg text-white py-2 px-7 2xl:py-4 2xl:px-10 text-sm lg:text-base xl:text-lg 2xl:text-3xl"
+          className="custom-button mx-15 my-10 lg:mx-20 xl:mx-25 2xl:mx-100 border-3 border-amber-500 rounded-lg text-white py-2 px-7 2xl:py-4 2xl:px-10 text-sm lg:text-base xl:text-lg 2xl:text-3xl"
           onClick={() => window.history.back()}
         >
           Volver

@@ -49,7 +49,7 @@ export const LoginForm = () => {
         />
       </div>
       <button
-        className="custom-card p-2 border-2 border-amber-300 rounded-lg text-sm md:text-base xl:text-lg 2xl:text-2xl 2xl:p-4"
+        className="custom-button p-2 border-2 border-amber-300 rounded-lg text-sm md:text-base xl:text-lg 2xl:text-2xl 2xl:p-4 cursor-pointer transition duration-200 ease-in-out transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95]"
         type="submit"
       >
         Iniciar Sesión

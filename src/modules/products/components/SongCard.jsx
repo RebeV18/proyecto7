@@ -17,7 +17,7 @@ export const SongCard = ({ song }) => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-amber-400 to-pink-600 pg-50 shadow cursor-pointer rounded-2xl bg-transparent shadow-md mt-2 mb-10">
+    <div className="bg-transparent border-2 border-amber-400 pg-50 shadow cursor-pointer rounded-2xl bg-transparent shadow-md mt-2 mb-10">
       <div className="mx-auto flex flex-col md:flex-row justify-center object-center rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
         <div className="flex flex-col items-center justify-center p-7">
           <h3 className="text-white text-center font-bold mb-2 text-xl md:text-2xl lg:text-3xl 2xl:text-5xl">
@@ -47,22 +47,22 @@ export const SongCard = ({ song }) => {
           <ul className="icon flex flex-row justify-center gap-x-7 md:gap-x-10 lg:gap-x-12 xl:gap-x-15 2xl:gap-x-20 xl:p-5 2xl:mt:10">
             <li>
               <a href={song.apple} target="_blank" rel="noopener noreferrer">
-                <SiApplemusic className="icon text-xl sm:text-3xl xl:text-4xl 2xl:xl:text-6xl transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95] hover:text-amber-300" />
+                <SiApplemusic className="icon text-amber-400 text-xl sm:text-3xl xl:text-4xl 2xl:xl:text-6xl transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95] hover:text-amber-300" />
               </a>
             </li>
             <li>
               <a href={song.youtube} target="_blank" rel="noopener noreferrer">
-                <CiYoutube className="icon text-xl sm:text-3xl xl:text-4xl 2xl:xl:text-6xl transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95] hover:text-amber-300" />
+                <CiYoutube className="icon text-amber-400 text-xl sm:text-3xl xl:text-4xl 2xl:xl:text-6xl transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95] hover:text-amber-300" />
               </a>
             </li>
             <li>
               <a href={song.spotify} target="_blank" rel="noopener noreferrer">
-                <PiSpotifyLogoLight className="icon text-xl sm:text-3xl xl:text-4xl 2xl:xl:text-6xl transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95] hover:text-amber-300" />
+                <PiSpotifyLogoLight className="icon text-amber-400 text-xl sm:text-3xl xl:text-4xl 2xl:xl:text-6xl transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95] hover:text-amber-300" />
               </a>
             </li>
             <button
               key={song.id}
-              className="icon text-xl sm:text-3xl xl:text-4xl 2xl:xl:text-6xl transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95] hover:text-amber-300"
+              className="icon text-amber-400 text-xl sm:text-3xl xl:text-4xl 2xl:xl:text-6xl transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95] hover:text-amber-300"
               onClick={() => handleClickCart(song)}
             >
               <MdAddShoppingCart />

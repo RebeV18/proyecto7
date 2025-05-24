@@ -22,8 +22,14 @@
   text-shadow: 2px 2px 4px rgba(252, 203, 68);
 }
 
-.custom-card {
-  box-shadow: 0 1px 2px 0 #47a1eb, 0 2px 5px 0 #47a1eb;
+.custom-button:hover {
+  box-shadow: 1px 1px 2px 1px #47a1eb, 1px 2px 5px 1px #47a1eb;
+  color: #47a1eb;
+}
+
+.custom-card:hover {
+  box-shadow: 0 px 5px 0 #d847eb, 0 2px 5px 0 #eb9f47;
+  background-color: rgba(0, 14, 29, 0.733);
 }
 
 .menu-button {

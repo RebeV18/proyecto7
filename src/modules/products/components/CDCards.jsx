@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { useState, useEffect, useMemo } from "react";
-import { PiCursorClickLight } from "react-icons/pi";
+import { IoIosArrowRoundForward, IoIosArrowRoundBack } from "react-icons/io";
 
 import { fetchAllProducts } from "../services/productApiService";
 import { Song } from "./Song";
@@ -66,7 +66,7 @@ export const CDCards = () => {
             key={cd.cd || index}
             onClick={() => handleCardClick(cd)}
             className={clsx(
-              "relative h-[445px] w-[260px] cursor-pointer rounded-2xl bg-gradient-to-r from-amber-400 to-pink-600 pg-50 shadow-md",
+              "relative h-[445px] w-[260px] cursor-pointer rounded-2xl bg-gradient-to-r from-amber-400 to-pink-600 pg-50 shadow-md p-1",
               {
                 "[&_.card-content]:rotate-y-180": flippedCards[cd.cd],
               }
@@ -74,7 +74,7 @@ export const CDCards = () => {
           >
             <div className="card-content h-full w-full transition-transform duration-500 [transform-style:preserve-3d]">
               {/* Front Side */}
-              <div className="custom-card absolute h-full w-full rounded-2xl p-4 text-gray-800 [backface-visibility:hidden]">
+              <div className="absolute h-full w-full rounded-2xl p-4 bg-[#000e1f] [backface-visibility:hidden]">
                 <h3 className="relative h-[80px] w-[230px] flex items-center justify-center py-2 mt-1 mb-3 shadow text-center gap-1 text-xl text-white font-semibold">
                   {cd.cd}
                 </h3>
@@ -89,12 +89,12 @@ export const CDCards = () => {
                   />
                 </div>
                 <div className="flex justify-center text-center z-10 text-3xl font-bold text-white mt-5 transition-transform duration-500 hover:scale-[1.30] active:scale-[0.95]">
-                  <PiCursorClickLight className="shadow rounded-full" />
+                  <IoIosArrowRoundForward className="shadow rounded-full" />
                 </div>
               </div>
 
               {/* Back Side */}
-              <div className="custom-card absolute h-full w-full rotate-y-180 rounded-2xl p-4 text-gray-800 shadow-lg [backface-visibility:hidden]">
+              <div className="absolute h-full w-full rotate-y-180 rounded-2xl p-4 bg-[#000e1f] shadow-lg [backface-visibility:hidden]">
                 <h3 className="relative h-[80px] w-[230px] flex items-center justify-center py-2 mt-1 mb-3 shadow text-center gap-1 text-xl text-white font-semibold">
                   {cd.cd}
                 </h3>
@@ -108,6 +108,9 @@ export const CDCards = () => {
                       No hay canciones disponibles
                     </p>
                   )}
+                </div>
+                <div className="flex justify-center text-center z-10 text-3xl font-bold text-white mt-2 transition-transform duration-500 hover:scale-[1.30] active:scale-[0.95]">
+                  <IoIosArrowRoundBack className="shadow rounded-full" />
                 </div>
               </div>
             </div>

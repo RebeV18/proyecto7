@@ -16,7 +16,7 @@ export const LoginPage = () => {
           ¿No tienes cuenta?{" → "}
           <Link
             to="/register"
-            className="shadow-lg text-amber-400 hover:underline"
+            className="shadow-lg text-amber-400 hover:underline hover:text-[#47a1eb]"
           >
             Regístrate
           </Link>
