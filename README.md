@@ -1,41 +1,149 @@
-# PROYECTO 7
+# PROYECTO 7 - E-commerce con Firebase
 
-El objetivo de este proyecto es desarrollar una aplicación Fullstack de comercio electrónico que incluya todos los elementos esenciales para gestionar un negocio en línea. Algunos de los elementos clave que deberás tener en cuenta son:
+## 🔥 Migración a Firebase
 
-- Un catálogo de productos que permita a los usuarios explorar los artículos disponibles.
-- Un carrito de compras para que los usuarios puedan seleccionar y gestionar sus compras.
-- Una pasarela de pago segura (específicamente Stripe, PayPal o MercadoPago, en versión de pruebas) que facilite las transacciones en línea.
-- Autenticación de usuarios, incluido el registro de cuentas y el inicio de sesión, mediante JSON Web Tokens (JWT).
-- Autorización, mediante la creación de áreas privadas en las que los usuarios puedan acceder y gestionar su perfil e información personal.
+Este proyecto ha sido migrado de MongoDB a **Firebase** como backend principal, aprovechando Firebase Authentication para la gestión de usuarios y Firestore como base de datos NoSQL.
 
+### Características principales:
+- 🛍️ **Catálogo de productos** que permite a los usuarios explorar artículos disponibles
+- 🛒 **Carrito de compras** para seleccionar y gestionar compras
+- 💳 **Pasarela de pago** integrada con MercadoPago
+- 🔐 **Autenticación de usuarios** con Firebase Authentication
+- 👤 **Gestión de perfiles** de usuario
+- 📱 **Diseño responsivo** con TailwindCSS
 
-Para el desarrollo de este proyecto, te recomendamos emplear las siguientes tecnologías:
+## 🚀 Stack Tecnológico
+
 ### Frontend
-React (con vite)
-Uso de manejo de estado con useContext y useReducer
-Manejo de ruteo con react-router-dom. Puedes utilizar la v5 o v6
-CSS (TailwindCSS, MUI, Bootstrap, CSS Modules o Styled Components)
-Axios
+- **React** (con Vite)
+- **Firebase SDK** (Authentication, Firestore)
+- **React Router DOM** para el enrutado
+- **TailwindCSS** para estilos
+- **Axios** para llamadas a APIs externas
+- **useContext y useReducer** para manejo de estado
 
-### Backend
-Node
-Express.js
-JWT
-bcryptjs
-cors
-dotenv
-mongoose
-nodemon
-openapi-backend
-stripe u otra librería de comercio electrónico
-swagger-jsdoc
-swagger-ui-express
+### Backend (Firebase)
+- **Firebase Authentication** - Gestión de usuarios
+- **Firestore** - Base de datos NoSQL
+- **Firebase Storage** - Almacenamiento de archivos
 
-### Base de datos
-MongoDB
+### Servicios Externos
+- **MercadoPago** - Pasarela de pagos
 
-## Links importantes
-- Backend GitHub: https://github.com/RebeV18/proyecto6
-- Backend Deployment: https://proyecto6-sgv2.onrender.com
+## ⚙️ Configuración
 
-- Frontend Deployment: luisgerardoaquino.netlify.app
+### 1. Variables de Entorno
+
+Crea un archivo `.env` basado en `.env.example`:
+
+```bash
+# Firebase Configuration
+VITE_FIREBASE_API_KEY=tu_firebase_api_key
+VITE_FIREBASE_AUTH_DOMAIN=tu_proyecto.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=tu_proyecto_id
+VITE_FIREBASE_STORAGE_BUCKET=tu_proyecto.appspot.com
+VITE_FIREBASE_MESSAGING_SENDER_ID=123456789
+VITE_FIREBASE_APP_ID=1:123456789:web:abcdef123456
+VITE_FIREBASE_MEASUREMENT_ID=G-ABCDEF123
+
+# Currency Configuration
+VITE_CURRENCY=CLP
+VITE_LOCALE=es-CL
+VITE_MINIMUM_FRACTION_DIGITS=0
+VITE_MAXIMUM_FRACTION_DIGITS=0
+
+# MercadoPago Configuration
+VITE_MP_PUBLIC_KEY=tu_mercadopago_public_key
+```
+
+### 2. Configuración de Firebase
+
+1. Crea un proyecto en [Firebase Console](https://console.firebase.google.com/)
+2. Habilita **Authentication** con el proveedor de Email/Password
+3. Crea una base de datos **Firestore** en modo de prueba
+4. Obtén la configuración del proyecto en Project Settings > General > Your apps
+
+### 3. Estructura de Firestore
+
+El proyecto utiliza las siguientes colecciones:
+
+```
+firestore/
+├── users/           # Información adicional de usuarios
+│   ├── {uid}/
+│   │   ├── nombre
+│   │   ├── apellido
+│   │   ├── pais
+│   │   ├── telefono
+│   │   ├── email
+│   │   ├── createdAt
+│   │   └── updatedAt
+│   
+└── products/        # Catálogo de productos
+    ├── {productId}/
+    │   ├── title
+    │   ├── description
+    │   ├── price
+    │   ├── category
+    │   ├── imageUrl
+    │   ├── featured (boolean)
+    │   ├── createdAt
+    │   └── updatedAt
+```
+
+## 🛠️ Instalación y Desarrollo
+
+```bash
+# Instalar dependencias
+npm install
+
+# Ejecutar en modo desarrollo
+npm run dev
+
+# Construir para producción
+npm run build
+
+# Preview de la build
+npm run preview
+```
+
+## 🔧 Servicios Migrados
+
+### Autenticación (`authApiService.jsx`)
+- ✅ **Login** con Firebase Authentication
+- ✅ **Registro** con almacenamiento adicional en Firestore
+- ✅ **Actualización de perfil** con sincronización Auth/Firestore
+- ✅ **Logout** y gestión de sesiones
+- ✅ **Observador de estado** de autenticación
+
+### Productos (`productApiService.js`)
+- ✅ **Obtener todos los productos** desde Firestore
+- ✅ **Obtener producto por ID**
+- ✅ **Agregar nuevos productos**
+- ✅ **Actualizar productos existentes**
+- ✅ **Eliminar productos**
+- ✅ **Filtrar por categoría**
+- ✅ **Productos destacados**
+
+### Cliente API (`apiClient.js`)
+- ✅ **Interceptor automático** para tokens de Firebase
+- ✅ **Compatibilidad** con APIs externas
+- ✅ **Helpers de autenticación** Firebase
+
+## 🚨 Consideraciones Importantes
+
+```
+
+## 📦 Deployment
+
+El proyecto puede ser desplegado en cualquier servicio de hosting estático como:
+- **Netlify**
+- **Vercel** 
+- **Firebase Hosting**
+
+Asegúrate de configurar las variables de entorno en tu plataforma de deployment.
+
+## 🔗 Links
+
+- Frontend Deployment: [luisgerardoaquino.netlify.app](https://luisgerardoaquino.netlify.app)
+- Firebase Console: [console.firebase.google.com](https://console.firebase.google.com)

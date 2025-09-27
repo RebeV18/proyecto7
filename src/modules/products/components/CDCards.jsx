@@ -44,7 +44,12 @@ export const CDCards = () => {
                 },
               ])
           ).values(),
-        ];
+        ].sort((a, b) => {
+          // Ordenar por año de lanzamiento (más reciente primero)
+          const yearA = parseInt(a.anho_lanzamiento) || 0;
+          const yearB = parseInt(b.anho_lanzamiento) || 0;
+          return yearB - yearA;
+        });
         setCds(groupSongs);
       } catch (error) {
         console.error("Error al obtener los productos:", error);
@@ -55,7 +60,14 @@ export const CDCards = () => {
   }, []);
 
   const filteredSongs = useMemo(() => {
-    return songs.filter((song) => theCd && song.cd === theCd.cd);
+    return songs
+      .filter((song) => theCd && song.cd === theCd.cd)
+      .sort((a, b) => {
+        // Ordenar por track number (asumiendo que existe una propiedad 'track' o 'trackNumber')
+        const trackA = parseInt(a.track || a.trackNumber || 0);
+        const trackB = parseInt(b.track || b.trackNumber || 0);
+        return trackA - trackB;
+      });
   }, [songs, theCd]);
 
   return (
@@ -83,7 +95,7 @@ export const CDCards = () => {
                 </p>
                 <div className="mt-4 overflow-hidden rounded-xl">
                   <img
-                    className="h-[160px] h-full w-full object-cover rounded-xl"
+                    className="h-[160px] w-full object-cover rounded-xl"
                     src={cd.imagen}
                     alt={cd.cd || "CD"}
                   />
