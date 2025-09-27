@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthGlobalState";
 import { FormField } from "../Register/FormField";
 import { useValidateRegisterForm } from "../../hooks/useValidateRegisterForm";
-import { formatDataUpdate } from "../../utils/formatDataUpdate";
+import { formatDataUpdate } from "../../utils/formatDataUpdate.js";
 
 export const UpdateForm = ({ userUpdate }) => {
   const { update } = useAuthContext();

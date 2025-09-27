@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 import { FormField } from "./FormField";
 
-import { initialState } from "../../utils/initialState";
+import { initialState } from "../../utils/initialState.js";
 import { useValidateRegisterForm } from "../../hooks/useValidateRegisterForm";
-import { formatDataRegister } from "../../utils/formatDataRegister";
+import { formatDataRegister } from "../../utils/formatDataRegister.js";
 
 export const RegisterForm = () => {
   const { register } = useAuthContext();

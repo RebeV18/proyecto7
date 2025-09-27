@@ -1,6 +1,6 @@
 [build]
-  # Comando para construir la aplicación con verificación de variables
-  command = "chmod +x scripts/netlify-build.sh && scripts/netlify-build.sh"
+  # Comando para construir la aplicación
+  command = "npm run build"
   
   # Directorio donde se genera el build (Vite usa 'dist' por defecto)
   publish = "dist"

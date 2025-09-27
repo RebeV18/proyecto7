@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { registerRules } from "../utils/registerRules";
+import { registerRules } from "../utils/registerRules.js";
 
 export const useValidateRegisterForm = (formData) => {
   const [errors, setErrors] = useState({});
@@ -19,7 +19,7 @@ export const useValidateRegisterForm = (formData) => {
 
       return error;
     },
-    [formData]
+    [] // formData no necesita estar en dependencies ya que no se usa directamente
   );
 
   const validateForm = useCallback(() => {
