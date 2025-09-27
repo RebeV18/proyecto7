@@ -16,6 +16,9 @@ import { auth, db } from '../../../config/firebase';
 // Login service using Firebase Authentication
 export const loginService = async ({ email, password }) => {
   try {
+    if (!auth || !db) {
+      throw new Error('Firebase not initialized');
+    }
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
     
