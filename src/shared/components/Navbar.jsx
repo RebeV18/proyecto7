@@ -9,7 +9,7 @@ import {
 } from "react-icons/io";
 
 import { CartIcon } from "../../modules/cart/components/CartIcon";
-import { useAuthContext } from "../../modules/auth/context/AuthGlobalState";
+import { useAuthContext } from "../../modules/auth/Hooks/useAuthContext";
 
 import "../../shared/Styles/Styles.css";
 

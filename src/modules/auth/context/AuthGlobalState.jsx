@@ -1,17 +1,14 @@
 import {
   useReducer,
   useEffect,
-  createContext,
-  useContext,
   useState,
 } from "react";
 import { authReducer } from "./authReducer";
+import { AuthContext } from "./AuthContext";
 
 import { loginService } from "../services/authApiService";
 import { registerService } from "../services/authApiService";
 import { updateService } from "../services/authApiService";
-
-const AuthContext = createContext();
 
 const initialState = {
   user: null,
@@ -142,5 +139,3 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
-
-export const useAuthContext = () => useContext(AuthContext);

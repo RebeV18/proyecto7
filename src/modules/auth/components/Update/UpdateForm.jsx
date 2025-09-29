@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { useAuthContext } from "../../context/AuthGlobalState";
+import { useAuthContext } from "../../Hooks/useAuthContext";
 import { FormField } from "../Register/FormField";
 import { useValidateRegisterForm } from "../../Hooks/useValidateRegisterForm";
 import { formatDataUpdate } from "../../utils/formatDataUpdate";

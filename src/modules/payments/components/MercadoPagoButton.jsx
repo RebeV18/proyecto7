@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { mercadoPagoPreference } from "../services/PaymentService";
 import { envLoader } from "../../../config/envLoader";
-import { useAuthContext } from "../../auth/context/AuthGlobalState";
+import { useAuthContext } from "../../auth/Hooks/useAuthContext";
 
 const {
   mp_publicKey,
