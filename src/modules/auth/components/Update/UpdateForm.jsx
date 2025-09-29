@@ -1,9 +1,9 @@
 import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { useAuthContext } from "../../Hooks/useAuthContext";
+import { useAuthContext } from "../../hooks/useAuthContext";
 import { FormField } from "../Register/FormField";
-import { useValidateRegisterForm } from "../../Hooks/useValidateRegisterForm";
+import { useValidateRegisterForm } from "../../hooks/useValidateRegisterForm";
 import { formatDataUpdate } from "../../utils/formatDataUpdate";
 
 export const UpdateForm = ({ userUpdate }) => {

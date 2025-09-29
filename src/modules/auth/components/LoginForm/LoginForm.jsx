@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAuthContext } from "../../Hooks/useAuthContext";
+import { useAuthContext } from "../../hooks/useAuthContext";
 import { useNavigate } from "react-router-dom";
 
 export const LoginForm = () => {

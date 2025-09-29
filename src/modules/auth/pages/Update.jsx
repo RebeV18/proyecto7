@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 
-import { useAuthContext } from "../Hooks/useAuthContext";
+import { useAuthContext } from "../hooks/useAuthContext";
 import { UpdateForm } from "../components/Update/UpdateForm";
 import { Background } from "../../../shared/components/Background";
 

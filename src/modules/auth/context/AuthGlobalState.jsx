@@ -6,9 +6,7 @@ import {
 import { authReducer } from "./authReducer";
 import { AuthContext } from "./AuthContext";
 
-import { loginService } from "../services/authApiService";
-import { registerService } from "../services/authApiService";
-import { updateService } from "../services/authApiService";
+import { loginService, registerService, updateService } from "../services/authApiService";
 
 const initialState = {
   user: null,

@@ -1,11 +1,11 @@
 import { useCallback, useState } from "react";
-import { useAuthContext } from "../../Hooks/useAuthContext";
+import { useAuthContext } from "../../hooks/useAuthContext";
 import { useNavigate } from "react-router-dom";
 
 import { FormField } from "./FormField";
 
 import { initialState } from "../../utils/initialState";
-import { useValidateRegisterForm } from "../../Hooks/useValidateRegisterForm";
+import { useValidateRegisterForm } from "../../hooks/useValidateRegisterForm";
 import { formatDataRegister } from "../../utils/formatDataRegister";
 
 export const RegisterForm = () => {
