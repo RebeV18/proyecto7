@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import { FormField } from "./FormField";
 
-import { initialState } from "../../utils/initialState.js";
+import { initialState } from "../../utils/initialState";
 import { useValidateRegisterForm } from "../../Hooks/useValidateRegisterForm";
 import { formatDataRegister } from "../../utils/formatDataRegister";
 
