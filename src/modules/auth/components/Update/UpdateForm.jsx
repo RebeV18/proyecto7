@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 import { useAuthContext } from "../../context/AuthGlobalState";
 import { FormField } from "../Register/FormField";
-import { useValidateRegisterForm } from "../../hooks/useValidateRegisterForm";
-import { formatDataUpdate } from "../../utils/formatDataUpdate.js";
+import { useValidateRegisterForm } from "../../Hooks/useValidateRegisterForm";
+import { formatDataUpdate } from "../../utils/formatDataUpdate";
 
 export const UpdateForm = ({ userUpdate }) => {
   const { update } = useAuthContext();
@@ -107,7 +107,7 @@ export const UpdateForm = ({ userUpdate }) => {
 
       <div className="flex justify-center">
         <button
-          className="custom-button border-2 border-amber-300 mt-5 mb-5 text-white text-base md:text-lg lg:text-xl px-10 lg:px-15 xl:px-18 2xl:px-20 py-3 xl:py-4 rounded-md cursor-pointer transition duration-200 ease-in-out transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95]"
+          className="custom-button border-2 border-amber-300 mt-5 mb-5 text-white text-base md:text-lg lg:text-xl px-10 lg:px-15 xl:px-18 2xl:px-20 py-3 xl:py-4 rounded-md cursor-pointer ease-in-out transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95]"
           type="submit"
         >
           Actualizar
