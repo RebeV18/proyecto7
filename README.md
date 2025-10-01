@@ -138,7 +138,6 @@ npm run preview
 
 El proyecto puede ser desplegado en cualquier servicio de hosting estático como:
 - **Netlify**
-- **Vercel** 
 - **Firebase Hosting**
 
 Asegúrate de configurar las variables de entorno en tu plataforma de deployment.
@@ -146,4 +145,3 @@ Asegúrate de configurar las variables de entorno en tu plataforma de deployment
 ## 🔗 Links
 
 - Frontend Deployment: [luisgerardoaquino.netlify.app](https://luisgerardoaquino.netlify.app)
-- Firebase Console: [console.firebase.google.com](https://console.firebase.google.com)
