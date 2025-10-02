@@ -112,7 +112,7 @@ export const syncCartOnLogin = async (localCart) => {
       
       localCart.products.forEach(localProduct => {
         const existingIndex = combinedProducts.findIndex(
-          p => p._id === localProduct._id
+          p => p.id === localProduct.id
         );
         
         if (existingIndex >= 0) {

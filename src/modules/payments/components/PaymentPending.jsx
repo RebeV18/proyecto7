@@ -12,8 +12,8 @@ export const PaymentPending = () => {
   useEffect(() => {
     const processPendingPayment = async () => {
       try {
-        const orderId = searchParams.get('order_id');
-        const paymentId = searchParams.get('payment_id');
+        const orderId = searchParams.get('orderid');
+        const paymentId = searchParams.get('paymentid');
         const status = searchParams.get('status');
 
         if (!orderId) {

@@ -58,9 +58,9 @@ export const mercadoPagoPreference = async ({ cart }) => {
 
     return {
       success: true,
-      preference_id: response.data.preference_id || response.data.id,
+      preferenceid: response.data.preferenceid || response.data.id,
       init_point: response.data.init_point,
-      order_id: orderId,
+      orderid: orderId,
       sandbox_init_point: response.data.sandbox_init_point,
       ...response.data
     };

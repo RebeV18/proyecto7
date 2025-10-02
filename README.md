@@ -40,7 +40,7 @@ Crea un archivo `.env` basado en `.env.example`:
 # Firebase Configuration
 VITE_FIREBASE_API_KEY=tu_firebase_api_key
 VITE_FIREBASE_AUTH_DOMAIN=tu_proyecto.firebaseapp.com
-VITE_FIREBASE_PROJECT_ID=tu_proyecto_id
+VITE_FIREBASE_PROJECT_ID=tu_proyectoid
 VITE_FIREBASE_STORAGE_BUCKET=tu_proyecto.appspot.com
 VITE_FIREBASE_MESSAGING_SENDER_ID=123456789
 VITE_FIREBASE_APP_ID=1:123456789:web:abcdef123456

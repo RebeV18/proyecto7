@@ -143,7 +143,7 @@ export const Navbar = () => {
                 </Link>
               ) : (
                 <Link
-                  to={`/update/${user._id}`}
+                  to={`/update/${user.id}`}
                   className="flex flex-col items-center display-center text-white transition-transform duration-500 hover:scale-[1.05] active:scale-[0.95] hover:text-amber-300"
                 >
                   <IoIosPerson className="text-xl xl:text-2xl 2xl:text-3xl" />

@@ -8,7 +8,7 @@ export const UpdatePage = () => {
   const { id } = useParams();
   const { user } = useAuthContext();
 
-  const userToUpdate = user && (user._id === id || user.id === id) ? user : null;
+  const userToUpdate = user && (user.id === id || user.id === id) ? user : null;
 
   if (!userToUpdate) {
     return (

@@ -39,7 +39,7 @@ export const UpdateForm = ({ userUpdate }) => {
 
     try {
       const formDataToSend = formatDataUpdate(formData);
-      await update({ ...formDataToSend, id: userUpdate._id || userUpdate.id });
+      await update({ ...formDataToSend, id: userUpdate.id || userUpdate.id });
       navigate("/login");
     } catch (error) {
       console.error("Error updating:", error);

@@ -1,14 +1,18 @@
-import { useState } from "react";
 import useCartContext from "../context/CartContext";
 import { CartSideBar } from "./CartSideBar";
 import { BsCart4 } from "react-icons/bs";
 
 export const CartIcon = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const totalItems = useCartContext((state) => state.totalItems);
+  const isCartOpen = useCartContext((state) => state.isCartOpen);
+  const setCartOpen = useCartContext((state) => state.setCartOpen);
 
   const handleIsOpen = () => {
-    setIsOpen(!isOpen);
+    setCartOpen(!isCartOpen);
+  };
+
+  const handleClose = () => {
+    setCartOpen(false);
   };
 
   return (
@@ -25,7 +29,7 @@ export const CartIcon = () => {
         )}
       </button>
 
-      {isOpen && <CartSideBar onClose={handleIsOpen} />}
+      {isCartOpen && <CartSideBar onClose={handleClose} />}
     </div>
   );
 };

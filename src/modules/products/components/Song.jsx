@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { MdAddShoppingCart } from "react-icons/md";
 import { FaRegCirclePlay } from "react-icons/fa6";
@@ -10,27 +9,26 @@ import useCartContext from "../../cart/context/CartContext";
 export const Song = ({ producto }) => {
   const { optionsCurrency } = envLoader;
   const navigate = useNavigate();
-
-  const [song, setTheSong] = useState([]);
   const addItem = useCartContext((state) => state.addItem);
 
-  const handleClickSong = (songSelected) => {
-    if (!songSelected || !songSelected._id) {
-      console.error("songSelected is undefined or missing id");
+  const handleClickSong = (e) => {
+    e.stopPropagation(); // Prevenir que el evento llegue al contenedor padre
+    if (!producto || !producto.id) {
+      console.error("producto is undefined or missing id", producto);
       return;
     }
-    setTheSong(songSelected);
-    navigate(`/SongPage/${songSelected._id}`, {
-      state: { song: song },
+    navigate(`/SongPage/${producto.id}`, {
+      state: { song: producto },
     });
   };
 
-  const handleClickCart = (songSelected) => {
-    if (!songSelected || !songSelected._id) {
-      console.error("songSelected is undefined or missing id");
+  const handleClickCart = (e) => {
+    e.stopPropagation(); // Prevenir que el evento llegue al contenedor padre
+    if (!producto || !producto.id) {
+      console.error("producto is undefined or missing id", producto);
       return;
     }
-    addItem(songSelected);
+    addItem(producto);
   };
 
   return (
@@ -51,17 +49,15 @@ export const Song = ({ producto }) => {
         </div>
         <div className="flex flex-row justify-center items-center gap-20">
           <button
-            key={producto.id}
             className="text-white text-center p-1 cursor-pointer transition-transform duration-500 hover:scale-[1.70] active:scale-[0.95] hover:text-amber-200"
-            onClick={() => handleClickCart(producto)}
+            onClick={handleClickCart}
           >
             <MdAddShoppingCart />
             {/* <p className="text-xs">Agregar</p> */}
           </button>
           <button
-            key={producto.id}
             className="text-white align-center p-1 cursor-pointer transition-transform duration-500 hover:scale-[1.70] active:scale-[0.95] hover:text-amber-200"
-            onClick={() => handleClickSong(producto)}
+            onClick={handleClickSong}
           >
             <FaRegCirclePlay />
           </button>

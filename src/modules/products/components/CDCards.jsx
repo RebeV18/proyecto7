@@ -10,7 +10,7 @@ import "../../../shared/Styles/Styles.css";
 export const CDCards = () => {
   const [flippedCards, setFlippedCards] = useState({});
   const [songs, setSongs] = useState([]);
-  const [cds, setCds] = useState([]);
+  const [allItems, setAllItems] = useState([]);
   const [theCd, setTheCd] = useState(null);
 
   const handleCardClick = (cd) => {
@@ -28,29 +28,51 @@ export const CDCards = () => {
         const products = data.products || data.data || data;
         setSongs(products);
 
+        // Procesar singles individualmente
+        const singlesData = products
+          .filter((song) => song.cd === "Singles")
+          .map((single) => ({
+            id: single.id,
+            cd: `Single ${single.cancion}`,
+            imagen: single.imagen,
+            anho_lanzamiento: single.anho_lanzamiento,
+            type: 'single',
+            songData: single
+          }));
+
+        // Agrupar el resto de CDs (excluyendo Singles y Podcast)
         const groupSongs = [
           ...new Map(
             products
-              .filter((song) => song.cd !== "Podcast")
+              .filter((song) => song.cd !== "Podcast" && song.cd !== "Singles")
               .map((song) => [
                 song.cd,
                 {
+                  id: song.cd,
                   cd: song.cd,
-                  imagen:
-                    song.cd === "Singles"
-                      ? "https://res.cloudinary.com/ddxlvh0go/image/upload/v1746074281/LG_hvi4gy.jpg"
-                      : song.imagen,
+                  imagen: song.imagen,
                   anho_lanzamiento: song.anho_lanzamiento,
+                  type: 'cd'
                 },
               ])
           ).values(),
-        ].sort((a, b) => {
-          // Ordenar por año de lanzamiento (más reciente primero)
+        ];
+
+        // Combinar singles y CDs, ordenar por año y tipo
+        const allItems = [...singlesData, ...groupSongs].sort((a, b) => {
           const yearA = parseInt(a.anho_lanzamiento) || 0;
           const yearB = parseInt(b.anho_lanzamiento) || 0;
-          return yearB - yearA;
+          
+          // Si tienen el mismo año, priorizar CDs (type !== 'single') sobre singles
+          if (yearA === yearB) {
+            if (a.type === 'single' && b.type !== 'single') return 1;
+            if (a.type !== 'single' && b.type === 'single') return -1;
+          }
+          
+          return yearB - yearA; // Más reciente primero
         });
-        setCds(groupSongs);
+
+        setAllItems(allItems);
       } catch (error) {
         console.error("Error al obtener los productos:", error);
       }
@@ -60,27 +82,34 @@ export const CDCards = () => {
   }, []);
 
   const filteredSongs = useMemo(() => {
-    return songs
-      .filter((song) => theCd && song.cd === theCd.cd)
-      .sort((a, b) => {
-        // Ordenar por track number (asumiendo que existe una propiedad 'track' o 'trackNumber')
-        const trackA = parseInt(a.track || a.trackNumber || 0);
-        const trackB = parseInt(b.track || b.trackNumber || 0);
-        return trackA - trackB;
-      });
+    if (!theCd) return [];
+    
+    if (theCd.type === 'single') {
+      // Para singles, devolver solo esa canción
+      return [theCd.songData];
+    } else {
+      // Para CDs, filtrar canciones del álbum
+      return songs
+        .filter((song) => song.cd === theCd.cd)
+        .sort((a, b) => {
+          const trackA = parseInt(a.track || a.trackNumber || 0);
+          const trackB = parseInt(b.track || b.trackNumber || 0);
+          return trackA - trackB;
+        });
+    }
   }, [songs, theCd]);
 
   return (
     <div className="py-10 px-5">
       <div className="grid grid-cols-1 content-center sm:grid-cols-2 xl:grid-cols-3 gap-15 xl:gap-25">
-        {cds.map((cd, index) => (
+        {allItems.map((item, index) => (
           <div
-            key={cd.cd || index}
-            onClick={() => handleCardClick(cd)}
+            key={item.id || index}
+            onClick={() => handleCardClick(item)}
             className={clsx(
               "relative h-[445px] w-[260px] cursor-pointer rounded-2xl bg-gradient-to-r from-amber-400 to-pink-600 pg-50 shadow-md p-1",
               {
-                "[&_.card-content]:rotate-y-180": flippedCards[cd.cd],
+                "[&_.card-content]:rotate-y-180": flippedCards[item.cd],
               }
             )}
           >
@@ -88,16 +117,16 @@ export const CDCards = () => {
               {/* Front Side */}
               <div className="absolute h-full w-full rounded-2xl p-4 bg-[#000e1f] [backface-visibility:hidden]">
                 <h3 className="relative h-[80px] w-[230px] flex items-center justify-center py-2 mt-1 mb-3 shadow text-center gap-1 text-xl text-white font-semibold">
-                  {cd.cd}
+                  {item.cd}
                 </h3>
                 <p className="font-poppins text-base text-center text-white italic">
-                  {cd.anho_lanzamiento}
+                  {item.anho_lanzamiento}
                 </p>
                 <div className="mt-4 overflow-hidden rounded-xl">
                   <img
-                    className="h-[160px] w-full object-cover rounded-xl"
-                    src={cd.imagen}
-                    alt={cd.cd || "CD"}
+                    className="h-[200px] w-full object-cover rounded-xl"
+                    src={item.imagen}
+                    alt={item.cd || "CD"}
                   />
                 </div>
                 <div className="flex justify-center text-center z-10 text-3xl font-bold text-white mt-5 transition-transform duration-500 hover:scale-[1.30] active:scale-[0.95]">
@@ -108,12 +137,12 @@ export const CDCards = () => {
               {/* Back Side */}
               <div className="absolute h-full w-full rotate-y-180 rounded-2xl p-4 bg-[#000e1f] shadow-lg [backface-visibility:hidden]">
                 <h3 className="relative h-[80px] w-[230px] flex items-center justify-center py-2 mt-1 mb-3 shadow text-center gap-1 text-xl text-white font-semibold">
-                  {cd.cd}
+                  {item.cd}
                 </h3>
                 <div className="overflow-y-auto max-h-[280px] mt-2 space-y-2">
                   {filteredSongs.length > 0 ? (
                     filteredSongs.map((song) => (
-                      <Song key={song._id} producto={song} />
+                      <Song key={song.id} producto={song} />
                     ))
                   ) : (
                     <p className="text-center text-sm">

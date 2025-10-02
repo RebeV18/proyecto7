@@ -12,7 +12,7 @@ export const SongPage = () => {
 
   useEffect(() => {
     if (productos.length > 0) {
-      const selectedSong = productos.find((s) => s._id === id);
+      const selectedSong = productos.find((s) => s.id === id);
       setSong(selectedSong);
     }
   }, [productos, id]);
@@ -45,7 +45,7 @@ export const SongPage = () => {
           </div>
         )}
 
-        {theSong && <SongCard key={theSong._id} song={theSong} />}
+        {theSong && <SongCard key={theSong.id} song={theSong} />}
         <button
           className="border-3 border-amber-500 rounded-lg text-white py-2 px-7 2xl:py-4 2xl:px-10 text-sm lg:text-base xl:text-lg 2xl:text-3xl"
           onClick={() => window.history.back()}

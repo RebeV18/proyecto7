@@ -9,7 +9,7 @@ export const SongCard = ({ song }) => {
   const addItem = useCartContext((state) => state.addItem);
 
   const handleClickCart = (songSelected) => {
-    if (!songSelected || !songSelected._id) {
+    if (!songSelected || !songSelected.id) {
       console.error("songSelected is undefined or missing id");
       return;
     }
@@ -17,7 +17,7 @@ export const SongCard = ({ song }) => {
   };
 
   return (
-    <div className="bg-transparent border-2 border-amber-400 pg-50 shadow cursor-pointer rounded-2xl bg-transparent shadow-md mt-2 mb-10">
+    <div className="bg-transparent border-2 border-amber-400 pg-50 cursor-pointer rounded-2xl shadow-md mt-2 mb-10">
       <div className="mx-auto flex flex-col md:flex-row justify-center object-center rounded-lg px-2 py-2 sm:py-5 lg:max-w-7xl">
         <div className="flex flex-col items-center justify-center p-7">
           <h3 className="text-white text-center font-bold mb-2 text-xl md:text-2xl lg:text-3xl 2xl:text-5xl">
@@ -25,7 +25,7 @@ export const SongCard = ({ song }) => {
           </h3>
           <div className="flex flex-col md:justify-between p-2 items-center">
             <img
-              className="w-full h-auto aspect-square object-cover rounded-lg mx-18 mb-2 md:w-55 md:h-55 md:mb-5 lg:w-65 lg:h-65 2xl:w-110 2xl:h-110 md:mb-8 object-center object-cover 2xl:my-7"
+              className="w-full h-auto aspect-square object-cover rounded-lg mx-18 mb-2 md:w-55 md:h-55 lg:w-65 lg:h-65 2xl:w-110 2xl:h-110 md:mb-8 object-center 2xl:my-7"
               src={song.imagen}
               alt={song.cancion}
             />

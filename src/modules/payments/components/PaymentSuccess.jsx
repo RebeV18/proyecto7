@@ -13,10 +13,10 @@ export const PaymentSuccess = () => {
   useEffect(() => {
     const processPayment = async () => {
       try {
-        const orderId = searchParams.get('order_id');
-        const paymentId = searchParams.get('payment_id');
+        const orderId = searchParams.get('orderid');
+        const paymentId = searchParams.get('paymentid');
         const status = searchParams.get('status');
-        const merchantOrderId = searchParams.get('merchant_order_id');
+        const merchantOrderId = searchParams.get('merchant_orderid');
 
         if (!orderId) {
           throw new Error('ID de orden no encontrado');

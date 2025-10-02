@@ -29,7 +29,7 @@ export const CartProduct = ({ product }) => {
 
           <div className="flex justify-center gap-2 p-1 text-sm">
             <button
-              onClick={() => removeOneItem(product._id)}
+              onClick={() => removeOneItem(product.id)}
               className="text-gray-100 hover:text-gray-700 cursor-pointer"
             >
               <CiCircleMinus className="h-5 w-5" />

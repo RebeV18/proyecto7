@@ -10,10 +10,12 @@ export const CartSideBar = ({ onClose }) => {
   const products = useCartContext((state) => state.products);
   const totalPrice = useCartContext((state) => state.totalPrice);
   const clearCart = useCartContext((state) => state.clearCart);
+  const setCartOpen = useCartContext((state) => state.setCartOpen);
 
   const handleCheckout = () => {
     alert("Pedido realizado con éxito! muchas gracias por su compra!");
     clearCart();
+    setCartOpen(false);
     onClose();
   };
 
@@ -24,10 +26,10 @@ export const CartSideBar = ({ onClose }) => {
         className="fixed inset-y-0 right-0 max-w-xl shadow-2xl transform transition-all ease-in-out duration-300"
       ></div>
 
-      <div className="fixed inset-y-0 right-0 max-w-md shadow-2xl transform transition-all ease-in-out duration-300  bg-slate-900 shadow">
+      <div className="fixed inset-y-0 right-0 max-w-md shadow-2xl transform transition-all ease-in-out duration-300  bg-slate-900">
         <div className="h-full flex flex-col overflow-y-auto">
           <div className="px-4 py-6 sm:px-6 border-b border-gray-200">
-            <h2 className="text-lg text-white font-medium text-gray-900 bg-[#3053458] shadow p-2">
+            <h2 className="text-lg text-white font-medium bg-[#3053458] shadow p-2">
               Carrito de compras
             </h2>
             <button
@@ -47,7 +49,7 @@ export const CartSideBar = ({ onClose }) => {
               <div className="flow-root">
                 <ul className="divide-y divide-gray-300">
                   {products.map((product) => {
-                    return <CartProduct key={product._id} product={product} />;
+                    return <CartProduct key={product.id} product={product} />;
                   })}
                 </ul>
               </div>

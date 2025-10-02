@@ -8,16 +8,19 @@ const useCartContext = create(
       products: [],
       totalItems: 0,
       totalPrice: 0,
+      isCartOpen: false,
+
+      setCartOpen: (isOpen) => set({ isCartOpen: isOpen }),
 
       addItem: (product) => {
         const products = get().products;
         const existingProduct = products.find(
-          (item) => item._id === product._id
+          (item) => item.id === product.id
         );
 
         if (existingProduct) {
           const updateProduct = products.map((product) =>
-            product._id === existingProduct._id
+            product.id === existingProduct.id
               ? { ...product, quantity: product.quantity + 1 }
               : product
           );
@@ -26,6 +29,7 @@ const useCartContext = create(
             products: updateProduct,
             totalItems: state.totalItems + 1,
             totalPrice: state.totalPrice + product.precio,
+            isCartOpen: true, // Abrir carrito automáticamente
           }));
         } else {
           const productWithQuantity = { ...product, quantity: 1 };
@@ -34,13 +38,14 @@ const useCartContext = create(
             products: [...state.products, productWithQuantity],
             totalItems: state.totalItems + 1,
             totalPrice: state.totalPrice + product.precio,
+            isCartOpen: true, // Abrir carrito automáticamente
           }));
         }
       },
       removeOneItem: (productID) => {
         const products = get().products;
         const existingProduct = products.find(
-          (product) => product._id === productID
+          (product) => product.id === productID
         );
 
         if (!existingProduct) return;
@@ -48,14 +53,14 @@ const useCartContext = create(
         if (existingProduct.quantity === 1) {
           set((state) => ({
             products: state.products.filter(
-              (product) => product._id !== productID
+              (product) => product.id !== productID
             ),
             totalItems: state.totalItems - 1,
             totalPrice: state.totalPrice - existingProduct.precio,
           }));
         } else {
           const updatedProducts = products.map((product) =>
-            product._id === productID
+            product.id === productID
               ? { ...product, quantity: product.quantity - 1 }
               : product
           );
@@ -70,7 +75,7 @@ const useCartContext = create(
       removeItem: (productID) => {
         const products = get().products;
         const existingProduct = products.find(
-          (product) => product._id === productID
+          (product) => product.id === productID
         );
 
         if (!existingProduct) return;
