@@ -124,7 +124,7 @@ export const CDCards = () => {
                 </p>
                 <div className="mt-4 overflow-hidden rounded-xl">
                   <img
-                    className="h-[220px] w-full object-cover rounded-xl"
+                    className="h-full w-full object-cover rounded-xl"
                     src={item.imagen}
                     alt={item.cd || "CD"}
                   />
